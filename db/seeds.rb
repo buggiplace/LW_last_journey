@@ -18,5 +18,5 @@ puts 'Create funerals'
 funeral = Funeral.create!(user: user)
 
 puts 'Create condolences'
-funeral.condolences.create!
-funeral.condolences.create!
+funeral.condolences.create!(first_name: 'Jane', last_name: 'Doe')
+funeral.condolences.create!(first_name: 'John', last_name: 'Smith')
