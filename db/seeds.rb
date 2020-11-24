@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
 puts "Starting seed"
 
 puts "Cleaning old seeds"
@@ -18,17 +17,27 @@ User.destroy_all
 # serialized_preferences = File.read(filepath) #returns a string
 # preferences = JSON.parse(serialized_preferences)
 
-#puts 'Create users'
-#user = User.create!(email: "lucas@test.com", password: "123456")
-#puts "User Seed done - x added"
+# puts 'Create users'
+# user = User.create!(email: "lucas@test.com", password: "123456")
+# puts "User Seed done - x added"
 
 puts 'Create 2 demo accounts'
-simon = User.create!(email: "simon@test.com", password: "123456789", representative: true)
-lena = User.create!(email: "lena@test.com", password: "12345678", representative: false)
+simon = User.create!(first_name: 'Simon',
+                     last_name: 'Lacroix',
+                     birth_date: Date.new(1989, 2, 1),
+                     email: "simon@test.com",
+                     password: "123456789",
+                     representative: true)
+lena = User.create!(first_name: 'Lena',
+                    last_name: 'Link',
+                    birth_date: Date.new(1978, 3, 3),
+                    email: "lena@test.com",
+                    password: "12345678",
+                    representative: false)
 # funeral = Funeral.create!(user: lena, representative_email: simon.email)
 
 puts 'Create funerals'
-Funeral.create!(
+funeral = Funeral.create!(
   preferences: {
     'funeral_type': {
       'type': 'Peace forest',
@@ -50,10 +59,10 @@ Funeral.create!(
       'rep_comment': 'Hang in there, buddy! Please make sure my parents dont get to see my nude pictures in whatsapp.'
     },
     'digital_will': {
-      'cancel_accounts': ['LinkedIn','Spotify','Facebook','Twitter'],
+      'cancel_accounts': ['LinkedIn', 'Spotify', 'Facebook', 'Twitter'],
       'facebook_obituary': 'No',
-      'bank_accounts': ['Sparkasse ****2456','N26: ****2456', 'Coinbase'],
-      'insurance_accounts': ['HUB24: ****2635','Clark: ****4659'],
+      'bank_accounts': ['Sparkasse ****2456', 'N26: ****2456', 'Coinbase'],
+      'insurance_accounts': ['HUB24: ****2635', 'Clark: ****4659'],
       'hardware': 'Please destroy my harddrives',
       'dig_comment': 'Yes, you can!'
     },
@@ -69,11 +78,11 @@ Funeral.create!(
       'obituary_intro': '',
       'obituary_relatives': '',
       'obituary_other': ''
-    },
+    }
   },
-  user_id: User.last.id,
+  user: lena
 )
-  # picture_one: row['picture_link'],
+# picture_one: row['picture_link'],
 
 puts "Funeral Seed finished"
 
@@ -82,4 +91,3 @@ funeral.condolences.create!(first_name: 'Jane', last_name: 'Doe')
 funeral.condolences.create!(first_name: 'John', last_name: 'Smith')
 
 puts "Condolences seed finished"
-
