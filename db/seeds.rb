@@ -6,18 +6,28 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 puts "Starting seed"
 
 puts "Cleaning old seeds"
-
+Condolence.destroy_all
 Funeral.destroy_all
-
-puts "Adding funerals"
+User.destroy_all
 
 # filepath = "db/preferences.json"
 # serialized_preferences = File.read(filepath) #returns a string
 # preferences = JSON.parse(serialized_preferences)
 
+#puts 'Create users'
+#user = User.create!(email: "lucas@test.com", password: "123456")
+#puts "User Seed done - x added"
+
+puts 'Create 2 demo accounts'
+simon = User.create!(email: "simon@test.com", password: "123456789", representative: true)
+lena = User.create!(email: "lena@test.com", password: "12345678", representative: false)
+# funeral = Funeral.create!(user: lena, representative_email: simon.email)
+
+puts 'Create funerals'
 Funeral.create!(
   preferences: {
     'funeral_type': {
@@ -61,25 +71,15 @@ Funeral.create!(
       'obituary_other': ''
     },
   },
-  user_id: User.all.sample.id,
+  user_id: User.last.id,
 )
   # picture_one: row['picture_link'],
 
+puts "Funeral Seed finished"
 
-puts "User Seed done - x added"
+puts 'Create condolences'
+funeral.condolences.create!(first_name: 'Jane', last_name: 'Doe')
+funeral.condolences.create!(first_name: 'John', last_name: 'Smith')
 
-puts "Seed finished"
+puts "Condolences seed finished"
 
-
-# Funeral.create!(
-#   preferences: {
-#     funeral_type: {
-#       type: 'forrest funeral',
-#       wish_comment: 'free text fiel input'
-#     },
-#     music: {
-#       song_selection: ['ave maria', 'highway to hell'],
-#       wish_comment: 'free text field input'
-#     }
-#   },
-#   representative_email: 'hello@gmail.com'

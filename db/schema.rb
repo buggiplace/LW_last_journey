@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_101824) do
+ActiveRecord::Schema.define(version: 2020_11_24_135851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "condolences", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.text "content"
+    t.bigint "funeral_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["funeral_id"], name: "index_condolences_on_funeral_id"
+  end
 
   create_table "funerals", force: :cascade do |t|
     t.json "preferences"
@@ -33,9 +43,11 @@ ActiveRecord::Schema.define(version: 2020_11_24_101824) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "representative", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "condolences", "funerals"
   add_foreign_key "funerals", "users"
 end
