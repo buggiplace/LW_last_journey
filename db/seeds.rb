@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts 'Deleting data'
+Condolence.destroy_all
+Funeral.destroy_all
+User.destroy_all
+
+puts 'Create users'
+user = User.create!(email: "lucas@test.com", password: "123456")
+
+puts 'Create funerals'
+funeral = Funeral.create!(user: user)
+
+puts 'Create condolences'
+funeral.condolences.create!
+funeral.condolences.create!
