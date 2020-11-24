@@ -1,0 +1,2 @@
+class Condolence < ApplicationRecord
+end
