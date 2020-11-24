@@ -20,3 +20,8 @@ funeral = Funeral.create!(user: user)
 puts 'Create condolences'
 funeral.condolences.create!(first_name: 'Jane', last_name: 'Doe')
 funeral.condolences.create!(first_name: 'John', last_name: 'Smith')
+
+puts 'Create demo account'
+lena = User.create!(email: "lena@test.com", password: "12345678", representative: false)
+simon = User.create!(email: "simon@test.com", password: "123456789", representative: true)
+funeral = Funeral.create!(user: lena, representative_email: simon.email)
