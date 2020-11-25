@@ -1,8 +1,4 @@
-
-
-<h1>THIS IS THE TILE FUNERAL TYPES</h1>
-
-
+<h1>THIS IS THE TILE DIGITAL WILL</h1>
 
 <!-- <form action='/funeral_types' method='post'>
   <input type="hidden" name="authenticity_token" value="fUrBymmVzFG49YTQE9xKfohttEtW7eHnui2WT6KWpRXT6g9dz73lhZ7bRdHH+RuV/TFoB23OG5l1eo731o8l6g==">
@@ -12,20 +8,22 @@
 </form> -->
 
 
-  <%= simple_form_for(@funeral_type) do |f| %>
+  <%= simple_form_for(@digital_will) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-      <%= f.input :type%>
-      <%= f.input :loc_street%>
-      <%= f.input :loc_zip%>
-      <%= f.input :loc_city%>
-      <%= f.input :comment%>
+      <%= f.input :comment %>
+      <%= f.input :facebook_obituary %>
+      <%= f.input :cancel_accounts %>
+      <%= f.input :bank_account_1 %>
+      <%= f.input :bank_account_2 %>
+      <%= f.input :bank_account_3 %>
+      <%= f.input :insurance_account_1 %>
+      <%= f.input :insurance_account_2 %>
+      <%= f.input :insurance_account_3 %>
+      <%= f.input :hardware %>
+    <div class="form-actions">
       <%= f.button :submit, class: "btn btn-obnb-main-lg" %>
     </div>
   <% end %>
-
-
-
-
 
 
