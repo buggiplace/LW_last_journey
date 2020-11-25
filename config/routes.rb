@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post "/dashboard", to: 'funerals#create', as: :funeral
 
   get "/documents", to: 'funerals#documents', as: :funerals_documents
-  patch "/documents", to: 'funerals#update_documents'
+  post "/documents", to: 'funerals#update_documents'
 
   # get "/representative", to: 'funerals#representative', as: :funerals_representative
   # patch "/representative", to: 'funerals#update_representativ'

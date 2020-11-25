@@ -18,8 +18,13 @@ class FuneralsController < ApplicationController
   end
 
   def update_documents
-    @funeral.preferences[:documents][:doc_comment] = params[:comment_doc].to_json
+    # @funeral.preferences[:documents][:doc_comment] = params[:comment_doc].to_json[1..-2]
+    # @funeral.preferences[:documents][:doc_comment] = params[:comment_doc].to_json[1..-2]
+    # @funeral.preferences[:documents][:doc_comment] = params[:comment_doc].to_json[1..-2]
+    # @funeral.save
+    # redirect_to documents_path
   end
+
 
   # def representative
   # end

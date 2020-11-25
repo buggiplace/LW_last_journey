@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_210145) do
+
+ActiveRecord::Schema.define(version: 2020_11_25_145830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,21 +40,92 @@ ActiveRecord::Schema.define(version: 2020_11_24_210145) do
   create_table "condolences", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.text "content"
+    t.string "content"
     t.bigint "funeral_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["funeral_id"], name: "index_condolences_on_funeral_id"
   end
 
+  create_table "digital_wills", force: :cascade do |t|
+    t.string "cancel_accounts", default: [], array: true
+    t.boolean "facebook_obituary", default: false
+    t.string "bank_account_1"
+    t.string "bank_account_2"
+    t.string "bank_account_3"
+    t.string "insurance_account_1"
+    t.string "insurance_account_2"
+    t.string "insurance_account_3"
+    t.string "hardware"
+    t.string "comment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "documents", force: :cascade do |t|
+    t.string "type"
+    t.string "comment"
+    t.bigint "funeral_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["funeral_id"], name: "index_documents_on_funeral_id"
+  end
+
+  create_table "funeral_types", force: :cascade do |t|
+    t.string "type"
+    t.string "comment"
+    t.string "loc_street"
+    t.string "loc_zip"
+    t.string "loc_city"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "funerals", force: :cascade do |t|
-    t.json "preferences"
-    t.json "guests"
+    t.bigint "playlist_id", null: false
+    t.bigint "funeral_type_id", null: false
+    t.bigint "digital_will_id", null: false
+    t.bigint "obituary_id", null: false
+    t.bigint "representative_profile_id"
     t.string "representative_email"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["digital_will_id"], name: "index_funerals_on_digital_will_id"
+    t.index ["funeral_type_id"], name: "index_funerals_on_funeral_type_id"
+    t.index ["obituary_id"], name: "index_funerals_on_obituary_id"
+    t.index ["playlist_id"], name: "index_funerals_on_playlist_id"
+    t.index ["representative_profile_id"], name: "index_funerals_on_representative_profile_id"
     t.index ["user_id"], name: "index_funerals_on_user_id"
+  end
+
+  create_table "obituaries", force: :cascade do |t|
+    t.string "last_words"
+    t.string "spotify_list"
+    t.datetime "death_date"
+    t.string "death_location"
+    t.datetime "funeral_time"
+    t.string "funeral_location"
+    t.string "funeral_info"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.string "spotify_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "representative_profiles", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "comment"
+    t.string "email"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_representative_profiles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -75,5 +147,12 @@ ActiveRecord::Schema.define(version: 2020_11_24_210145) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "condolences", "funerals"
+  add_foreign_key "documents", "funerals"
+  add_foreign_key "funerals", "digital_wills"
+  add_foreign_key "funerals", "funeral_types"
+  add_foreign_key "funerals", "obituaries"
+  add_foreign_key "funerals", "playlists"
+  add_foreign_key "funerals", "representative_profiles"
   add_foreign_key "funerals", "users"
+  add_foreign_key "representative_profiles", "users"
 end
