@@ -49,7 +49,7 @@ playlist = Playlist.create
 digital_will = DigitalWill.create
 obituary = Obituary.create
 
-funeral = Funeral.create!( funeral_type: funeral_type, playlist: playlist, digital_will: digital_will, obituary: obituary, user: simon)
+funeral = Funeral.create!( funeral_type: funeral_type, playlist: playlist, digital_will: digital_will, obituary: obituary, user: lena)
 
 
 # simon.funeral = funeral
