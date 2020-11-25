@@ -15,6 +15,12 @@ class DocumentsController < ApplicationController
     end
   end
 
+  def destroy
+    document = @funeral.documents.find(params[:id])
+    document.destroy
+    redirect_to funeral_documents_path(@funeral), notice: 'Document deleted!'
+  end
+
   private 
 
   def document_params

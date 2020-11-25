@@ -8,6 +8,9 @@
 
 <ul>
   <% @funeral.documents.each do |document| %>
-    <li><%= link_to document.file_name, cloudinary_url(document.file.key), target: "_blank" %></li>
+    <li>
+      <%= link_to document.file_name, cloudinary_url(document.file.key), target: "_blank" %>
+      <%= link_to 'Delete', funeral_document_path(@funeral, document), method: 'delete', data: { confirm: "Are you sure?" } %>
+    </li>
   <% end %>
 </ul>
