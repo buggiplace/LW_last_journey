@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get "/dashboard", to: 'funerals#dashboard', as: :funerals_dashboard
+  post "/dashboard", to: 'funerals#create', as: :funeral
 
   get "/documents", to: 'funerals#documents', as: :funerals_documents
   patch "/documents", to: 'funerals#update_documents'

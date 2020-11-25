@@ -8,5 +8,5 @@ class User < ApplicationRecord
 
   has_one_attached :profile_picture
 
-  validates :first_name, :last_name, :birth_date, presence: true
+  validates :first_name, :last_name, presence: true
 end

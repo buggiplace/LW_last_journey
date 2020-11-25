@@ -1,22 +1,23 @@
 class FuneralsController < ApplicationController
   before_action :find_funeral
 
+  def create
+    @funeral.user = current_user
+    @funeral.preferences = {}
+    @funeral.save!
+  end
+
   def dashboard
-    # @funeral = current_user.funeral
+    if @funeral.nil?
+    @funeral = Funeral.new
+    end
   end
 
   def documents
     # @funeral = current_user.funeral
   end
 
-
-
-  # @my_model.my_data = params[:my_fields].to_json
-  # @funeral.preferences[:documents][:doc_comment] = params[:my_fields].to_json
-
-
   def update_documents
-    raise
     @funeral.preferences[:documents][:doc_comment] = params[:comment_doc].to_json
   end
 
