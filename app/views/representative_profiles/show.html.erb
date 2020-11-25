@@ -1,0 +1,18 @@
+<h1>My representative</h1>
+
+<%= @representative_profile.last_name %>
+<br>
+
+  <%= simple_form_for(@representative_profile) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <div class="form-inputs p-5 d-flex justify-content-center flex-column">
+      <%= f.input :first_name, wrapper_html: {class: "form-group d-flex align-items-center flex-column"}%>
+      <%= f.input :last_name, wrapper_html: {class: "form-group d-flex align-items-center flex-column"}%>
+      <%= f.input :email, wrapper_html: {class: "form-group d-flex align-items-center flex-column"}%>
+      <%= f.input :comment, wrapper_html: {class: "form-group d-flex align-items-center flex-column"}%>
+    <div class="form-actions">
+      <%= f.button :submit, class: "btn btn-obnb-main-lg" %>
+    </div>
+  <% end %>
+
