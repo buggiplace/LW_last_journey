@@ -44,7 +44,15 @@ puts 'Create funerals'
 
 puts 'Create 1 funeral'
 
-# JSON SEED BELOW INACTIVE
+funeral_type = FuneralType.create
+playlist = Playlist.create
+digital_will = DigitalWill.create
+obituary = Obituary.create
+
+funeral = Funeral.create!( funeral_type: funeral_type, playlist: playlist, digital_will: digital_will, obituary: obituary, user: lena)
+
+
+# simon.funeral = funeral
 
 
 # Funeral.create!(
