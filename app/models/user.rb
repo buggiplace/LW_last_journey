@@ -7,7 +7,8 @@ class User < ApplicationRecord
   # has_one :representative_profile, optional: :true
   has_one_attached :profile_picture
 
-  validates :first_name, :last_name, :birth_date, presence: true
+  validates :first_name, :last_name,  presence: true
+  # :birth_date,
 
   after_create :initialize_funeral
   private
