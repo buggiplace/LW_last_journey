@@ -1,1 +1,13 @@
-<h1>documents</h1>
+<h1>Documents</h1>
+
+<%= simple_form_for([@funeral, @document]) do |f| %>
+  <%= f.error :base %>
+  <%= f.input :file, as: :file %>
+  <%= f.submit %>
+<% end %>
+
+<ul>
+  <% @funeral.documents.each do |document| %>
+    <li><%= link_to document.file_name, cloudinary_url(document.file.key), target: "_blank" %></li>
+  <% end %>
+</ul>
