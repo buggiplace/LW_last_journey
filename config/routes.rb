@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :funeral_types, only: [:show, :update]
   resources :digital_wills, only: [:show, :update]
   resources :playlists, only: [:show, :update]
-
+  resources :funerals, only: [] do 
+    resources :documents, only: [:index]
+  end
 
 
 
