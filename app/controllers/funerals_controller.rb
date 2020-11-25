@@ -1,8 +1,16 @@
 class FuneralsController < ApplicationController
   before_action :find_funeral
 
+  def create
+    @funeral.user = current_user
+    @funeral.preferences = {}
+    @funeral.save!
+  end
+
   def dashboard
-    # @funeral = current_user.funeral
+    if @funeral.nil?
+    @funeral = Funeral.new
+    end
   end
 
   def documents
