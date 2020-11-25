@@ -9,6 +9,7 @@
 puts "Starting seed"
 
 puts "Cleaning old seeds"
+
 Condolence.destroy_all
 Funeral.destroy_all
 User.destroy_all
@@ -20,6 +21,7 @@ User.destroy_all
 # puts 'Create users'
 # user = User.create!(email: "lucas@test.com", password: "123456")
 # puts "User Seed done - x added"
+
 
 puts 'Create 2 demo accounts'
 simon = User.create!(first_name: 'Simon',
@@ -37,7 +39,10 @@ lena = User.create!(first_name: 'Lena',
 # funeral = Funeral.create!(user: lena, representative_email: simon.email)
 
 puts 'Create funerals'
-funeral = Funeral.create!(
+
+puts 'Create 1 funeral'
+
+Funeral.create!(
   preferences: {
     'funeral_type': {
       'type': 'Peace forest',
@@ -84,10 +89,12 @@ funeral = Funeral.create!(
 )
 # picture_one: row['picture_link'],
 
-puts "Funeral Seed finished"
+puts "Funeral seed finished"
 
 puts 'Create condolences'
-funeral.condolences.create!(first_name: 'Jane', last_name: 'Doe')
-funeral.condolences.create!(first_name: 'John', last_name: 'Smith')
+
+
+# funeral.condolences.create!(first_name: 'Jane', last_name: 'Doe')
+# funeral.condolences.create!(first_name: 'John', last_name: 'Smith')
 
 puts "Condolences seed finished"
