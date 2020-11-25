@@ -9,16 +9,14 @@ class FuneralsController < ApplicationController
     # @funeral = current_user.funeral
   end
 
-
-
-  # @my_model.my_data = params[:my_fields].to_json
-  # @funeral.preferences[:documents][:doc_comment] = params[:my_fields].to_json
-
-
   def update_documents
-    raise
-    @funeral.preferences[:documents][:doc_comment] = params[:comment_doc].to_json
+    # @funeral.preferences[:documents][:doc_comment] = params[:comment_doc].to_json[1..-2]
+    # @funeral.preferences[:documents][:doc_comment] = params[:comment_doc].to_json[1..-2]
+    # @funeral.preferences[:documents][:doc_comment] = params[:comment_doc].to_json[1..-2]
+    # @funeral.save
+    # redirect_to documents_path
   end
+
 
   # def representative
   # end
