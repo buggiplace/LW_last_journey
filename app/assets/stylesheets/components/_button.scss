@@ -1,3 +1,29 @@
+// custom last journey buttons
+
+
+.btn-lj-big {
+  color: white;
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  font-size: 1.3rem;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-lj-big:hover {
+  opacity: 1;
+  color: white;
+}
+
+
+
+
+
+// below lewagon buttons
+
+
 .btn-ghost {
   color: #4A4A4A;
   border: 1px solid #4A4A4A;
