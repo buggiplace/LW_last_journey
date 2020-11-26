@@ -6,6 +6,7 @@ class ObituaryController < ApplicationController
 
   def update
     if @obituary.update(obituary_params)
+      @obituary.photos.attach(params[:obituary][:photos])
       redirect_to obituary_path
     else
       render "/obituary/show"

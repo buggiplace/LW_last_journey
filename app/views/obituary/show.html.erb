@@ -13,9 +13,16 @@
         <%= f.rich_text_area :rich_body %>
       </div>
 
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
 
       <%= f.input :spotify_list%>
       <%= f.button :submit, class: "btn btn-obnb-main-lg" %>
     </div>
   <% end %>
+
+
+<h1>preview</h1>
+<% @obituary.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
