@@ -19,12 +19,12 @@
       <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/buggiplace", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to 'Digital Will', digital_will_path(@funeral), class: "dropdown-item"%>
-          <%= link_to 'Funeral Type', funeral_type_path(@funeral), class: "dropdown-item"%>
+          <%#= link_to 'Digital Will', digital_will_path(@funeral), class: "dropdown-item"%>
+          <%#= link_to 'Funeral Type', funeral_type_path(@funeral), class: "dropdown-item"%>
           <%#= link_to 'Documents', document_path(@funeral.document.id), class: "btn btn-primary"%>
-          <%= link_to 'Playlist', playlist_path(@funeral), class: "dropdown-item"%>
-          <%= link_to 'Representative', representative_profile_path(@funeral), class: "dropdown-item"%>
-          <%= link_to 'Obituary', obituary_path(@funeral), class: "dropdown-item"%>
+          <%#= link_to 'Playlist', playlist_path(@funeral), class: "dropdown-item"%>
+          <%#= link_to 'Representative', representative_profile_path(@funeral), class: "dropdown-item"%>
+          <%#= link_to 'Obituary', obituary_path(@funeral), class: "dropdown-item"%>
           <br>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </div>
