@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   resources :funeral_types, only: [:show, :update]
   resources :digital_wills, only: [:show, :update]
   resources :playlists, only: [:show, :update]
-  resources :obituary, only: [:show, :update] do
-    resources :condolences, only: [:new, :create ]
+  resources :representative_profiles, only: [:show, :update]
+  resources :obituary, only: [:show, :update]  
+  # resources :condolences, only: [:new, :create ]
   end
+
+
 
 
 
@@ -53,8 +56,6 @@ Rails.application.routes.draw do
 
   # get "funerals/:id/funeral_type", to: 'funerals#funeral_type', as: :funerals_funeral_type
   # resources :funerals, only: :show
-end
-
 
   # get "funeral/:id/representative"
   # get "funeral/:id/funeral_type"
