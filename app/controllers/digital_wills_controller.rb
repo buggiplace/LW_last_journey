@@ -2,6 +2,7 @@ class DigitalWillsController < ApplicationController
   before_action :find_digital_will
 
   def show
+    @exclude_banner = false
   end
 
   def update

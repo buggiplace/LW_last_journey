@@ -2,6 +2,7 @@ class ObituaryController < ApplicationController
   before_action :find_obituary
 
   def show
+    @exclude_banner = false
   end
 
   def update

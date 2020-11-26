@@ -33,15 +33,18 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  background: #F4F4F4;
 }
 
 .category-item {
-  flex: 0 0 30%;
+  flex: 1 1 30%;
+  margin: 20px;
 }
 
 .category-selector {
   position: absolute;
   transform: scale(0);
+
 }
 
 .category-selector + label {
@@ -53,7 +56,7 @@
   text-align: left;
   padding: 10px 10px 30px 10px;
   border: 1px solid #EAEAEA;
-  border-radius: 4px;
+  border-radius: 8px;
   background-color: white;
 }
 
@@ -73,7 +76,7 @@
 }
 
 #funeral_type_burial_type_burial:checked + label {
-  border: 2px solid #FD1015;
+  border: 1px solid #FD1015;
   max-height: 80px;
 }
 
@@ -89,7 +92,7 @@
 }
 
 #funeral_type_burial_type_burial_at_sea:checked + label {
-  border: 2px solid #FD1015;
+  border: 1px solid #FD1015;
   max-height: 80px;
 }
 
@@ -105,7 +108,7 @@
 }
 
 #funeral_type_burial_type_tree_funeral:checked + label {
-  border: 2px solid #FD1015;
+  border: 1px solid #FD1015;
   max-height: 80px;
 }
 
@@ -121,7 +124,7 @@
 }
 
 #funeral_type_burial_type_woodland_burial:checked + label {
-  border: 2px solid #FD1015;
+  border: 1px solid #FD1015;
   max-height: 80px;
 }
 
@@ -137,7 +140,7 @@
 }
 
 #funeral_type_burial_type_diamond_burial:checked + label {
-  border: 2px solid #FD1015;
+  border: 1px solid #FD1015;
   max-height: 80px;
 }
 
@@ -153,7 +156,7 @@
 }
 
 #funeral_type_burial_type_urn_burial:checked + label {
-  border: 2px solid #FD1015;
+  border: 1px solid #FD1015;
   max-height: 80px;
 }
 
@@ -169,7 +172,7 @@
 }
 
 #funeral_type_burial_type_sky_burial:checked + label {
-  border: 2px solid #FD1015;
+  border: 1px solid #FD1015;
   max-height: 80px;
 }
 
@@ -186,7 +189,7 @@
 }
 
 #funeral_type_burial_type_undecided:checked + label {
-  border: 2px solid #FD1015;
+  border: 1px solid #FD1015;
   max-height: 80px;
 }
 
