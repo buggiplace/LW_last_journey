@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   resources :funeral_types, only: [:show, :update]
   resources :digital_wills, only: [:show, :update]
   resources :playlists, only: [:show, :update]
-  resources :obituary, only: [:show, :update]
+  resources :obituary, only: [:show, :update] do
+    resources :condolences, only: [:new, :create ]
+  end
+
 
 
 
