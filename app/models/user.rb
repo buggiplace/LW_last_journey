@@ -7,7 +7,7 @@ class User < ApplicationRecord
   # has_one :representative_profile, optional: :true
   has_one_attached :profile_picture
 
-  validates :first_name, :last_name,  presence: true
+  validates :first_name, :last_name, presence: true
   # :birth_date,
 
   after_create :initialize_funeral
@@ -19,8 +19,7 @@ class User < ApplicationRecord
       playlist = Playlist.create
       digital_will = DigitalWill.create
       obituary = Obituary.create
-      representative_profile = RepresentativeProfile.create
-      Funeral.create!( funeral_type: funeral_type, playlist: playlist, digital_will: digital_will, representative_profile: representative_profile, obituary: obituary, user: self)
+      Funeral.create!( funeral_type: funeral_type, playlist: playlist, digital_will: digital_will, obituary: obituary, user: self)
     end
   end
 end
