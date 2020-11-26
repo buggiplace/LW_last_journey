@@ -63,9 +63,13 @@
 
 #funeral_type_burial_type_burial + label {
   color: white;
-  background-image: url("burial_sm.jpg");
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url("burial_sm.jpg");
   max-height: 80px;
   font-size: 15px;
+  border: 1px solid black;
 }
 
 #funeral_type_burial_type_burial:checked + label {
@@ -75,9 +79,13 @@
 
 #funeral_type_burial_type_burial_at_sea + label {
   color: white;
-  background-image: url("sea_sm.png");
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url("sea_sm.png");
   max-height: 80px;
   font-size: 15px;
+  border: 1px solid black;
 }
 
 #funeral_type_burial_type_burial_at_sea:checked + label {
@@ -87,9 +95,13 @@
 
 #funeral_type_burial_type_tree_funeral + label {
   color: white;
-  background-image: url("tree_sm.png");
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url("tree_sm.png");
   max-height: 80px;
   font-size: 15px;
+  border: 1px solid black;
 }
 
 #funeral_type_burial_type_tree_funeral:checked + label {
@@ -99,9 +111,13 @@
 
 #funeral_type_burial_type_woodland_burial + label {
   color: white;
-  background-image: url("woodland_sm.png");
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url("woodland_sm.png");
   max-height: 80px;
   font-size: 15px;
+  border: 1px solid black;
 }
 
 #funeral_type_burial_type_woodland_burial:checked + label {
@@ -111,9 +127,13 @@
 
 #funeral_type_burial_type_diamond_burial + label {
   color: white;
-  background-image: url("diamond_sm.png");
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url("diamond_sm.png");
   max-height: 80px;
   font-size: 15px;
+  border: 1px solid black;
 }
 
 #funeral_type_burial_type_diamond_burial:checked + label {
@@ -123,9 +143,13 @@
 
 #funeral_type_burial_type_urn_burial + label {
   color: white;
-  background-image: url("urn_sm.png");
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url("urn_sm.png");
   max-height: 80px;
   font-size: 15px;
+  border: 1px solid black;
 }
 
 #funeral_type_burial_type_urn_burial:checked + label {
@@ -135,9 +159,13 @@
 
 #funeral_type_burial_type_sky_burial + label {
   color: white;
-  background-image: url("sky_sm.png");
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url("sky_sm.png");
   max-height: 80px;
   font-size: 15px;
+  border: 1px solid black;
 }
 
 #funeral_type_burial_type_sky_burial:checked + label {
@@ -147,9 +175,14 @@
 
 #funeral_type_burial_type_undecided + label {
   color: white;
-  background-image: url("undecided_sm.png");
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url("undecided_sm.png");
   max-height: 80px;
   font-size: 15px;
+  border: 1px solid black;
+   text-shadow: 2px black;
 }
 
 #funeral_type_burial_type_undecided:checked + label {
