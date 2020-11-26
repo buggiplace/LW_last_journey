@@ -2,13 +2,9 @@
     </section>
 
 
-
-
-THIS IS A DASHBOARD THAT SHOWS ALL 7 TILES FOR THE USER
-
-<h1>This is a H1</h1>
-<h2>This is a H2</h2>
-
+<div class="d-flex justify-content-center mt-5 mb-5">
+  <h1>Please choose what you want to organize for your funeral</h1>
+</div>
 
 <!-- link to the fonts
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> -->
@@ -43,7 +39,7 @@ THIS IS A DASHBOARD THAT SHOWS ALL 7 TILES FOR THE USER
         <h3 class="card__heading">My documents</h3>
      </div>
     <% end %>
-    <%= link_to representative_profile_path(@funeral), class: "card" do%>
+    <%= link_to playlist_path(@funeral), class: "card" do%>
       <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1507041957456-9c397ce39c97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)"></div>
       <div class="card__content">
         <p class="card__category">Define</p>
