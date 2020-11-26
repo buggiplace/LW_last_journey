@@ -11,13 +11,13 @@ require("channels")
 // custom compontent imports
 // require ("components/navbar-new")
 
-import 'mapbox-gl/dist/mapbox-gl.css';
+// import 'mapbox-gl/dist/mapbox-gl.css';
 
-import { initMapbox } from '../plugins/init_mapbox';
+// import { initMapbox } from '../plugins/init_mapbox';
 
-document.addEventListener('turbolinks:load', () => {
-  initMapbox();
-})
+// document.addEventListener('turbolinks:load', () => {
+//   initMapbox();
+// })
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -43,3 +43,6 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+require("trix")
+require("@rails/actiontext")
