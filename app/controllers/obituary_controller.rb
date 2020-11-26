@@ -3,6 +3,7 @@ class ObituaryController < ApplicationController
 
   def show
     @exclude_banner = false
+    @banner_title = "My obituary"
   end
 
   def update

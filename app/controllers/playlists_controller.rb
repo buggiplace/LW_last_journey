@@ -3,6 +3,9 @@ class PlaylistsController < ApplicationController
 
   def show
     @exclude_banner = false
+    @banner_title = "My Playlist"
+    @embed_spotify_url = @playlist.spotify_url.match(/......................$/)
+    @spotify_profile_url = @playlist.spotify_profile_url
   end
 
   def update
@@ -22,6 +25,13 @@ class PlaylistsController < ApplicationController
   end
 
   def playlist_params
-    params.require(:playlist).permit(:spotify_url)
+    params.require(:playlist).permit(:spotify_url, :embed_spotify_url, :spotify_profile_url)
   end
 end
+
+# spotify:playlist:3cG2t53DkOglpC4hzvu3bq
+# <iframe src="https://open.spotify.com/embed/playlist/3cG2t53DkOglpC4hzvu3bq"
+
+# ......................$
+
+# <%= @playlist.spotify_url %>

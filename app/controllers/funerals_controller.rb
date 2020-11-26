@@ -9,6 +9,7 @@ class FuneralsController < ApplicationController
 
   def dashboard
     @exclude_banner = false
+    @banner_title = "Dashboard"
   end
 
   # def documents

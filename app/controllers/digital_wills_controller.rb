@@ -3,6 +3,7 @@ class DigitalWillsController < ApplicationController
 
   def show
     @exclude_banner = false
+    @banner_title = "Digital Will"
   end
 
   def update
