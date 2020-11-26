@@ -4,7 +4,7 @@ class FuneralTypesController < ApplicationController
   def show
     @exclude_banner = false
     if @funeral_type.geocoded?
-      @marker = [{
+      @markers = [{
         lat: @funeral_type.latitude,
         lng: @funeral_type.longitude,
       }]

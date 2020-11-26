@@ -14,6 +14,8 @@ Condolence.destroy_all
 Funeral.destroy_all
 User.destroy_all
 
+Location.destroy_all
+
 # filepath = "db/preferences.json"
 # serialized_preferences = File.read(filepath) #returns a string
 # preferences = JSON.parse(serialized_preferences)
@@ -134,3 +136,21 @@ puts 'Create condolences'
 # funeral.condolences.create!(first_name: 'John', last_name: 'Smith')
 
 puts "Condolences seed finished"
+
+
+# puts 'Create funeral locations'
+
+# require 'csv'
+# csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
+# filepath = Rails.root.join('db', 'address_seed4.csv')
+#     CSV.foreach(filepath, csv_options) do |row|
+#       Location.create!(
+#           name: Faker::Company.name,
+#           street: row['address_street'],
+#           zip: row['address_zip'],
+#           city: row['address_city'],
+#         )
+#       end
+
+# puts 'Funeral locations seed finished'
+
