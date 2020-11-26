@@ -17,6 +17,7 @@ class ObituaryController < ApplicationController
   def find_obituary
     @funeral = current_user.funeral
     @obituary = Obituary.find(params[:id])
+    authorize @obituary
   end
 
   def obituary_params

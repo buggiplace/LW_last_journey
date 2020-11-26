@@ -17,6 +17,7 @@ class PlaylistsController < ApplicationController
   def find_playlist
     @funeral = current_user.funeral
     @playlist = Playlist.find(params[:id])
+    authorize @playlist
   end
 
   def playlist_params

@@ -22,6 +22,7 @@ private
   def find_funeral_type
     @funeral = current_user.funeral
     @funeral_type = FuneralType.find(params[:id])
+    authorize @funeral_type
   end
 
   def funeral_type_params
