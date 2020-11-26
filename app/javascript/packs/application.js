@@ -9,7 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 
 // custom compontent imports
-require ("components/navbar-new")
+// require ("components/navbar-new")
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_26_072350) do
+ActiveRecord::Schema.define(version: 2020_11_26_102507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2020_11_26_072350) do
   end
 
   create_table "funeral_types", force: :cascade do |t|
-    t.string "type"
+    t.string "burial_type"
     t.string "comment"
     t.string "loc_street"
     t.string "loc_zip"
