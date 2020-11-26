@@ -1,6 +1,8 @@
 <h1>THIS IS THE TILE DIGITAL WILL</h1>
 
 
+
+
   <%= simple_form_for(@digital_will) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -18,5 +20,6 @@
       <%= f.button :submit, class: "btn btn-obnb-main-lg" %>
     </div>
   <% end %>
-
+  <br>
+<%= @digital_will %>
 

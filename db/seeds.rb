@@ -25,7 +25,7 @@ User.destroy_all
 
 puts 'Create 2 demo accounts'
 simon = User.create!(first_name: 'Simon',
-                     last_name: 'Lacroix',
+                     last_name: 'Turbo',
                      birth_date: Date.new(1989, 2, 1),
                      email: "simon@test.com",
                      password: "123456789",
@@ -36,6 +36,12 @@ lena = User.create!(first_name: 'Lena',
                     email: "lena@test.com",
                     password: "12345678",
                     representative: false)
+lisa = User.create!(first_name: 'Lisa',
+                    last_name: 'Href',
+                    birth_date: Date.new(1977, 3, 3),
+                    email: "lisa@test.com",
+                    password: "12345678",
+                    representative: false)
 # funeral = Funeral.create!(user: lena, representative_email: simon.email)
 
 
@@ -44,12 +50,28 @@ puts 'Create funerals'
 
 puts 'Create 1 funeral'
 
-funeral_type = FuneralType.create
-playlist = Playlist.create
-digital_will = DigitalWill.create
-obituary = Obituary.create
+lisa.funeral.funeral_type.update(
+  burial_type: 'forest',
+  comment: 'Please no flowers. I really hate flowers',
+  loc_street: 'Giersstrasse 19',
+  loc_zip: '13088',
+  loc_city: 'Berlin')
+lisa.funeral.playlist.update(
+  spotify_url: 'spotify:playlist:09vrf9JgCt1AD06mqwlubq')
+lisa.funeral.digital_will.update(
+  cancel_accounts: ["Spotify", "Netflix"],
+  facebook_obituary: 'false',
+  bank_account_1: 'n26',
+  bank_account_2: 'Coinbase',
+  insurance_account_1: 'Getsurance',
+  insurance_account_2: 'Lemonade',
+  hardware: 'Destroy all harddrives',
+  comment: 'Make sure my parents never get the naked pictures from my Laptop'
+  )
+lisa.funeral.obituary.update(
+  last_words: 'Thank you for a wonderful life. Keep on rockin!'
+  )
 
-funeral = Funeral.create!( funeral_type: funeral_type, playlist: playlist, digital_will: digital_will, obituary: obituary, user: lena)
 
 
 # simon.funeral = funeral
