@@ -51,7 +51,7 @@ puts 'Create funerals'
 puts 'Create 1 funeral'
 
 lisa.funeral.funeral_type.update(
-  burial_type: 'forest',
+  burial_type: 'Burial',
   comment: 'Please no flowers. I really hate flowers',
   loc_street: 'Giersstrasse 19',
   loc_zip: '13088',
