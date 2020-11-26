@@ -2,6 +2,7 @@ class ObituaryController < ApplicationController
   before_action :find_obituary
 
   def show
+    @exclude_banner = false
   end
 
   def update
@@ -17,6 +18,7 @@ class ObituaryController < ApplicationController
   def find_obituary
     @funeral = current_user.funeral
     @obituary = Obituary.find(params[:id])
+    authorize @obituary
   end
 
   def obituary_params

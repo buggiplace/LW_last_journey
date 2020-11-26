@@ -1,1 +1,195 @@
-// custom css for forms here
+// radio buttons
+.tag-item {
+  display: inline-block;
+}
+
+.tag-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.7rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  background-color: #ECEAFF;
+  color: #7E73FF;
+  border: 1px solid #7E73FF;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.tag-selector:checked + label {
+  background-color: #7E73FF;
+  color: white;
+}
+
+
+// dynamic rich buttons
+
+.category-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: #F4F4F4;
+}
+
+.category-item {
+  flex: 1 1 30%;
+  margin: 20px;
+}
+
+.category-selector {
+  position: absolute;
+  transform: scale(0);
+
+}
+
+.category-selector + label {
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 12px;
+  text-align: left;
+  padding: 10px 10px 30px 10px;
+  border: 1px solid #EAEAEA;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.category-selector:checked + label {
+  color: white !important;
+}
+
+#funeral_type_burial_type_burial + label {
+  color: white;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url("burial_sm.jpg");
+  max-height: 80px;
+  font-size: 15px;
+  border: 1px solid black;
+}
+
+#funeral_type_burial_type_burial:checked + label {
+  border: 1px solid #FD1015;
+  max-height: 80px;
+}
+
+#funeral_type_burial_type_burial_at_sea + label {
+  color: white;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url("sea_sm.png");
+  max-height: 80px;
+  font-size: 15px;
+  border: 1px solid black;
+}
+
+#funeral_type_burial_type_burial_at_sea:checked + label {
+  border: 1px solid #FD1015;
+  max-height: 80px;
+}
+
+#funeral_type_burial_type_tree_funeral + label {
+  color: white;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url("tree_sm.png");
+  max-height: 80px;
+  font-size: 15px;
+  border: 1px solid black;
+}
+
+#funeral_type_burial_type_tree_funeral:checked + label {
+  border: 1px solid #FD1015;
+  max-height: 80px;
+}
+
+#funeral_type_burial_type_woodland_burial + label {
+  color: white;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url("woodland_sm.png");
+  max-height: 80px;
+  font-size: 15px;
+  border: 1px solid black;
+}
+
+#funeral_type_burial_type_woodland_burial:checked + label {
+  border: 1px solid #FD1015;
+  max-height: 80px;
+}
+
+#funeral_type_burial_type_diamond_burial + label {
+  color: white;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url("diamond_sm.png");
+  max-height: 80px;
+  font-size: 15px;
+  border: 1px solid black;
+}
+
+#funeral_type_burial_type_diamond_burial:checked + label {
+  border: 1px solid #FD1015;
+  max-height: 80px;
+}
+
+#funeral_type_burial_type_urn_burial + label {
+  color: white;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url("urn_sm.png");
+  max-height: 80px;
+  font-size: 15px;
+  border: 1px solid black;
+}
+
+#funeral_type_burial_type_urn_burial:checked + label {
+  border: 1px solid #FD1015;
+  max-height: 80px;
+}
+
+#funeral_type_burial_type_sky_burial + label {
+  color: white;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url("sky_sm.png");
+  max-height: 80px;
+  font-size: 15px;
+  border: 1px solid black;
+}
+
+#funeral_type_burial_type_sky_burial:checked + label {
+  border: 1px solid #FD1015;
+  max-height: 80px;
+}
+
+#funeral_type_burial_type_undecided + label {
+  color: white;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url("undecided_sm.png");
+  max-height: 80px;
+  font-size: 15px;
+  border: 1px solid black;
+   text-shadow: 2px black;
+}
+
+#funeral_type_burial_type_undecided:checked + label {
+  border: 1px solid #FD1015;
+  max-height: 80px;
+}
+

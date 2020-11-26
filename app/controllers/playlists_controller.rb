@@ -2,6 +2,7 @@ class PlaylistsController < ApplicationController
   before_action :find_playlist
 
   def show
+    @exclude_banner = false
   end
 
   def update
@@ -17,6 +18,7 @@ class PlaylistsController < ApplicationController
   def find_playlist
     @funeral = current_user.funeral
     @playlist = Playlist.find(params[:id])
+    authorize @playlist
   end
 
   def playlist_params

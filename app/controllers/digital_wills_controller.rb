@@ -2,6 +2,7 @@ class DigitalWillsController < ApplicationController
   before_action :find_digital_will
 
   def show
+    @exclude_banner = false
   end
 
   def update
@@ -16,6 +17,7 @@ private
   def find_digital_will
     @funeral = current_user.funeral
     @digital_will = DigitalWill.find(params[:id])
+    authorize @digital_will
   end
 
   def digital_will_params

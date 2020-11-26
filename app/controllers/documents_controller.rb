@@ -3,9 +3,9 @@ class DocumentsController < ApplicationController
 
   def index
     @document = Document.new
-  end    
+  end
 
-  def create 
+  def create
     @document = @funeral.documents.build(document_params)
     @document.file_name = params[:document][:file].original_filename
     if @document.save
@@ -21,7 +21,7 @@ class DocumentsController < ApplicationController
     redirect_to funeral_documents_path(@funeral), notice: 'Document deleted!'
   end
 
-  private 
+  private
 
   def document_params
     params.require(:document).permit(:file)

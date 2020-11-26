@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @disable_nav = true
+    @exclude_banner = true
   end
 end
