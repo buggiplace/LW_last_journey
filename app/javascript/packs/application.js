@@ -9,7 +9,15 @@ require("@rails/activestorage").start()
 require("channels")
 
 // custom compontent imports
-require ("components/navbar-new")
+// require ("components/navbar-new")
+
+import 'mapbox-gl/dist/mapbox-gl.css';
+
+import { initMapbox } from '../plugins/init_mapbox';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

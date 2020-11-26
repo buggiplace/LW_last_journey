@@ -1,18 +1,11 @@
 <h1>THIS IS THE TILE DIGITAL WILL</h1>
 
-<!-- <form action='/funeral_types' method='post'>
-  <input type="hidden" name="authenticity_token" value="fUrBymmVzFG49YTQE9xKfohttEtW7eHnui2WT6KWpRXT6g9dz73lhZ7bRdHH+RuV/TFoB23OG5l1eo731o8l6g==">
-  <label for='loc_street'>STREET</label><br>
-  <input type='text' id='loc_street' value='<%= @funeral.funeral_type.loc_street %>' name='@funeral.funeral_type'><br>
-  <input type='submit' value='Submit' class='btn btn-primary'>
-</form> -->
-
 
   <%= simple_form_for(@digital_will) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
       <%= f.input :comment %>
-      <%= f.input :facebook_obituary %>
+      <%= f.input :facebook_obituary, as: :radio_buttons%>
       <%= f.input :cancel_accounts %>
       <%= f.input :bank_account_1 %>
       <%= f.input :bank_account_2 %>

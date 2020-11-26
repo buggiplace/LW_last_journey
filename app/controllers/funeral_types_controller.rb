@@ -2,6 +2,12 @@ class FuneralTypesController < ApplicationController
   before_action :find_funeral_type
 
   def show
+    if @funeral_type.geocoded?
+      @marker = [{
+        lat: @funeral_type.latitude,
+        lng: @funeral_type.longitude,
+      }]
+    end
   end
 
   def update
@@ -20,6 +26,6 @@ private
 
   def funeral_type_params
     params.require(:funeral_type).permit(
-      :type, :comment, :loc_street, :loc_zip, :loc_city)
+      :burial_type, :comment, :loc_street, :loc_zip, :loc_city)
   end
 end
