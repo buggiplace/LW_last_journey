@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'condolences/new'
+  get 'condolences/create'
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -7,7 +9,11 @@ Rails.application.routes.draw do
   resources :digital_wills, only: [:show, :update]
   resources :playlists, only: [:show, :update]
   resources :representative_profiles, only: [:show, :update]
-  resources :obituary, only: [:show, :update]
+  resources :obituary, only: [:show, :update]  
+  # resources :condolences, only: [:new, :create ]
+  end
+
+
 
 
 
@@ -50,8 +56,6 @@ Rails.application.routes.draw do
 
   # get "funerals/:id/funeral_type", to: 'funerals#funeral_type', as: :funerals_funeral_type
   # resources :funerals, only: :show
-end
-
 
   # get "funeral/:id/representative"
   # get "funeral/:id/funeral_type"
