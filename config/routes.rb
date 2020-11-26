@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :digital_wills, only: [:show, :update]
   resources :playlists, only: [:show, :update]
   resources :representative_profiles, only: [:show, :update]
-
+  resources :obituary, only: [:show, :update]
 
 
 

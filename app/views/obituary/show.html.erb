@@ -1,0 +1,14 @@
+<h1>My obituary</h1>
+<br>
+<p>test result</p>
+<%= @obituary.last_words %>
+<br>
+
+  <%= simple_form_for(@obituary) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <%= f.input :last_words%>
+      <%= f.input :spotify_list%>
+      <%= f.button :submit, class: "btn btn-obnb-main-lg" %>
+    </div>
+  <% end %>
