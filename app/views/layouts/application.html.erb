@@ -15,6 +15,7 @@
     <%= render 'shared/navbar' unless @disable_nav %>
     <%= render 'shared/flashes' %>
     <%= render 'shared/body' %>
+    <%= render 'shared/banner' unless @exclude_banner %>
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>

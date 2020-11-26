@@ -8,7 +8,7 @@ class FuneralsController < ApplicationController
   # end
 
   def dashboard
-
+    @exclude_banner = false
   end
 
   # def documents

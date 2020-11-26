@@ -2,6 +2,7 @@ class PlaylistsController < ApplicationController
   before_action :find_playlist
 
   def show
+    @exclude_banner = false
   end
 
   def update

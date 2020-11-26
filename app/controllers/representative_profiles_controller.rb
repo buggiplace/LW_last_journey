@@ -2,6 +2,7 @@ class RepresentativeProfilesController < ApplicationController
   before_action :find_representative_profile
 
   def show
+    @exclude_banner = false
   end
 
   def update
