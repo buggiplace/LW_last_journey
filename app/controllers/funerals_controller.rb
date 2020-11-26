@@ -63,6 +63,7 @@ private
 
 def find_funeral
   @funeral = current_user.funeral
+  authorize @funeral
 end
 
 
