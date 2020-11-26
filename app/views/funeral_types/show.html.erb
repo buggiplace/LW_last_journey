@@ -15,7 +15,7 @@
   <%= simple_form_for(@funeral_type) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-      <%= f.input :type%>
+      <%= f.input :burial_type%>
       <%= f.input :loc_street%>
       <%= f.input :loc_zip%>
       <%= f.input :loc_city%>

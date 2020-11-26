@@ -26,6 +26,6 @@ private
 
   def funeral_type_params
     params.require(:funeral_type).permit(
-      :type, :comment, :loc_street, :loc_zip, :loc_city)
+      :burial_type, :comment, :loc_street, :loc_zip, :loc_city)
   end
 end
