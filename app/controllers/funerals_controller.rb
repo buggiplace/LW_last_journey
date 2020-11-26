@@ -29,15 +29,26 @@ class FuneralsController < ApplicationController
   end
 
   def update_guestlist
-    @guestlist = []
-    @guestlist.push(params[:guest1])
+    @funeral.update(guestlist_params)
+    @funeral.guestlist << params[:funeral][:guestlist].reject(&:empty?)
+    @funeral.guestlist.flatten!
+    if @funeral.save
+      redirect_to guestlist_path
+    else
+    end
   end
 
-private
 
-def find_funeral
-  @funeral = current_user.funeral
-end
+  private
+
+  def find_funeral
+    @funeral = current_user.funeral
+  end
+
+
+  def guestlist_params
+      params.require(:funeral).permit(:guestlist)
+  end
 end
 
 
@@ -56,7 +67,4 @@ end
 #     @playlist = Playlist.find(params[:id])
 #   end
 
-#   def playlist_params
-#     params.require(:playlist).permit(:spotify_url)
-#   end
 # end
