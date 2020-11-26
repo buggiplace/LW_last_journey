@@ -46,3 +46,9 @@ document.addEventListener('turbolinks:load', () => {
 
 require("trix")
 require("@rails/actiontext")
+
+import { initMapbox } from '../plugins/init_mapbox';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})

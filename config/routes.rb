@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'locations/index'
   get 'condolences/new'
   get 'condolences/create'
   devise_for :users

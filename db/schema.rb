@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_26_111506) do
+ActiveRecord::Schema.define(version: 2020_11_26_191535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,12 +103,26 @@ ActiveRecord::Schema.define(version: 2020_11_26_111506) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "guestlist", default: [], array: true
     t.index ["digital_will_id"], name: "index_funerals_on_digital_will_id"
     t.index ["funeral_type_id"], name: "index_funerals_on_funeral_type_id"
     t.index ["obituary_id"], name: "index_funerals_on_obituary_id"
     t.index ["playlist_id"], name: "index_funerals_on_playlist_id"
     t.index ["representative_profile_id"], name: "index_funerals_on_representative_profile_id"
     t.index ["user_id"], name: "index_funerals_on_user_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.float "latitude"
+    t.float "longitude"
+    t.string "street"
+    t.string "zip"
+    t.string "city"
+    t.string "cemetery_type"
+    t.string "name"
+    t.string "phone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "obituaries", force: :cascade do |t|
