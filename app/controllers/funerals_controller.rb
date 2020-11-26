@@ -23,47 +23,40 @@ class FuneralsController < ApplicationController
   #   # redirect_to documents_path
   # end
 
-  # def representative
-  # end
+  def guestlist
+    # @funeral = current_user.funeral
+    @guestlist = @funeral.guestlist
+  end
 
-  # def update_representative
-  # end
-
-  # def music
-  # end
-
-  # def update_music
-  # end
-
-  # def digital_will
-  # end
-
-  # def update_digital_will
-  # end
-
-  # def obituary
-  # end
-
-  # def update_obituary
-  # end
-
-  # def guestlist
-  # end
-
-  # def update_guest_list
-  # end
-
-  # def funeral_type
-  # end
-
-  # def update_funeral_type
-  # end
+  def update_guestlist
+    @guestlist = []
+    @guestlist.push(params[:guest1])
+  end
 
 private
 
 def find_funeral
   @funeral = current_user.funeral
 end
-
-
 end
+
+
+# def update
+#     if @playlist.update(playlist_params)
+#       redirect_to playlist_path
+#     else
+#       render "/playlist/show"
+#     end
+#   end
+
+#   private
+
+#   def find_playlist
+#     @funeral = current_user.funeral
+#     @playlist = Playlist.find(params[:id])
+#   end
+
+#   def playlist_params
+#     params.require(:playlist).permit(:spotify_url)
+#   end
+# end

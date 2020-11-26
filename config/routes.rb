@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get "/dashboard", to: 'funerals#dashboard', as: :funerals_dashboard
+  get "/guestlist", to: 'funerals#guestlist'
   resources :funeral_types, only: [:show, :update]
   resources :digital_wills, only: [:show, :update]
   resources :playlists, only: [:show, :update]
   resources :representative_profiles, only: [:show, :update]
-  resources :obituary, only: [:show, :update]  
+  resources :obituary, only: [:show, :update]
   # resources :condolences, only: [:new, :create ]
   end
 
