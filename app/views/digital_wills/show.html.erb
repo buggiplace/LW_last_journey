@@ -1,0 +1,22 @@
+<h1>THIS IS THE TILE DIGITAL WILL</h1>
+
+
+  <%= simple_form_for(@digital_will) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <%= f.input :comment %>
+      <%= f.input :facebook_obituary, as: :radio_buttons%>
+      <%= f.input :cancel_accounts %>
+      <%= f.input :bank_account_1 %>
+      <%= f.input :bank_account_2 %>
+      <%= f.input :bank_account_3 %>
+      <%= f.input :insurance_account_1 %>
+      <%= f.input :insurance_account_2 %>
+      <%= f.input :insurance_account_3 %>
+      <%= f.input :hardware %>
+    <div class="form-actions">
+      <%= f.button :submit, class: "btn btn-obnb-main-lg" %>
+    </div>
+  <% end %>
+
+

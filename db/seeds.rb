@@ -38,55 +38,69 @@ lena = User.create!(first_name: 'Lena',
                     representative: false)
 # funeral = Funeral.create!(user: lena, representative_email: simon.email)
 
+
+
 puts 'Create funerals'
 
 puts 'Create 1 funeral'
 
-Funeral.create!(
-  preferences: {
-    'funeral_type': {
-      'type': 'Peace forest',
-      'funeral_comment': 'I would like a lot of white candles at the memorial service',
-      'location': 'xxxx'
-    },
-    'music': {
-      'spotify_link': 'https://open.spotify.com/playlist/09vrf9JgCt1AD06mqwlubq?si=Hd9IknaZTQCbIzL6MbxORQ'
-    },
-    'documents': {
-      'Organ donor card': 'https://images.unsplash.com/photo-1564069114553-7215e1ff1890?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80',
-      'Last will': 'https://images.unsplash.com/photo-1564069114553-7215e1ff1890?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80',
-      'doc_comment': 'Original documents can be found in my office desk at the end of the room.'
-    },
-    'representative': {
-      'first_name': 'Simon',
-      'last_name': 'Geierbach',
-      'email': 'simon.geierbach@gmail.com',
-      'rep_comment': 'Hang in there, buddy! Please make sure my parents dont get to see my nude pictures in whatsapp.'
-    },
-    'digital_will': {
-      'cancel_accounts': ['LinkedIn', 'Spotify', 'Facebook', 'Twitter'],
-      'facebook_obituary': 'No',
-      'bank_accounts': ['Sparkasse ****2456', 'N26: ****2456', 'Coinbase'],
-      'insurance_accounts': ['HUB24: ****2635', 'Clark: ****4659'],
-      'hardware': 'Please destroy my harddrives',
-      'dig_comment': 'Yes, you can!'
-    },
-    'obituary': {
-      'last_words': 'Thank you, I had a jolly good time with everyone. On my funeral I would like all of you drink a shot and throw the glasses on the wall! Tschaka!',
-      'spotify_list': 'Yes',
-      'death_date': '',
-      'death_location': '',
-      'funeral_time': '',
-      'funeral_location': '',
-      'funeral_info': '',
-      'obituary_quote': '',
-      'obituary_intro': '',
-      'obituary_relatives': '',
-      'obituary_other': ''
-    }
-  },
-  user: lena
-)
+funeral_type = FuneralType.create
+playlist = Playlist.create
+digital_will = DigitalWill.create
+obituary = Obituary.create
+
+funeral = Funeral.create!( funeral_type: funeral_type, playlist: playlist, digital_will: digital_will, obituary: obituary, user: lena)
+
+
+# simon.funeral = funeral
+
+
+# Funeral.create!(
+#   preferences: {
+#     'teststring': "test123",
+#     'funeral_type': {
+#       'type': 'Peace forest',
+#       'funeral_comment': 'I would like a lot of white candles at the memorial service',
+#       'location': 'xxxx'
+#     },
+#     'music': {
+#       'spotify_link': 'https://open.spotify.com/playlist/09vrf9JgCt1AD06mqwlubq?si=Hd9IknaZTQCbIzL6MbxORQ'
+#     },
+#     'documents': {
+#       'Organ_donor_card': 'https://images.unsplash.com/photo-1564069114553-7215e1ff1890?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80',
+#       'Last_will': 'https://images.unsplash.com/photo-1564069114553-7215e1ff1890?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80',
+#       'doc_comment': 'Original documents can be found in my office desk at the end of the room.'
+#     },
+#     'representative': {
+#       'first_name': 'Simon',
+#       'last_name': 'Geierbach',
+#       'email': 'simon.geierbach@gmail.com',
+#       'rep_comment': 'Hang in there, buddy! Please make sure my parents dont get to see my nude pictures in whatsapp.'
+#     },
+#     'digital_will': {
+#       'cancel_accounts': ['LinkedIn', 'Spotify', 'Facebook', 'Twitter'],
+#       'facebook_obituary': 'No',
+#       'bank_accounts': ['Sparkasse ****2456', 'N26: ****2456', 'Coinbase'],
+#       'insurance_accounts': ['HUB24: ****2635', 'Clark: ****4659'],
+#       'hardware': 'Please destroy my harddrives',
+#       'dig_comment': 'Yes, you can!'
+#     },
+#     'obituary': {
+#       'last_words': 'Thank you, I had a jolly good time with everyone. On my funeral I would like all of you drink a shot and throw the glasses on the wall! Tschaka!',
+#       'spotify_list': 'Yes',
+#       'death_date': '',
+#       'death_location': '',
+#       'funeral_time': '',
+#       'funeral_location': '',
+#       'funeral_info': '',
+#       'obituary_quote': '',
+#       'obituary_intro': '',
+#       'obituary_relatives': '',
+#       'obituary_other': ''
+#     }
+#   },
+#   user: lena
+# )
 # picture_one: row['picture_link'],
 
 puts "Funeral seed finished"
