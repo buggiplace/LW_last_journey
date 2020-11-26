@@ -19,7 +19,8 @@ class User < ApplicationRecord
       playlist = Playlist.create
       digital_will = DigitalWill.create
       obituary = Obituary.create
-      Funeral.create!( funeral_type: funeral_type, playlist: playlist, digital_will: digital_will, obituary: obituary, user: self)
+      representative_profile = RepresentativeProfile.create
+      Funeral.create!( funeral_type: funeral_type, playlist: playlist, digital_will: digital_will, representative_profile: representative_profile, obituary: obituary, user: self)
     end
   end
 end

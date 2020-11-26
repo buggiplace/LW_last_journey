@@ -2,6 +2,12 @@ class FuneralTypesController < ApplicationController
   before_action :find_funeral_type
 
   def show
+    if @funeral_type.geocoded?
+      @marker = [{
+        lat: @funeral_type.latitude,
+        lng: @funeral_type.longitude,
+      }]
+    end
   end
 
   def update
