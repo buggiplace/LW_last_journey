@@ -11,13 +11,12 @@ THIS IS A DASHBOARD THAT SHOWS ALL 7 TILES FOR THE USER
 <p>I will link some pages for now </p>
 
 <!-- please check the params current user with the correct input -->
-<%= link_to 'Digital Will', digital_will_path(@funeral.funeral_type.id)%>
-<%= link_to 'Funeral Type', digital_will_path(@funeral.funeral_type.id)%>
-<%#= link_to 'Documents', digital_will_path(@funeral.document.id)%>
-<%#= link_to 'Playlist', digital_will_path(@funeral.playlist.id)%>
-<%#= link_to 'Representative', digital_will_path(@funeral.representative.id)%>
-
-
+<%= link_to 'Digital Will', digital_will_path(@funeral), class: "btn btn-primary"%>
+<%= link_to 'Funeral Type', funeral_type_path(@funeral), class: "btn btn-primary"%>
+<%#= link_to 'Documents', document_path(@funeral.document.id), class: "btn btn-primary"%>
+<%= link_to 'Playlist', playlist_path(@funeral), class: "btn btn-primary"%>
+<%= link_to 'Representative', representative_profile_path(@funeral), class: "btn btn-primary"%>
+<%= link_to 'Obituary', obituary_path(@funeral), class: "btn btn-primary"%>
 
 <br>
 <br>
