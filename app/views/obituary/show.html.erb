@@ -7,7 +7,14 @@
   <%= simple_form_for(@obituary) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-      <%= f.input :last_words%>
+
+
+      <div class="form-inputs">
+        <%= f.rich_text_area :rich_body %>
+      </div>
+
+
+
       <%= f.input :spotify_list%>
       <%= f.button :submit, class: "btn btn-obnb-main-lg" %>
     </div>
