@@ -134,3 +134,19 @@ puts 'Create condolences'
 # funeral.condolences.create!(first_name: 'John', last_name: 'Smith')
 
 puts "Condolences seed finished"
+
+
+# require 'csv'
+# csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
+# filepath = Rails.root.join('db', 'address_seed4.csv')
+
+#     CSV.foreach(filepath, csv_options) do |row|
+
+#       Location.create!(
+#           name: Faker::Company.name,
+#           description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+#           street: row['address_street'],
+#           zip: row['address_zip'],
+#           city: row['address_city'],
+#         )
+#       end

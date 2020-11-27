@@ -1,3 +1,4 @@
+
 <h1>My funeral playlist</h1>
 
 <p>Paste the Spotify URI. Click on SHARE in your spotify playlist and copy the bottom Spotify URI</p>
@@ -6,12 +7,36 @@
 
 <br>
 
+
+<div class="container">
+
   <%= simple_form_for(@playlist) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
     <div class="form-inputs p-5 d-flex justify-content-center flex-column">
-      <%= f.input :spotify_url, wrapper_html: {class: "form-group d-flex align-items-center flex-column"}%>
-    <div class="form-actions">
-      <%= f.button :submit, class: "btn btn-obnb-main-lg" %>
+      <%= f.input :spotify_url, wrapper_html: {class: "form-group d-flex align-items-center flex-column"}, label: 'Please insert your favorite spotify url and save it for your descendants. For you, it will already magically appear below 😇 ' %>
+      <%= f.input :spotify_profile_url, label: 'If you like, put in your spotify profile URI here, so that anyone can follow all of your playlists' %>
+    <div class="form-actions d-flex justify-content-center align-items-center">
+      <%= f.button :submit, class: "btn btn-flat" %>
     </div>
   <% end %>
+
+</div>
+
+<br>
+<br>
+
+<div class = "d-flex justify-content-center align-items-center">
+  <iframe src="https://open.spotify.com/follow/1/?uri=<%=@spotify_profile_url%>&size=detail&theme=light" width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+</div>
+
+
+<br>
+<br>
+<br>
+
+<div class = "d-flex justify-content-center align-items-center spotifyplayer">
+  <iframe src="https://open.spotify.com/embed/playlist/<%=@embed_spotify_url %>" width="100%" height="1000" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+</div>
+
+

@@ -3,6 +3,7 @@ class RepresentativeProfilesController < ApplicationController
 
   def show
     @exclude_banner = false
+    @banner_title = "My Representative"
   end
 
   def update
