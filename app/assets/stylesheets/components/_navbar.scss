@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  margin-bottom: 50px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -17,3 +18,8 @@
   top: 0;
   width: 100%;
 }
+
+.dropdown-item:hover {
+  background-color: rgba(30, 221, 136, 1.0);
+}
+

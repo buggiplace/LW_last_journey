@@ -2,6 +2,9 @@ class DigitalWillsController < ApplicationController
   before_action :find_digital_will
 
   def show
+    @exclude_banner = false
+    @banner_title = "Digital Will"
+    @banner_url = "https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1778&q=80"
   end
 
   def update
@@ -16,6 +19,7 @@ private
   def find_digital_will
     @funeral = current_user.funeral
     @digital_will = DigitalWill.find(params[:id])
+    authorize @digital_will
   end
 
   def digital_will_params

@@ -2,6 +2,8 @@ class RepresentativeProfilesController < ApplicationController
   before_action :find_representative_profile
 
   def show
+    @exclude_banner = false
+    @banner_title = "My Representative"
   end
 
   def update

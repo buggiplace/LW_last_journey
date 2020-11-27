@@ -1,7 +1,10 @@
+// regular banner below - applied for all pages except home/ root
+
 .banner {
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  height: 40vh;
 }
 
 .banner h1 {
@@ -13,6 +16,76 @@
 }
 
 .banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner-content{
+  position: relative;
+  bottom: 10%;
+  height: 50%;
+  // left: 5%;
+  // z-index: 20;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.02);
+  // background: rgba(0, 0, 0, 0.4);
+  // backdrop-filter: blur(4px);
+  // border-radius: 10px;
+  width: 100%;
+}
+
+.banner-content h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 2px 2px 4px rga(0,0,0,0.2);
+  font-size: 33px;
+  font-weight: bold;
+  // backdrop-filter: blur(4px);
+}
+
+.banner-content p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  // backdrop-filter: blur(4px);
+}
+
+.home-journey {
+    width: 100%;
+    height: 50vh;
+    background-image: url(https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1500&q=80);
+    background-position: center top;
+    background-size:cover;
+}
+
+.home {
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1500&q=80);
+    background-position: center top;
+    background-size:cover;
+}
+
+// below only banner class for home / root banner
+.banner-home {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  height: 80vh;
+}
+
+.banner-home h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner-home p {
   font-size: 20px;
   color: white;
   opacity: .7;

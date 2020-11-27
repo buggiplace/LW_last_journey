@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'locations/index'
   get 'condolences/new'
   get 'condolences/create'
   devise_for :users
@@ -11,15 +12,13 @@ Rails.application.routes.draw do
   resources :funeral_types, only: [:show, :update]
   resources :digital_wills, only: [:show, :update]
   resources :playlists, only: [:show, :update]
+  resources :funerals, only: [] do 
+    resources :documents, only: [:index, :create, :destroy]
+  end
   resources :representative_profiles, only: [:show, :update]
   resources :obituary, only: [:show, :update]
   # resources :condolences, only: [:new, :create ]
   end
-
-
-
-
-
 
 
   # get "/funeral_types", to: 'funeral_types#show'

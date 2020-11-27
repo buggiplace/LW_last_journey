@@ -11,6 +11,8 @@
 @import "trix/dist/trix.css";
 @import 'select2/dist/css/select2';
 @import "choices.js/src/styles/choices.scss";
+@import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
+
 
 // Your CSS partials
 @import "components/index";

@@ -1,0 +1,20 @@
+
+
+<div class="container">
+<%= simple_form_for([@funeral, @document]) do |f| %>
+  <%= f.error :base %>
+  <%= f.input :file, as: :file %>
+  <%= f.submit %>
+<% end %>
+
+<ul>
+  <% @documents.each do |document| %>
+    <li>
+      <%= cl_image_tag document.file.key, format: :jpg, height: 400, width: 500, crop: :fill %>
+      <%= link_to document.file_name, cloudinary_url(document.file.key), target: "_blank" %>
+      <%= link_to 'Delete', funeral_document_path(@funeral, document), method: 'delete', data: { confirm: "Are you sure?" } %>
+    </li>
+  <% end %>
+</ul>
+</div>
+
