@@ -6,6 +6,7 @@ class DocumentsController < ApplicationController
     @documents = policy_scope(@funeral.documents)
     @exclude_banner = false
     @banner_title = "My Documents"
+    @banner_url = "https://images.unsplash.com/photo-1562240020-ce31ccb0fa7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
   end
 
   def create
