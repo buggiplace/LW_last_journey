@@ -9,9 +9,9 @@
 
       <%= f.input :last_words%>
 
-      <div class="form-inputs">
-        <%= f.rich_text_area :rich_body %>
-      </div>
+<!--       <div class="form-inputs">
+        <%#= f.rich_text_area :rich_body %>
+      </div> -->
 
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
@@ -45,4 +45,4 @@
 <div class="d-flex justify-content-center">
     <%= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-secondary btn-lg btn-block'%>
 </div>
-</div>
+

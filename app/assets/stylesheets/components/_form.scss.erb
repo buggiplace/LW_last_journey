@@ -70,7 +70,7 @@
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.3)
-    ), url("burial_sm.jpg");
+    ), url("<%= image_path "burial_sm.jpg" %>");
   max-height: 80px;
   font-size: 15px;
   border: 2px solid black;
@@ -86,7 +86,7 @@
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.3)
-    ), url("sea_sm.png");
+    ), url("<%= image_path "sea_sm.png" %>");
   max-height: 80px;
   font-size: 15px;
   border: 2px solid black;
@@ -102,11 +102,13 @@
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.3)
-    ), url("tree_sm.png");
+    ), url("<%= image_path "tree_sm.png" %>");
   max-height: 80px;
   font-size: 15px;
   border: 2px solid black;
 }
+
+
 
 #funeral_type_burial_type_tree_funeral:checked + label {
   border: 2px solid #1EDD88;
@@ -118,7 +120,7 @@
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.3)
-    ), url("woodland_sm.png");
+    ), url("<%= image_path "woodland_sm.png" %>");
   max-height: 80px;
   font-size: 15px;
   border: 2px solid black;
@@ -134,7 +136,7 @@
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.3)
-    ), url("diamond_sm.png");
+    ), url("<%= image_path "diamond_sm.png" %>");
   max-height: 80px;
   font-size: 15px;
   border: 2px solid black;
@@ -150,7 +152,7 @@
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.3)
-    ), url("urn_sm.png");
+    ), url("<%= image_path "urn_sm.png" %>");
   max-height: 80px;
   font-size: 15px;
   border: 2px solid black;
@@ -166,7 +168,7 @@
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.3)
-    ), url("sky_sm.png");
+    ), url("<%= image_path "sky_sm.png" %>");
   max-height: 80px;
   font-size: 15px;
   border: 2px solid black;
@@ -182,7 +184,7 @@
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.3)
-    ), url("undecided_sm.png");
+    ), url("<%= image_path "undecided_sm.png" %>");
   max-height: 80px;
   font-size: 15px;
   border: 2px solid black;
