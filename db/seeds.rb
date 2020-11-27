@@ -59,7 +59,8 @@ lisa.funeral.funeral_type.update(
   loc_zip: '13088',
   loc_city: 'Berlin')
 lisa.funeral.playlist.update(
-  spotify_url: 'spotify:playlist:09vrf9JgCt1AD06mqwlubq')
+  spotify_url: 'spotify:playlist:09vrf9JgCt1AD06mqwlubq',
+  spotify_profile_url: "spotify:user:buggiplace")
 lisa.funeral.digital_will.update(
   cancel_accounts: ["Spotify", "Netflix"],
   facebook_obituary: 'false',
@@ -153,4 +154,3 @@ filepath = Rails.root.join('db', 'address_seed4.csv')
       end
 
 puts 'Funeral locations seed finished'
-

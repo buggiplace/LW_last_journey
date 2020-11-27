@@ -1,11 +1,12 @@
-class ObituaryPolicy < ApplicationPolicy
-  def show?
+class DocumentPolicy < ApplicationPolicy
+  def create?
     record.funeral.user == user
   end
 
-  def update?
+  def destroy?
     record.funeral.user == user
   end
+
   class Scope < Scope
     def resolve
       scope.all

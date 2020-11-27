@@ -1,23 +1,23 @@
 
 <div class="container">
-<h1>Funeral types</h1>
-  <br>
+<h2></h2>
+
 
   <%= simple_form_for(@funeral_type) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-      <%= f.input :burial_type, label: 'Please choose your favourite burial type',
+      <%= f.input :burial_type, label: 'Please choose your favourite burial type.',
             as: :radio_buttons, collection_wrapper_tag: 'div',
             collection_wrapper_class: 'category-wrapper',
             item_wrapper_class: 'category-item',
             input_html: {class: 'category-selector'},
             collection: FuneralType::CATEGORIES %>
-      <p>Please specify below a favourite location for your funeral</p>
+      <p>Please specify below a favourite location for your funeral. A city without Street/ ZIP is sufficicient.</p>
       <%= f.input :loc_street, label: 'Street'%>
       <%= f.input :loc_zip, label: 'Zip code'%>
       <%= f.input :loc_city, label: 'City'%>
       <%= f.input :comment, label: 'What else do you want to say?', :input_html => {:rows => 10}%>
-      <%= f.button :submit, class: "btn btn-flat" %>
+      <%= f.button :submit, class: "btn btn-lj-big-g" %>
     </div>
   <% end %>
 
