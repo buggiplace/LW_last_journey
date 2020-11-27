@@ -9,7 +9,9 @@ class ObituaryController < ApplicationController
 
   def update
     if @obituary.update(obituary_params)
-      @obituary.photos.attach(params[:obituary][:photos])
+      if params[:obituary][:photos]
+        @obituary.photos.attach(params[:obituary][:photos])
+      end
       redirect_to obituary_path
     else
       render "/obituary/show"
@@ -26,6 +28,6 @@ class ObituaryController < ApplicationController
 
   def obituary_params
     params.require(:obituary).permit(
-      :last_words, :rich_body, :spotify_list, :death_date, :death_location, :funeral_time, :funeral_location, :funeral_info)
+      :last_words, :rich_body, :spotify_list, :death_date, :death_location, :funeral_time, :funeral_location, :funeral_info, guestlist: [])
   end
 end
