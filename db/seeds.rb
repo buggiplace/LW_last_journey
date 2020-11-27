@@ -138,19 +138,19 @@ puts 'Create condolences'
 puts "Condolences seed finished"
 
 
-# puts 'Create funeral locations'
+puts 'Create funeral locations'
 
-# require 'csv'
-# csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
-# filepath = Rails.root.join('db', 'address_seed4.csv')
-#     CSV.foreach(filepath, csv_options) do |row|
-#       Location.create!(
-#           name: Faker::Company.name,
-#           street: row['address_street'],
-#           zip: row['address_zip'],
-#           city: row['address_city'],
-#         )
-#       end
+require 'csv'
+csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
+filepath = Rails.root.join('db', 'address_seed4.csv')
+    CSV.foreach(filepath, csv_options) do |row|
+      Location.create!(
+          name: Faker::Company.name,
+          street: row['address_street'],
+          zip: row['address_zip'],
+          city: row['address_city'],
+        )
+      end
 
-# puts 'Funeral locations seed finished'
+puts 'Funeral locations seed finished'
 
