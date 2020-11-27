@@ -11,6 +11,7 @@ class FuneralsController < ApplicationController
 
   end
 
+
   # def documents
   #   # @funeral = current_user.funeral
   # end
@@ -29,15 +30,13 @@ class FuneralsController < ApplicationController
   end
 
   def update_guestlist
-    @funeral.update(guestlist_params)
-    @funeral.guestlist << params[:funeral][:guestlist].reject(&:empty?)
-    @funeral.guestlist.flatten!
+    @funeral.update(funeral_params)
     if @funeral.save
       redirect_to guestlist_path
     else
+      render 'guestlist'
     end
   end
-
 
   private
 
@@ -46,9 +45,10 @@ class FuneralsController < ApplicationController
   end
 
 
-  def guestlist_params
-      params.require(:funeral).permit(:guestlist)
+  def funeral_params
+    params.require(:funeral).permit(guestlist: [])
   end
+
 end
 
 

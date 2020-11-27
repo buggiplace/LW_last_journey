@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2020_11_26_142109) do
     t.bigint "funeral_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "file_name"
     t.index ["funeral_id"], name: "index_documents_on_funeral_id"
   end
 
