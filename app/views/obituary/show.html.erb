@@ -30,7 +30,7 @@
 
 <br>
 
-<% if !@obituary.spotify_list.empty? %>
+<% if @obituary.spotify_list.present? %>
 <h2>Preview of your playlist for your obituary site</h2>
 <iframe src= "https://open.spotify.com/embed/playlist/<%=@obituary.spotify_list.last(22)%>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 <% end %>
