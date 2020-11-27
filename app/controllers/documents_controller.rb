@@ -3,6 +3,8 @@ class DocumentsController < ApplicationController
 
   def index
     @document = Document.new
+    @exclude_banner = false
+    @banner_title = "Digital Will"
   end
 
   def create

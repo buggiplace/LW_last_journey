@@ -1,14 +1,10 @@
-<h1>My obituary</h1>
-<br>
-<p>test result</p>
-<%= @obituary.last_words %>
-<br>
+<div class="container mt-5">
 
   <%= simple_form_for(@obituary) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-
+      <%= f.input :last_words%>
       <div class="form-inputs">
         <%= f.rich_text_area :rich_body %>
       </div>
@@ -17,12 +13,14 @@
 
 
       <%= f.input :spotify_list%>
-      <%= f.button :submit, class: "btn btn-obnb-main-lg" %>
+      <%= f.button :submit, class: "btn btn-flat" %>
     </div>
   <% end %>
 
 
-<h1>preview</h1>
-<% @obituary.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+<!-- photo save and load does not work please fix save to cloudinary -->
+<h2>Photo Preview</h2>
+<%# @obituary.photos.each do |photo| %>
+  <%#= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<%# end %>
+</div>
