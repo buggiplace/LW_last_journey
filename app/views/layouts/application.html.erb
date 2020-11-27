@@ -17,6 +17,8 @@
     <%= render 'shared/body' %>
     <%= render 'shared/banner' unless @exclude_banner %>
     <%= yield %>
-    <%= render 'shared/footer' %>
   </body>
+  <footer>
+    <%= render 'shared/footer' %>
+  </footer>
 </html>
