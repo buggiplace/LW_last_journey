@@ -102,11 +102,13 @@
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.3)
-    ), url("tree_sm.png");
+    ), url("<%= image_path "tree_sm.png" %>");
   max-height: 80px;
   font-size: 15px;
   border: 2px solid black;
 }
+
+
 
 #funeral_type_burial_type_tree_funeral:checked + label {
   border: 2px solid #1EDD88;
