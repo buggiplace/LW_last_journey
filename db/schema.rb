@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_26_232046) do
+
+ActiveRecord::Schema.define(version: 2020_11_27_125106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,7 +104,6 @@ ActiveRecord::Schema.define(version: 2020_11_26_232046) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "guestlist", default: [], array: true
     t.index ["digital_will_id"], name: "index_funerals_on_digital_will_id"
     t.index ["funeral_type_id"], name: "index_funerals_on_funeral_type_id"
     t.index ["obituary_id"], name: "index_funerals_on_obituary_id"
@@ -135,6 +135,7 @@ ActiveRecord::Schema.define(version: 2020_11_26_232046) do
     t.string "funeral_info"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "guestlist", default: [], array: true
   end
 
   create_table "playlists", force: :cascade do |t|

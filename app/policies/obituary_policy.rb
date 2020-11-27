@@ -6,6 +6,7 @@ class ObituaryPolicy < ApplicationPolicy
   def update?
     record.funeral.user == user
   end
+
   class Scope < Scope
     def resolve
       scope.all
