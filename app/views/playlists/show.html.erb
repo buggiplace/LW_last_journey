@@ -4,7 +4,7 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
     <div class="form-inputs p-5 d-flex justify-content-center flex-column">
       <%= f.input :spotify_url, wrapper_html: {class: "form-group d-flex align-items-center flex-column"}, label: 'Please insert your favorite spotify url and save it for your descendants. For you, it will already magically appear below 😇 ' %>
-      <%= f.input :spotify_profile_url %>
+      <%= f.input :spotify_profile_url, label: 'If you like, put in your spotify profile URI here, so that anyone can follow all of your playlists' %>
     <div class="form-actions d-flex justify-content-center align-items-center">
       <%= f.button :submit, class: "btn btn-flat" %>
     </div>
