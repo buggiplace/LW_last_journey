@@ -9,6 +9,8 @@ class FuneralsController < ApplicationController
 
   def dashboard
     @exclude_banner = false
+    @banner_title = "Dashboard"
+    @banner_url = "https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1500&q=80"
   end
 
   # def documents

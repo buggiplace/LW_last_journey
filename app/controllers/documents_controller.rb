@@ -4,6 +4,8 @@ class DocumentsController < ApplicationController
   def index
     @document = Document.new
     @documents = policy_scope(@funeral.documents)
+    @exclude_banner = false
+    @banner_title = "My Documents"
   end
 
   def create
