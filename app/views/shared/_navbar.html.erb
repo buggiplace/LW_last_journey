@@ -23,9 +23,9 @@
           <br>
           <%= link_to 'Digital Will', digital_will_path(@funeral), class: "dropdown-item"%>
           <%= link_to 'Funeral Type', funeral_type_path(@funeral), class: "dropdown-item"%>
-          <%#= link_to 'Documents', funerals_dashboard_path, class: "dropdown-item"%>
           <%= link_to 'Playlist', playlist_path(@funeral), class: "dropdown-item"%>
-          <%#= link_to 'Representative', funerals_dashboard_path, class: "dropdown-item"%>
+          <%= link_to 'Representative', funerals_dashboard_path, class: "dropdown-item"%>
+          <%= link_to 'Documents', funeral_documents_path(@funeral), class: "dropdown-item"%>
           <%= link_to 'Obituary', obituary_path(@funeral), class: "dropdown-item"%>
           <br>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
