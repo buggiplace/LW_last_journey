@@ -1,0 +1,22 @@
+<h1>Guestlist</h1>
+<br>
+<br>
+<br>
+<br>
+
+
+<%= simple_form_for(@funeral, :url => guestlist_path) do |f| %>
+<%= f.input :guestlist, label: "Choose guests", input_html: {multiple: true, class: "js-choice select-multiple"} %>
+<%= f.button :submit, class: "btn btn-obnb-main-lg" %>
+<% end %>
+
+<!-- <h1>Hello World</h1>
+
+<%#= simple_form_for(@funeral, :url => guestlist_path) do |f| %>
+  <%#= f.error_notification %>
+  <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="form-inputs p-5 d-flex justify-content-center flex-column">
+  <%#= f.input :guestlist, as: :select, label: "Choose guests", input_html: {multiple: true, class: "select2"} %>
+    <%#= f.button :submit, class: "btn btn-obnb-main-lg" %>     </div>
+<%# end %>
+ -->
