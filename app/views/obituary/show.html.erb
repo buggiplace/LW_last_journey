@@ -39,4 +39,10 @@
 <% @obituary.photos.each do |photo| %>
   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
+
+<br>
+<br>
+<div class="d-flex justify-content-center">
+    <%= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-secondary btn-lg btn-block'%>
+</div>
 </div>
