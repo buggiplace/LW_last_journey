@@ -3,13 +3,15 @@ class DocumentsController < ApplicationController
 
   def index
     @document = Document.new
+    @documents = policy_scope(@funeral.documents)
     @exclude_banner = false
-    @banner_title = "Digital Will"
+    @banner_title = "My Documents"
   end
 
   def create
     @document = @funeral.documents.build(document_params)
     @document.file_name = params[:document][:file].original_filename
+    authorize @document
     if @document.save
       redirect_to funeral_documents_path(@funeral), notice: 'Document uploaded!'
     else
@@ -19,6 +21,7 @@ class DocumentsController < ApplicationController
 
   def destroy
     document = @funeral.documents.find(params[:id])
+    authorize document
     document.destroy
     redirect_to funeral_documents_path(@funeral), notice: 'Document deleted!'
   end
