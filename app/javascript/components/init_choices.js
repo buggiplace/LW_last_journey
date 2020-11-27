@@ -1,4 +1,5 @@
-const Choices = require('choices.js')
+// const Choices = require('choices.js')
+import Choices from 'choices.js';
 const initChoices = () => {
   const element = document.querySelector('.js-choice');
   const choices = new Choices(element,
