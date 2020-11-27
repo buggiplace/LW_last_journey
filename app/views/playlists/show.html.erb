@@ -36,11 +36,11 @@
 <br>
 <br>
 
-<!-- please fix this if else -->
 
-<%# if @spotify_url.present? %>
+
+<% if @embed_spotify_url.present? %>
   <div class = "d-flex justify-content-center align-items-center spotifyplayer">
     <iframe src="https://open.spotify.com/embed/playlist/<%=@embed_spotify_url %>" width="100%" height="1000" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
   </div>
-<%# end %>
+<% end %>
 
