@@ -111,6 +111,19 @@ ActiveRecord::Schema.define(version: 2020_11_26_232046) do
     t.index ["user_id"], name: "index_funerals_on_user_id"
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.float "latitude"
+    t.float "longitude"
+    t.string "street"
+    t.string "zip"
+    t.string "city"
+    t.string "cemetery_type"
+    t.string "name"
+    t.string "phone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "obituaries", force: :cascade do |t|
     t.string "last_words"
     t.string "spotify_list"

@@ -2,14 +2,19 @@ class FuneralTypesController < ApplicationController
   before_action :find_funeral_type
 
   def show
+
     @exclude_banner = false
     @banner_url = "https://images.unsplash.com/photo-1544813545-4827b64fcacb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
     @banner_title = "Funeral Type"
-    if @funeral_type.geocoded?
-      @marker = [{
-        lat: @funeral_type.latitude,
-        lng: @funeral_type.longitude,
-      }]
+    @locations = Location.all
+    # the `geocoded` scope filters only locations with coordinates (latitude & longitude)
+    @markers = @locations.geocoded.map do |location|
+      {
+        lat: location.latitude,
+        lng: location.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { location: location })
+        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+      }
     end
   end
 

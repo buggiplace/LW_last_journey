@@ -14,6 +14,8 @@ Condolence.destroy_all
 Funeral.destroy_all
 User.destroy_all
 
+Location.destroy_all
+
 # filepath = "db/preferences.json"
 # serialized_preferences = File.read(filepath) #returns a string
 # preferences = JSON.parse(serialized_preferences)
@@ -137,17 +139,18 @@ puts 'Create condolences'
 puts "Condolences seed finished"
 
 
-# require 'csv'
-# csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
-# filepath = Rails.root.join('db', 'address_seed4.csv')
+puts 'Create funeral locations'
 
-#     CSV.foreach(filepath, csv_options) do |row|
+require 'csv'
+csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
+filepath = Rails.root.join('db', 'address_seed4.csv')
+    CSV.foreach(filepath, csv_options) do |row|
+      Location.create!(
+          name: Faker::Company.name,
+          street: row['address_street'],
+          zip: row['address_zip'],
+          city: row['address_city'],
+        )
+      end
 
-#       Location.create!(
-#           name: Faker::Company.name,
-#           description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-#           street: row['address_street'],
-#           zip: row['address_zip'],
-#           city: row['address_city'],
-#         )
-#       end
+puts 'Funeral locations seed finished'
