@@ -143,13 +143,13 @@ puts 'Create funeral locations'
 
 require 'csv'
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
-filepath = Rails.root.join('db', 'address_seed4.csv')
+filepath = Rails.root.join('db', 'address_seed5.csv') # previously 'address_seed4.csv'
     CSV.foreach(filepath, csv_options) do |row|
       Location.create!(
-          name: Faker::Company.name,
-          street: row['address_street'],
-          zip: row['address_zip'],
-          city: row['address_city'],
+          street: row['street'], # previously address_street
+          zip: row['zip'], # previously address_zip
+          city: row['city'], # previously address_city
+          name: row['name'], # previously Faker::Company.name,
         )
       end
 
