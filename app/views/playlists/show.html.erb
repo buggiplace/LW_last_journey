@@ -1,14 +1,10 @@
-<!--
-<h1>My funeral playlist</h1>
-
-<p>Paste the Spotify URI. Click on SHARE in your spotify playlist and copy the bottom Spotify URI</p>
-
-<iframe src= "https://open.spotify.com/embed/playlist/<%=@playlist.spotify_url.last(22)%>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
-<br>
- -->
-
-<div class="container">
+<div class="container mt-5">
+<h2>"Music is the soundtrack of your life" - Dick Clark</h2>
+<p>There are a ton of ways to find your last words or create something meaningful to you or your beloved family and friends.
+Sometimes music helps to say a lot more - to remember certain moments, get a bit emotional, to laugh, to cry or to just dance.
+Determine what you want them to remember thinking of you. Create the soundtrack of your life in Spotify and connect your playlist.
+This can be shared with your friends and family after your funeral to remember you the way you want. But also think about the funeral itself.
+Music means a lot to you and is an important part of everyones' funeral. List the songs you wish to be played during your ceremony. </p>
 
   <%= simple_form_for(@playlist) do |f| %>
     <%= f.error_notification %>
@@ -43,4 +39,9 @@
     <iframe src="https://open.spotify.com/embed/playlist/<%=@embed_spotify_url %>" width="100%" height="1000" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
   </div>
 <% end %>
+<br>
+<br>
+<div class="d-flex justify-content-center">
+    <%= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-secondary btn-lg btn-block'%>
+</div>
 

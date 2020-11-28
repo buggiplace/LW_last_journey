@@ -13,7 +13,6 @@ class FuneralsController < ApplicationController
     @banner_url = "https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1500&q=80"
   end
 
-
   # def documents
   #   # @funeral = current_user.funeral
   # end
@@ -26,19 +25,12 @@ class FuneralsController < ApplicationController
   #   # redirect_to documents_path
   # end
 
-  def guestlist
-    # @funeral = current_user.funeral
-    @guestlist = @funeral.guestlist
-  end
+  # def guestlist
+  #   # @funeral = current_user.funeral
+  #   @guestlist = @funeral.guestlist
+  # end
 
-  def update_guestlist
-    @funeral.update(funeral_params)
-    if @funeral.save
-      redirect_to guestlist_path
-    else
-      render 'guestlist'
-    end
-  end
+
 
   private
 
@@ -49,9 +41,9 @@ class FuneralsController < ApplicationController
   end
 
 
-  def funeral_params
-    params.require(:funeral).permit(guestlist: [])
-  end
+  # def funeral_params
+  #   params.require(:funeral).permit(guestlist: [])
+  # end
 
 end
 

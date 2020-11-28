@@ -1,6 +1,6 @@
-
-<div class="container">
-<h2></h2>
+<div class="container mt-5">
+<h2>Where great spirits find their rest</h2>
+<p>There is not just one or the place to beginn jour last journey. It just depends on your preferences. Ask yourself what kind of last locale you want. Should it be one specific physical space? How much resources should it take to take care of that place? Do you have a personal connection to a place? Do you want this place to last and become a place for your family and friends to retrun to? </p>
 
 
   <%= simple_form_for(@funeral_type) do |f| %>
@@ -18,16 +18,22 @@
       <%= f.input :loc_city, label: 'City'%>
       <%= f.input :comment, label: 'What else do you want to say?', :input_html => {:rows => 10}%>
       <%= f.button :submit, class: "btn btn-lj-big-g" %>
-    </div>
+      </div>
   <% end %>
 
-</div>
 
 
 <br>
 
+<div class = "d-flex align-items-center justify-content-center flex-column mt-5">
+  <h2>Funeral locations in Europe</h2>
 <div id="map"
-     style="width: 100%; height: 600px;"
+     style="width: 50%; height: 300px;"
      data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+<div class="container d-flex justify-content-center mt-5">
+    <%= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-secondary btn-lg btn-block'%>
+</div>
 
