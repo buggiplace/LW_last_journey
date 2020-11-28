@@ -150,6 +150,7 @@ filepath = Rails.root.join('db', 'address_seed5.csv') # previously 'address_seed
           zip: row['zip'], # previously address_zip
           city: row['city'], # previously address_city
           name: row['name'], # previously Faker::Company.name,
+          cemetery_type: row['cemetery_type'], # new
         )
       end
 

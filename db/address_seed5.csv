@@ -1,12 +1,1 @@
-street,zip,city,name,
-
-"Arberger Heerstr. 77","28307","Bremen","Ahrbergen"
-"Breite Straße 38","14199","Berlin","Alt-Schmargendorf"
-"Sutelstraße 20","30659","Hannover","Alter Bothfelder Friedhof"
-"Ruhrstraße 103","22761","Hamburg","Bahrenfeld-Bornkamp"
-"Brunnenstraße 155","10115","Berlin","Berlin"
-"Kleewiesenweg 2","71336","Waiblingen","Bittenfeld"
-"Sülldorfer Kirchenweg 151","22589","Hamburg","Blankenese"
-"Grevenbroicher Straße","50829","Köln","Bocklemünd"
-"Westerwaldstraße","45133","Essen","Bredeney"
-"Hovenstraße","51109","Köln","Brück, Hovenstraße"
+street,zip,city,name,cemetery_type,
