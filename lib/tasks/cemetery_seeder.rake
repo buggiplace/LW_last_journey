@@ -1,13 +1,15 @@
 require 'open-uri'
 require 'nokogiri'
 
+require 'csv'
+
+# run in terminal rake cemetery:seed to see the data being seeded
 namespace :cemetery do
-  desc 'seeding cmeeteries from url' # run in terminal rake cemetery:seed
+  desc 'seeding cmeeteries from url'
   task seed: :environment do
     @base_url = "https://friedhoefe.trauer.de/Branchenbuch/Alle%20Friedh%c3%b6fe/-/"
-    1.times do |n|
-
-      url = "#{@base_url}#{n+1}"
+    2.times do |n|
+      url = "#{@base_url}#{n + 1}"
       html_file = open(url).read
       html_doc = Nokogiri::HTML(html_file)
 
@@ -16,10 +18,17 @@ namespace :cemetery do
         zip_city = element.search(".adressWrapper").search("span")[2].text.strip
         p zip = zip_city.split[0]
         p city = zip_city.split[1]
-        # p address = element.search(".adressWrapper").text.strip.gsub(/(\s|&lt;br&gt;)/, " ").split.join(" ")
+        # p address = element.search(".adressWrapper").text.strip.gsub(/(\s|&lt;br&gt;)/, " ").split.join(" ") prev try of scraping not needed anymore
         p name = element.search(".PanelBBEntryTitle").text.strip.gsub(/(\s|&lt;br&gt;)/, " ").split.join(" ")
-        # Location.create(address: address, name: name)
+        # Location.create(address: address, name: name) when TA did not know about the csv yet
       end
     end
-  end
+  ends
 end
+
+# csv_options = { col_sep: ',', force_quotes: true, quote_char: '"' }
+# filepath    = 'address_seed4.csv'
+
+# CSV.open(filepath, 'wb', csv_options) do |csv|
+#   csv << [name, street, zip, city]
+# end
