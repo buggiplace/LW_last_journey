@@ -23,7 +23,7 @@ namespace :cemetery do
         # Location.create(address: address, name: name) when TA did not know about the csv yet
       end
     end
-  ends
+  end
 end
 
 # csv_options = { col_sep: ',', force_quotes: true, quote_char: '"' }
