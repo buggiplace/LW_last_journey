@@ -142,7 +142,7 @@ puts "Condolences seed finished"
 puts 'Create funeral locations'
 
 Location.create!(street: 'Am Hafen 20', zip: '25992', city: 'List', name: 'Nordseehafen List/Sylt', cemetery_type: 'Burial at sea 🌊')
-Location.create!(street: 'Schwedenkai 1', zip: '24103', city: 'Kiel', name: 'Seehafen Kiel', cemetery_type: 'Burial at sea')
+Location.create!(street: 'Schwedenkai 1', zip: '24103', city: 'Kiel', name: 'Seehafen Kiel', cemetery_type: 'Burial at sea 🌊')
 Location.create!(street: 'Kopenhagener Str. 3', zip: '23966', city: 'Wismar', name: 'Ostseehafen Wismar', cemetery_type: 'Burial at sea 🌊')
 Location.create!(street: 'Hafendeichstraße 17', zip: '26465', city: 'Langeoog', name: 'Nordseehafen Langeoog', cemetery_type: 'Burial at sea 🌊')
 
