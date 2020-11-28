@@ -22,7 +22,7 @@ namespace :cemetery do
         name = element.search(".PanelBBEntryTitle").text.strip.gsub(/(\s|&lt;br&gt;)/, " ").split.join(" ")
         # Location.create(address: address, name: name) when TA did not know about the csv yet
         csv_options = { col_sep: ',', force_quotes: true, quote_char: '"', headers: :first_row }
-        filepath    = 'address_seed5.csv'
+        filepath    = 'db/address_seed5.csv'
         CSV.open(filepath, 'ab', csv_options) do |csv|
           csv << [street, zip, city, name]
         end
@@ -31,3 +31,4 @@ namespace :cemetery do
   end
 end
 
+# address_seed5.csv
