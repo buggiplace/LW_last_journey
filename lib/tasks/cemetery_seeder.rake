@@ -8,7 +8,7 @@ namespace :cemetery do
   desc 'seeding cmeeteries from url'
   task seed: :environment do
     @base_url = "https://friedhoefe.trauer.de/Branchenbuch/Alle%20Friedh%c3%b6fe/-/"
-    2.times do |n|
+    50.times do |n|
       url = "#{@base_url}#{n + 1}"
       html_file = open(url).read
       html_doc = Nokogiri::HTML(html_file)
