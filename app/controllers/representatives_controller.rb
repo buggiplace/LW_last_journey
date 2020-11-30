@@ -3,6 +3,7 @@ class RepresentativesController < ApplicationController
   # skip_before_action :verify_policy_scoped, only: :show
 
   def show
+    @exclude_banner = true
   end
 
   def update
