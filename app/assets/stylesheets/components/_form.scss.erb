@@ -2,20 +2,76 @@
 
 // general design for a form div
 .form-design {
-  border: 1px solid silver;
+  // border: 1px solid silver;
   background: white;
-  padding: 10px 20px;
-  width: 60%;
-  margin-top: 50px;
+  // padding: 10px 20px;
+  width: 100%;
+  margin-top: 30px;
   border-radius: 15px;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  // box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
   h2 {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 600;
+    // margin-bottom: 30px;
     text-align: center;
+    line-height: 37px;
+  }
+   h4 {
+    font-size: 14px;
+    font-weight: 600;
+    // margin-bottom: 30px;
+    text-align: center;
+    line-height: 17px;
   }
   }
+
+.sectionwrapper {
+    position: relative;
+    width: 100%;
+  }
+
+.form-exit {
+    margin-top: 200px;
+    margin-bottom: 50px;
+    background-color: $main2;
+    height: 134px;
+    border-radius: 20px;
+    border: 3px solid $main1;
+    z-index: 5;
+    position: relative;
+}
+
+.form-exit h3 {
+    font-size: 20px;
+    font-weight: 600;
+    // margin-bottom: 30px;
+    // text-align: center;
+    style: normal;
+    align: center;
+    line-height: 25px;
+    color: $main1;
+
+}
+
+// comment fields
+
+// #funeral_type_comment {
+//   border: 2px solid $main1;
+//   border-radius: 20px;
+//   box-sizing: border-box;
+// }
+
+.textfield {
+  border: 3px solid $main1;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+
+.was-validated .form-control:valid, .form-control.is-valid {
+  border: 3px solid $main1;
+}
+
 
 
 // radio buttons
@@ -77,7 +133,7 @@
   text-align: center;
   padding: 10px 10px 10px 10px;
   border: 1px solid #EAEAEA;
-  border-radius: 8px;
+  border-radius: 50px;
   background-color: white;
 }
 
@@ -86,132 +142,108 @@
 }
 
 #funeral_type_burial_type_burial + label {
-  color: white;
-  background-image: linear-gradient(
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)
-    ), url("<%= image_path "burial_sm.jpg" %>");
+  color: $main1;
   max-height: 80px;
   font-size: 20px;
-  border: 2px solid black;
+  border: 2px solid $main1;
 }
 
 #funeral_type_burial_type_burial:checked + label {
-  border: 2px solid #1EDD88;
+  border: 2px solid $main1;
+  background: $main1;
   max-height: 80px;
 }
 
 #funeral_type_burial_type_burial_at_sea + label {
-  color: white;
-  background-image: linear-gradient(
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)
-    ), url("<%= image_path "sea_sm.png" %>");
+  color: $main1;
   max-height: 80px;
   font-size: 20px;
-  border: 2px solid black;
+  border: 2px solid $main1;
 }
 
 #funeral_type_burial_type_burial_at_sea:checked + label {
-  border: 2px solid #1EDD88;
+  border: 2px solid $main1;
+  background: $main1;
   max-height: 80px;
 }
 
 #funeral_type_burial_type_tree_funeral + label {
-  color: white;
-  background-image: linear-gradient(
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)
-    ), url("<%= image_path "tree_sm.png" %>");
+  color: $main1;
   max-height: 80px;
   font-size: 20px;
-  border: 2px solid black;
+  border: 2px solid $main1;
 }
 
 
 
 #funeral_type_burial_type_tree_funeral:checked + label {
-  border: 2px solid #1EDD88;
+  border: 2px solid $main1;
+  background: $main1;
   max-height: 80px;
 }
 
 #funeral_type_burial_type_woodland_burial + label {
-  color: white;
-  background-image: linear-gradient(
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)
-    ), url("<%= image_path "woodland_sm.png" %>");
+  color: $main1;
   max-height: 80px;
   font-size: 20px;
-  border: 2px solid black;
+  border: 2px solid $main1;
 }
 
 #funeral_type_burial_type_woodland_burial:checked + label {
-  border: 2px solid #1EDD88;
+  border: 2px solid $main1;
+  background: $main1;
   max-height: 80px;
 }
 
 #funeral_type_burial_type_diamond_burial + label {
-  color: white;
-  background-image: linear-gradient(
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)
-    ), url("<%= image_path "diamond_sm.png" %>");
+  color: $main1;
   max-height: 80px;
   font-size: 20px;
-  border: 2px solid black;
+  border: 2px solid $main1;
 }
 
 #funeral_type_burial_type_diamond_burial:checked + label {
-  border: 2px solid #1EDD88;
+  border: 2px solid $main1;
+  background: $main1;
   max-height: 80px;
 }
 
 #funeral_type_burial_type_urn_burial + label {
-  color: white;
-  background-image: linear-gradient(
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)
-    ), url("<%= image_path "urn_sm.png" %>");
+  color: $main1;
   max-height: 80px;
   font-size: 20px;
-  border: 2px solid black;
+  border: 2px solid $main1;
 }
 
 #funeral_type_burial_type_urn_burial:checked + label {
-  border: 2px solid #1EDD88;
+  border: 2px solid $main1;
+  background: $main1;
   max-height: 80px;
 }
 
 #funeral_type_burial_type_sky_burial + label {
-  color: white;
-  background-image: linear-gradient(
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)
-    ), url("<%= image_path "sky_sm.png" %>");
+  color: $main1;
   max-height: 80px;
   font-size: 20px;
-  border: 2px solid black;
+  border: 2px solid $main1;
 }
 
 #funeral_type_burial_type_sky_burial:checked + label {
-  border: 2px solid #1EDD88;
+  border: 2px solid $main1;
+  background: $main1;
   max-height: 80px;
 }
 
 #funeral_type_burial_type_undecided + label {
-  color: white;
-  background-image: linear-gradient(
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)
-    ), url("<%= image_path "undecided_sm.png" %>");
+  color: $main1;
   max-height: 80px;
   font-size: 20px;
-  border: 2px solid black;
+  border: 2px solid $main1;
 }
 
 #funeral_type_burial_type_undecided:checked + label {
-  border: 2px solid #1EDD88;
+  border: 2px solid $main1;
+  background: $main1;
   max-height: 80px;
 }
 
