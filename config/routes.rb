@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :funeral_types, only: [:show, :update]
   resources :digital_wills, only: [:show, :update]
   resources :playlists, only: [:show, :update]
+  resources :representatives, only: [:show, :update]
   resources :funerals, only: [] do
     resources :documents, only: [:index, :create, :destroy]
     get "/representative", to: 'funerals#new_rep', as: :assign_rep
@@ -20,7 +21,9 @@ Rails.application.routes.draw do
   end
   resources :obituary, only: [:show, :update]
   # resources :condolences, only: [:new, :create ]
-  end
+  get 'public_obituary/:obituary_id', to: 'public_obituary#show', as: :public_obituary
+  post 'public_obituary/:obituary_id/condolences', to: 'public_obituary#create_condolences', as: :create_condolence
+end
 
 
   # get "/funeral_types", to: 'funeral_types#show'

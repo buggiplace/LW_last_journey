@@ -1,0 +1,9 @@
+<% if @funeral.representative == current_user%>
+Hello <%= @funeral.representative.first_name%>.
+<br>
+You are the representative of:
+<%= @funeral.user.first_name%>
+
+<% else %>
+Go away. You are not authorized.
+<% end %>
