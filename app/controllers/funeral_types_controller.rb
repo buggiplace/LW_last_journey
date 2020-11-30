@@ -2,7 +2,6 @@ class FuneralTypesController < ApplicationController
   before_action :find_funeral_type
 
   def show
-
     @exclude_banner = true
     @banner_url = "https://images.unsplash.com/photo-1544813545-4827b64fcacb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
     @banner_title = "My Funeral"
@@ -19,8 +18,14 @@ class FuneralTypesController < ApplicationController
   end
 
   def update
+    # raise
+    # "redirect_to"=>"dashboard"
     if @funeral_type.update(funeral_type_params)
-      redirect_to funeral_type_path
+      if params[:redirect_to] == "dashboard"
+        redirect_to funerals_dashboard_path
+      else
+        redirect_to funeral_type_path
+      end
     else
       render "/funeral_types/show"
     end
