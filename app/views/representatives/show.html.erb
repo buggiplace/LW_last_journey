@@ -3,7 +3,57 @@ Hello <%= @funeral.representative.first_name%>.
 <br>
 You are the representative of:
 <%= @funeral.user.first_name%>
+<br>
+<br>
+<br>
+Last words of <%= @funeral.user.first_name%> for the obituary:
+<br>
+"<%= @funeral.obituary.last_words%>""
+<br>
+<br>
+Spotify playlist for the obituary:
+<br>
+ <%= @funeral.obituary.spotify_list%>
+ <br>
+ Guestlist:
+ <br>
+ <%= @funeral.obituary.guestlist%>
 
+<br>
+
+
+
+  <%= simple_form_for(@funeral.obituary) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+      <%= f.input :death_date%>
+      <%= f.input :death_location%>
+      <%= f.input :funeral_time%>
+      <%= f.input :funeral_location%>
+      <%= f.input :funeral_info%>
+<!-- deactivated code block below bc of conflicts with heroku -->
+<!--       <div class="form-inputs">
+        <%#= f.rich_text_area :rich_body %>
+      </div> -->
+
+      <!-- deactivated this below input_html: { multiple: true } -->
+
+
+      <%= f.button :submit, class: "btn btn-lj-big-g" %>
+
+  <% end %>
+
+<!--
+    t.string "last_words"
+    t.string "spotify_list"
+    t.datetime "death_date"
+    t.string "death_location"
+    t.datetime "funeral_time"
+    t.string "funeral_location"
+    t.string "funeral_info"
+
+ -->
 <% else %>
 Go away. You are not authorized.
 <% end %>

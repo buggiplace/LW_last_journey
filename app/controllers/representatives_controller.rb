@@ -12,6 +12,7 @@ class RepresentativesController < ApplicationController
 
   def find_funeral
     @funeral = current_user.funeral_as_representative
+    # maybe use params id...just an idea
   end
 
 end
