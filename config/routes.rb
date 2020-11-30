@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :funeral_types, only: [:show, :update]
   resources :digital_wills, only: [:show, :update]
   resources :playlists, only: [:show, :update]
+  resources :representatives, only: [:show, :update]
   resources :funerals, only: [] do
     resources :documents, only: [:index, :create, :destroy]
     get "/representative", to: 'funerals#new_rep', as: :assign_rep

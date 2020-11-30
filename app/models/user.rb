@@ -6,12 +6,17 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one_attached :profile_picture
   has_one :funeral, dependent: :destroy
-  has_many :funeral_as_representative, source: :funerals, foreign_key: :representative_id
+  # has_many :funeral_as_representative, source: :funerals, foreign_key: :representative_id
 
   validates :first_name, :last_name, presence: true
   # :birth_date,
 
   after_create :initialize_funeral
+
+  def funeral_as_representative
+    Funeral.find_by(representative_id: self.id)
+  end
+
   private
 
   def initialize_funeral
@@ -23,6 +28,8 @@ class User < ApplicationRecord
       Funeral.create!( funeral_type: funeral_type, playlist: playlist, digital_will: digital_will, obituary: obituary, user: self)
     end
   end
+
+
 end
 
 
