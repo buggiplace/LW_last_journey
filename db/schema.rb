@@ -98,7 +98,8 @@ ActiveRecord::Schema.define(version: 2020_11_27_125106) do
     t.bigint "funeral_type_id", null: false
     t.bigint "digital_will_id", null: false
     t.bigint "obituary_id", null: false
-    t.bigint "representative_id"
+    t.bigint "representative_profile_id"
+    t.string "representative_email"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -106,7 +107,7 @@ ActiveRecord::Schema.define(version: 2020_11_27_125106) do
     t.index ["funeral_type_id"], name: "index_funerals_on_funeral_type_id"
     t.index ["obituary_id"], name: "index_funerals_on_obituary_id"
     t.index ["playlist_id"], name: "index_funerals_on_playlist_id"
-    t.index ["representative_id"], name: "index_funerals_on_representative_id"
+    t.index ["representative_profile_id"], name: "index_funerals_on_representative_profile_id"
     t.index ["user_id"], name: "index_funerals_on_user_id"
   end
 
@@ -143,6 +144,17 @@ ActiveRecord::Schema.define(version: 2020_11_27_125106) do
     t.string "spotify_profile_url"
   end
 
+  create_table "representative_profiles", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "comment"
+    t.string "email"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_representative_profiles_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -151,7 +163,7 @@ ActiveRecord::Schema.define(version: 2020_11_27_125106) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "kind", default: 0
+    t.boolean "representative", default: false
     t.string "first_name"
     t.string "last_name"
     t.date "birth_date"
@@ -167,6 +179,7 @@ ActiveRecord::Schema.define(version: 2020_11_27_125106) do
   add_foreign_key "funerals", "funeral_types"
   add_foreign_key "funerals", "obituaries"
   add_foreign_key "funerals", "playlists"
+  add_foreign_key "funerals", "representative_profiles"
   add_foreign_key "funerals", "users"
-  add_foreign_key "funerals", "users", column: "representative_id"
+  add_foreign_key "representative_profiles", "users"
 end

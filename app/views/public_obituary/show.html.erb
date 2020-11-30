@@ -6,8 +6,10 @@
     <li>
       <%= condolence.first_name %>
       <%= condolence.content %>
-      <%= link_to 'Delete', condolence_path(condolence), method: 'delete', data: { confirm: "Are you sure?" } %>
-      </li>
+      <% if policy(condolence).destroy? %>
+        <%= link_to 'Delete', condolence_path(condolence), method: 'delete', data: { confirm: "Are you sure?" } %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
 

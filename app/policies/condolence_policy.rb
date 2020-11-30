@@ -1,6 +1,6 @@
 class CondolencePolicy < ApplicationPolicy
   def destroy?
-    record.funeral.representative_profile.user == user
+    record.funeral.representative == user
   end
 
   class Scope < Scope
