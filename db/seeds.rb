@@ -31,21 +31,18 @@ simon = User.create!(first_name: 'Simon',
                      birth_date: Date.new(1989, 2, 1),
                      email: "simon@test.com",
                      password: "123456789",
-                     representative: true)
+                     kind: 1)
 lena = User.create!(first_name: 'Lena',
                     last_name: 'Link',
                     birth_date: Date.new(1978, 3, 3),
                     email: "lena@test.com",
-                    password: "12345678",
-                    representative: false)
+                    password: "12345678")
 lisa = User.create!(first_name: 'Lisa',
                     last_name: 'Href',
                     birth_date: Date.new(1977, 3, 3),
                     email: "lisa@test.com",
-                    password: "12345678",
-                    representative: false)
+                    password: "12345678")
 # funeral = Funeral.create!(user: lena, representative_email: simon.email)
-
 
 
 puts 'Create funerals'
@@ -74,8 +71,8 @@ lisa.funeral.digital_will.update(
 lisa.funeral.obituary.update(
   last_words: 'Thank you for a wonderful life. Keep on rockin!'
   )
-
-
+lisa.funeral.representative = simon
+lisa.funeral.save
 
 # simon.funeral = funeral
 
@@ -146,18 +143,18 @@ Location.create!(street: 'Schwedenkai 1', zip: '24103', city: 'Kiel', name: 'See
 Location.create!(street: 'Kopenhagener Str. 3', zip: '23966', city: 'Wismar', name: 'Ostseehafen Wismar', cemetery_type: 'Burial at sea 🌊')
 Location.create!(street: 'Hafendeichstraße 17', zip: '26465', city: 'Langeoog', name: 'Nordseehafen Langeoog', cemetery_type: 'Burial at sea 🌊')
 
-require 'csv'
-csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
-filepath = Rails.root.join('db', 'address_seed5.csv') # previously 'address_seed4.csv'
-    CSV.foreach(filepath, csv_options) do |row|
-      Location.create!(
-          street: row['street'], # previously address_street
-          zip: row['zip'], # previously address_zip
-          city: row['city'], # previously address_city
-          name: row['name'], # previously Faker::Company.name,
-          cemetery_type: row['cemetery_type'], # new
-        )
-    end
+# require 'csv'
+# csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
+# filepath = Rails.root.join('db', 'address_seed5.csv') # previously 'address_seed4.csv'
+#     CSV.foreach(filepath, csv_options) do |row|
+#       Location.create!(
+#           street: row['street'], # previously address_street
+#           zip: row['zip'], # previously address_zip
+#           city: row['city'], # previously address_city
+#           name: row['name'], # previously Faker::Company.name,
+#           cemetery_type: row['cemetery_type'], # new
+#         )
+#     end
 
 
 puts 'Funeral locations seed finished'

@@ -15,8 +15,9 @@ Rails.application.routes.draw do
   resources :playlists, only: [:show, :update]
   resources :funerals, only: [] do
     resources :documents, only: [:index, :create, :destroy]
+    get "/representative", to: 'funerals#new_rep', as: :assign_rep
+    post "/representative", to: 'funerals#create_rep', as: :create_rep
   end
-  resources :representative_profiles, only: [:show, :update]
   resources :obituary, only: [:show, :update]
   # resources :condolences, only: [:new, :create ]
   end

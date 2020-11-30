@@ -1,11 +1,12 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  enum kind: { owner: 0, representative: 1 }
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_one :funeral, dependent: :destroy
-  # has_one :representative_profile, optional: :true
   has_one_attached :profile_picture
+  has_one :funeral, dependent: :destroy
+  has_many :funeral_as_representative, source: :funerals, foreign_key: :representative_id
 
   validates :first_name, :last_name, presence: true
   # :birth_date,
@@ -14,7 +15,7 @@ class User < ApplicationRecord
   private
 
   def initialize_funeral
-    if representative == false
+    if owner?
       funeral_type = FuneralType.create
       playlist = Playlist.create
       digital_will = DigitalWill.create
@@ -23,3 +24,7 @@ class User < ApplicationRecord
     end
   end
 end
+
+
+  # scope :owners, -> { where(kind: 0) }
+  # scope :representatives, -> { where(kind: 1) }

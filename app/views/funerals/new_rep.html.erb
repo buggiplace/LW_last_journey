@@ -1,0 +1,25 @@
+<h1>Hello World</h1>
+
+<%= form_tag funeral_create_rep_path(@funeral), method: :post do %>
+    <%= text_field_tag :first_name, placeholder: "Peter" %>
+    <%= text_field_tag :last_name, placeholder: "Mustermann" %>
+    <%= text_field_tag :email %>
+    <%= submit_tag %>
+<% end %>
+
+
+<!-- <form action="/funerals/:funeral_id/representative" method="POST">
+  <label for="first_name">Enter your representative's first name</label>
+  <input type="text" id="first_name" placeholder="Peter">
+  <br>
+  <label for="last_name">Enter your representative's last name</label>
+  <input type="text" id="last_name" placeholder="Mustermann">
+  <br>
+  <label for="password">Enter your password</label>
+  <input type="password" id="password">
+  <br>
+  <label for="email">Enter your representative's email address</label>
+  <input type="text" id="email">
+  <br>
+  <input type="submit" value="Invite representative">
+</form> -->
