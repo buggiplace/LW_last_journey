@@ -1,24 +1,26 @@
 .footer {
-  background: #F4F4F4;
+  background: $main1;
   display: flex;
   align-items: center;
-  height: 50px;
-  padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
+  height: 300px;
+  padding: 0px 20px;
+  color: rgba(255,255,255,1);
   justify-content: center;
-
-  position: fixed;
   bottom: 0;
   width: 100%;
-
+  margin-top: 150px;
+  position: static;
+  height: 100%;
+  z-index: 20;
 }
 .footer-links {
   display: flex;
   align-items: center;
+  margin-top: 50px;
 
 }
 .footer-links a {
-  color: black;
+  color: rgba(255,255,255,1);
   opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
@@ -27,6 +29,21 @@
 .footer-links a:hover {
   opacity: 1;
 }
+
+.footer table {
+  color: rgba(255,255,255,1);
+  width: 50%;
+  border-collapse: collapse;
+  border: none;
+}
+
+//  table, th, td {
+//   border: none;
+// }
+.footer td, tr, th {
+    border: none !important;
+}
+
 // .footer .fa-heart {
 //   color: #D23333;
 // }

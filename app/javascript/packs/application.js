@@ -65,3 +65,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
 
+// import { scrollFooter } from '../components/footer';
+

@@ -17,21 +17,72 @@
   color: white;
 }
 
-.btn-lj-big-g {
-  color: #1EDD88;
-  border: 1px solid #1EDD88;
+// Main color in the front
+.btn-lj-big-m {
+  color: $main1;
+  border: 3px solid $main1;
   padding: 8px 24px;
   border-radius: 50px;
-  font-weight: lighter;
-  font-size: 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
 
-.btn-lj-big-g:hover {
+.btn-lj-big-m:hover {
   opacity: 1;
-  color: #1EDD88;
+  color: $main1;
+  border: 3px solid $main1;
 }
+
+// Main color in the back
+.btn-lj-big-m2 {
+  color: $main2;
+  // border: 3px solid $main1;
+  border: 1px solid #3E2F5B;
+  // box-sizing: border-box;
+  height: 50px;
+  width: 220px;
+  text-align: center;
+  background-color: $main1;
+  border-radius: 4px;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-lj-big-m2:hover {
+  opacity: 1;
+  color: $main2;
+  // border: 3px solid $main1;
+}
+
+
+.btn-lj-big-m3 {
+  color: $main2;
+  // border: 3px solid $main1;
+  border: 1px solid #3E2F5B;
+  // box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  background-color: $main1;
+  border-radius: 4px;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  // opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.btn-lj-big-m4:hover {
+  opacity: 1;
+  color: $main2;
+  // border: 3px solid $main1;
+}
+
 
 
 .upload-photo {

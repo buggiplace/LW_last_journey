@@ -1,59 +1,37 @@
 <body class = "nonav">
-    <div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1500&q=80');">
-      <div class="d-flex flex-column justify-content-center align-items-center">
-        <%= image_tag("logo_tree_w.png", class: "logo") %>
-        <h1>Last Journey</h1>
-        <%= link_to 'Get peace of mind now', funerals_dashboard_path, class: "btn btn-lj-big" %>
-      </div>
-    </div>
 
+<div class="container d-flex justify-content-space-between mt-5">
+  <div class="d-flex flex-column justify-content-between home-head">
+    <%= image_tag "logo_tree_b.png", class: "logo" %>
+    <h1>Last Journey</h1>
+    <h2>Organize your own funeral and have everything planned for the last great adventure of life.</h2>
+    <%= link_to 'Get peace of mind now', funerals_dashboard_path, class: "btn btn-lj-big-m3" %>
+    <%= link_to 'Representative Login', funerals_dashboard_path, class: "btn btn-lj-big-m3 mt-2" %>
+  </div>
 
-
-<div class="container d-flex justify-content-center flex-column align-items-center mt-4 mb-4">
-  <h2>Organize your own funeral and have everything worked out for the event of death.</h2>
-  <p>How it works</p>
+  <div>
+    <%= image_tag "i_cover.jpg", class: "illustration-cover" %>
+  </div>
 </div>
 
-
-<div class="container d-flex justify-content-between">
-      <div class="card-trip">
-      <img src="https://images.unsplash.com/photo-1544813545-4827b64fcacb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
-      <div class="card-trip-infos">
-        <div class="d-flex flex-column align-items-center">
-          <h2>Your Style</h2>
-          <p>Plan your funeral and last will - exactly like you want it. Its all about you afterall! </p>
-        </div>
-      </div>
-    </div>
-
-      <div class="card-trip">
-      <img src="https://images.unsplash.com/photo-1522621032211-ac0031dfbddc?ixlib=rb-1.2.1&auto=format&fit=crop&w=333&q=80" />
-      <div class="card-trip-infos">
-        <div class="d-flex flex-column align-items-center">
-          <h2>Choose your person of confidence</h2>
-          <p>Take a burden of yourself and your beloved ones by organizing everything in advance. </p>
-        </div>
-      </div>
-    </div>
-
-      <div class="card-trip">
-      <img src="https://images.unsplash.com/photo-1596751303335-ca42b3ca50c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=626&q=80" />
-      <div class="card-trip-infos">
-        <div class="d-flex flex-column align-items-center">
-          <h2>Your obituary</h2>
-          <p>Make sure no one will access your nude pics and your last wishes are passed on. </p>
-        </div>
-      </div>
-    </div>
+<div class="container sectionwrapper2">
+  <%= image_tag "i_done.jpg", class: "illustration-done" %>
+  <div class="mt-5">
+    <h2>Take a burden of yourself and your beloved ones</h2>
+    <p class = "home-textbox-1">Make sure no one will access your nude pics and your last wishes are passed on. Your life is digital, so should be your choices what happens to your digital life after death.</p>
+  </div>
+  <%= image_tag "i_cloud.jpg", class: "illustration-cloud-home1" %>
 </div>
 
-
-<div class="container d-flex justify-content-center flex-column align-items-center mt-4 mb-4">
-<p>Make sure no one will access your nude pics and your last wishes are passed on. Your life is digital, so should be your choices what happens to your digital life after death.</p>
-<p>You dont want boring church music at your funeral? Your life is colorful and so should be your last celebration. Tell your person of confidence what your last wishes are. </p>
-<p>Your digital accounts are out there, but what should happen to them? What should your beloved ones do with your laptop? </p>
-<p>Make life easier and get everything settled. It will take a big burden of your beloved ones. And once thing is for sure. We will all die! So get started today. </p>
-
+<div class="container sectionwrapper3">
+  <%= image_tag "i_obituary.jpg", class: "illustration-obituary" %>
+  <h2>It is all about you afterall</h2>
+  <p class = "home-textbox-2">Your Style</p>
+  <p class = "home-textbox-3">Plan your Individual funeral and last will</p>
+  <p class = "home-textbox-4">Your rep</p>
+  <p class = "home-textbox-5">Assign your representative</p>
+  <p class = "home-textbox-6">Your obituary</p>
+  <p class = "home-textbox-7">Find your peace while everything will happen according to your wished</p>
+  <%= image_tag "i_cloud.jpg", class: "illustration-cloud-home2" %>
 </div>
-
 </body>
