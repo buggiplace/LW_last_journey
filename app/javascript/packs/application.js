@@ -65,3 +65,4 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
 
+document.querySelector('#cemetery-4').addEventListener("click",console.log("selected"))
