@@ -18,10 +18,8 @@ class FuneralTypesController < ApplicationController
   end
 
   def update
-    # raise
-    # "redirect_to"=>"dashboard"
     if @funeral_type.update(funeral_type_params)
-      if params[:redirect_to] == "dashboard"
+      if params[:redirect_to] == "Save & exit"
         redirect_to funerals_dashboard_path
       else
         redirect_to funeral_type_path

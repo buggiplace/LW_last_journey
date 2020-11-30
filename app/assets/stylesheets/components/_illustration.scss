@@ -1,3 +1,13 @@
+
+// playlist / music illustrations
+
+.illustration-music{
+  width: 300px;
+  margin: 50px;
+}
+
+
+// funeral types illustrations
 .illustration-angel{
   width: 300px;
   margin: 50px;
@@ -12,6 +22,7 @@
   z-index: 1;
   width: -190px;
 }
+// below only illustrations on home
 
 .illustration-cover {
   width: 550px;
@@ -46,9 +57,9 @@
 .illustration-cloud-home1 {
   position: absolute;
   // width: 518px;
-  height: 268px;
+  height: 200px;
   // right: -200px;
-  left: 763px;
+  left: 65%;
 
   // top: 5%;
   z-index: 1;
@@ -58,9 +69,10 @@
 .illustration-cloud-home2 {
   position: absolute;
   // width: 518px;
-  height: 305px;
+  height: 250px;
   // right: -200px;
-  left: 1010px;
+  right: 0%;
+
 
   top: 300px;
 
