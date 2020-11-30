@@ -8,9 +8,18 @@ body {
     font-family: "Quicksand", sans-serif;
     font-size: 100%;
     // font-size: 10px;
-    background-color: #ECEAEF;
+    background-color: white;
 }
 
+// h2 {
+//   font-weight: 600;
+//   font-size: 30px;
+// }
+
+
+h2 {
+  color: $main1;
+}
 
 .logo {
   height: 20vh;
