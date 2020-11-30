@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  enum kind: [ :owner, :representative ]
+  enum kind: { owner: 0, representative: 1 }
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one_attached :profile_picture
@@ -24,3 +24,7 @@ class User < ApplicationRecord
     end
   end
 end
+
+
+  # scope :owners, -> { where(kind: 0) }
+  # scope :representatives, -> { where(kind: 1) }

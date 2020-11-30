@@ -8,4 +8,12 @@ class FuneralPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def new_rep?
+    record.user == user
+  end
+
+  def create_rep?
+    record.user == user
+  end
 end

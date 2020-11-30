@@ -1,0 +1,26 @@
+<h1>Hello World</h1>
+
+
+
+<% form_for([@funeral, @represenative]) do |f| %>
+  First name: <%= f.text_field :first_name %><br />
+  Last name : <%= f.text_field :last_name %><br />
+  Email :<%= email_field("user", "email") %>
+  <%= f.submit %>
+<% end %>
+
+<!-- <form action="/....." method="POST">
+  <label for="first_name">Enter your representative's first name</label>
+  <input type="text" id="first_name" placeholder="Peter">
+  <br>
+  <label for="last_name">Enter your representative's last name</label>
+  <input type="text" id="last_name" placeholder="Mustermann">
+  <br>
+  <label for="password">Enter your password</label>
+  <input type="password" id="password">
+  <br>
+  <label for="email">Enter your representative's email address</label>
+  <input type="text" id="email">
+  <br>
+  <input type="submit" value="Invite representative">
+</form> -->
