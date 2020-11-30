@@ -1,26 +1,26 @@
 <%= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-light m-1'%>
-<div class="container mt-5">
+<div class="container d-flex align-items-center justify-content-center flex-column mt-5">
 <h2>Where great spirits find their rest</h2>
 <p>There is not just one or the place to beginn jour last journey. It just depends on your preferences. Ask yourself what kind of last locale you want. Should it be one specific physical space? How much resources should it take to take care of that place? Do you have a personal connection to a place? Do you want this place to last and become a place for your family and friends to retrun to? </p>
-
-
-  <%= simple_form_for(@funeral_type) do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<div class="form-design">
+    <%= simple_form_for(@funeral_type) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
       <%= f.input :burial_type, label: 'Please choose your favourite burial type.',
-            as: :radio_buttons, collection_wrapper_tag: 'div',
-            collection_wrapper_class: 'category-wrapper',
-            item_wrapper_class: 'category-item',
-            input_html: {class: 'category-selector'},
-            collection: FuneralType::CATEGORIES %>
+              as: :radio_buttons, collection_wrapper_tag: 'div',
+              collection_wrapper_class: 'category-wrapper',
+              item_wrapper_class: 'category-item',
+              input_html: {class: 'category-selector'},
+              collection: FuneralType::CATEGORIES %>
       <p>Please specify below a favourite location for your funeral. A city without Street/ ZIP is sufficicient.</p>
       <%= f.input :loc_street, label: 'Street'%>
       <%= f.input :loc_zip, label: 'Zip code'%>
       <%= f.input :loc_city, label: 'City'%>
-      <%= f.input :comment, label: 'What else do you want to say?', :input_html => {:rows => 10}%>
+      <%= f.input :comment, label: 'What else do you want to say?', :as => :text, :input_html => {:style=> 'width: 100%;', 'rows' => 5}%>
       <%= f.button :submit, class: "btn btn-lj-big-g" %>
       </div>
   <% end %>
+</div>
 
 
 
@@ -29,12 +29,14 @@
 <div class = "d-flex align-items-center justify-content-center flex-column mt-5">
   <h2>Funeral locations in Europe</h2>
 <div id="map"
-     style="width: 50%; height: 300px;"
+     style="width: 75%; height: 300px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
 </div>
 
 <div class="container d-flex justify-content-center mt-5">
     <%= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-secondary btn-lg btn-block'%>
 </div>
+
 

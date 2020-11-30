@@ -2,14 +2,13 @@
 
 html,
 body {
-    margin-top: 30px;
-
+    margin-top: 30px; // bc of the navbar
     padding: 0px;
     box-sizing: border-box;
     font-family: "Quicksand", sans-serif;
     font-size: 100%;
     // font-size: 10px;
-    background-color: $light-gray;
+    background-color: #ECEAEF;
 }
 
 
@@ -21,3 +20,22 @@ body {
 .nonav {
   margin-top: -30px;
 }
+
+
+
+
+//tried this in order to position the footer at the bottom
+
+// body{
+//  width: 100%;
+//  min-height: 100vh;
+//  display: flex;
+//  flex-direction: column;
+// }
+// .container{
+// flex-grow: 1;
+// }
+
+// footer{
+// flex-grow: 0;
+// }

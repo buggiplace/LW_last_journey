@@ -23,7 +23,7 @@
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
-  font-size: 1.3rem;
+  font-size: 1rem;
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
@@ -31,6 +31,18 @@
 .btn-lj-big-g:hover {
   opacity: 1;
   color: #1EDD88;
+}
+
+
+.upload-photo {
+  color: #1EDD88;
+  border: 1px solid #1EDD88;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  font-size: 1rem;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
 
