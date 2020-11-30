@@ -62,24 +62,34 @@ body{
   position: relative;
   background-color: white;
   border-color: transparent;
-  height: 25vh;
+  height: 20vh;
+  width: 20vw;
   border: 3px solid $main1;
   border-radius: var(--spacing-l);
 }
 
 .card:hover {
   background-color: $main1;
+  // background: linear-gradient(90deg, rgba(62,47,91,1) 0%, rgba(255,255,255,0) 100%);
 }
 
 .card:hover .card__content h3 {
   color:white!important;
 }
 
+.card:hover .card__content p {
+  color:white!important;
+}
+
+.card:hover img {
+  display: none;
+}
+
 .card img {
     position: absolute;
     top: 12%;
     left: 50%;
-    width: 50%;
+    width: 40%;
     transition:
     filter 200ms linear,
     transform 200ms linear;
