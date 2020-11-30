@@ -1,0 +1,11 @@
+<h1><%= @obituary %></h1>
+
+<%= simple_form_for(@condolence, url: create_condolence_path(@obituary)) do |f| %>
+  <div class="form-inputs p-5 d-flex justify-content-center flex-column">
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :content %>
+  <div class="form-actions d-flex justify-content-center align-items-center">
+    <%= f.button :submit, class: "btn btn-lj-big-g" %>
+  </div>
+<% end %>
