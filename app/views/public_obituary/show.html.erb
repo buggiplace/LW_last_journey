@@ -1,5 +1,14 @@
 <h1><%= @obituary %></h1>
 
+<ul>
+  <% @obituary.funeral.condolences.each do |condolence| %>
+    <li>
+      <%= condolence.first_name %>
+      <%= condolence.content %>
+    </li>
+  <% end %>
+</ul>
+
 <%= simple_form_for(@condolence, url: create_condolence_path(@obituary)) do |f| %>
   <div class="form-inputs p-5 d-flex justify-content-center flex-column">
     <%= f.input :first_name %>
