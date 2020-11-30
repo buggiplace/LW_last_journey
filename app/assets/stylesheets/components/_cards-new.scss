@@ -62,10 +62,11 @@ body{
   position: relative;
   background-color: white;
   border-color: transparent;
-  height: 20vh;
+  height: 300px;
   width: 20vw;
-  border: 3px solid $main1;
+  // border: 3px solid $main1;
   border-radius: var(--spacing-l);
+  transition: 100ms linear;
 }
 
 .card:hover {
@@ -87,9 +88,9 @@ body{
 
 .card img {
     position: absolute;
-    top: 12%;
-    left: 50%;
-    width: 40%;
+    top: 10%;
+    left: 29%;
+    width: 50%;
     transition:
     filter 200ms linear,
     transform 200ms linear;
@@ -145,7 +146,7 @@ body{
   left: 0;
   padding: var(--spacing-l);
   position: absolute;
-  top: 0;
+  top: 50%;
 }
 
 .card .card__content:hover {
@@ -164,5 +165,5 @@ body{
   font-size: 1.9rem;
   text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
   line-height: 1.4;
-  word-spacing: 100vw;
+  // word-spacing: 100vw;
 }
