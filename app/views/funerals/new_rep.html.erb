@@ -1,15 +1,14 @@
 <h1>Hello World</h1>
 
-
-
-<% form_for([@funeral, @represenative]) do |f| %>
-  First name: <%= f.text_field :first_name %><br />
-  Last name : <%= f.text_field :last_name %><br />
-  Email :<%= email_field("user", "email") %>
-  <%= f.submit %>
+<%= form_tag funeral_create_rep_path(@funeral), method: :post do %>
+    <%= text_field_tag :first_name, placeholder: "Peter" %>
+    <%= text_field_tag :last_name, placeholder: "Mustermann" %>
+    <%= text_field_tag :email %>
+    <%= submit_tag %>
 <% end %>
 
-<!-- <form action="/....." method="POST">
+
+<!-- <form action="/funerals/:funeral_id/representative" method="POST">
   <label for="first_name">Enter your representative's first name</label>
   <input type="text" id="first_name" placeholder="Peter">
   <br>

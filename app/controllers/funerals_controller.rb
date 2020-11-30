@@ -19,16 +19,32 @@ class FuneralsController < ApplicationController
   end
 
   def create_rep
-    raise
-    authorize @representative
-    @representative = User.new(user_params)
+    authorize @funeral
+    @representative = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email])
+    @representative.password = "123456"
     @representative.kind = "representative"
+    # call a new method that notifies the user here
+    @funeral = Funeral.find(params[:funeral_id])
     if @representative.save
+      @funeral.representative = @representative
+      @funeral.save
       redirect_to funerals_dashboard_path, notice: 'Representative account was successfully created.'
     else
+      # still need to display all of the errors in the view
       render :new_rep
     end
   end
+
+
+# "authenticity_token"=>"Y6ydy4+laq4ASEEAe8rtNn76aE9msWOIyWhzDchf9Wewu7OIMMbw/nBuCXCnaN2GEOi5boCfpRhWyNAxBNHXCw==",
+#  "first_name"=>"peter",
+#  "last_name"=>"muster",
+#  "email"=>"hello@hello.com",
+#  "commit"=>"Save changes",
+#  "funeral_id"=>"2"
+
+
+
 
 
   # def documents
@@ -58,9 +74,9 @@ class FuneralsController < ApplicationController
   end
 
 
-  def user_params
-    params.require(:user).permit(:firs_name, :last_name, :email)
-  end
+  # def user_params
+  #   params.require(:user).permit(:firs_name, :last_name, :email)
+  # end
 
 end
 
