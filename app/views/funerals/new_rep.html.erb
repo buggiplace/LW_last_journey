@@ -1,8 +1,11 @@
 <h1>Hello World</h1>
 
 <%= form_tag funeral_create_rep_path(@funeral), method: :post do %>
-    <%= text_field_tag :first_name, placeholder: "Peter" %>
-    <%= text_field_tag :last_name, placeholder: "Mustermann" %>
+    <%= label_tag(:first_name, "First Name:") %>
+    <%= text_field_tag :first_name%>
+    <%= label_tag(:last_name, "Last Name:") %>
+    <%= text_field_tag :last_name%>
+    <%= label_tag(:email, "Email:") %>
     <%= text_field_tag :email %>
     <%= submit_tag %>
 <% end %>
