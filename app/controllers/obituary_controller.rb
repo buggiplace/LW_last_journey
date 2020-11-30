@@ -12,7 +12,11 @@ class ObituaryController < ApplicationController
       if params[:obituary][:photos]
         @obituary.photos.attach(params[:obituary][:photos])
       end
-      redirect_to obituary_path
+      if current_user == @obituary.funeral.user
+        redirect_to obituary_path
+      else
+        redirect_to representative_path(@funeral)
+      end
     else
       render "/obituary/show"
     end
@@ -21,8 +25,8 @@ class ObituaryController < ApplicationController
   private
 
   def find_obituary
-    @funeral = current_user.funeral
     @obituary = Obituary.find(params[:id])
+    @funeral = @obituary.funeral
     authorize @obituary
   end
 
