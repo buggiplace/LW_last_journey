@@ -2,7 +2,7 @@ class PlaylistsController < ApplicationController
   before_action :find_playlist
 
   def show
-    @exclude_banner = false
+    @exclude_banner = true
     @banner_title = "My Music"
     @embed_spotify_url = @playlist.spotify_url.match(/......................$/)
     @spotify_profile_url = @playlist.spotify_profile_url
@@ -11,7 +11,11 @@ class PlaylistsController < ApplicationController
 
   def update
     if @playlist.update(playlist_params)
-      redirect_to playlist_path
+      if params[:redirect_to] == "Save & exit"
+        redirect_to funerals_dashboard_path
+      else
+        redirect_to playlist_path
+      end
     else
       render "/playlist/show"
     end

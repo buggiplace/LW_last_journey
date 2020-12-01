@@ -1,49 +1,61 @@
-<div class="d-flex justify-content-center mt-5 mb-5">
+<!-- <div class="d-flex justify-content-center mt-5 mb-5">
   <h2>Manage your last wishes</h2>
-</div>
+</div> -->
 
 <!-- link to the fonts
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> -->
+<div class="container form-design mt-5 mb-5">
+        <h4 class="d-flex flex-start">Plan your funeral</h4>
+        <h2 class="d-flex flex-start">Dashboard</h2>
+</div>
 
 <div class="container">
   <div class="card-grid">
     <%= link_to funeral_type_path(@funeral), class: "card" do%>
-      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1544813545-4827b64fcacb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)"></div>
+      <!-- <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1544813545-4827b64fcacb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)"></div> -->
+      <%= image_tag "i_cloud.png" %>
       <div class="card__content">
         <p class="card__category">Define</p>
         <h3 class="card__heading">My funeral</h3>
       </div>
     <% end %>
     <%= link_to digital_will_path(@funeral), class: "card" do%>
-      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)"></div>
+      <!-- <div class="card__background" style="background-image: url(<%= asset_path "i_misc.jpg" %>)"></div> -->
+      <!-- <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)"></div> -->
+      <%= image_tag "i_cloud.png" %>
       <div class="card__content">
         <p class="card__category">Define</p>
         <h3 class="card__heading">My digitals</h3>
       </div>
     <% end %>
     <%= link_to obituary_path(@funeral), class: "card" do%>
-      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1596751303335-ca42b3ca50c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=626&q=80)"></div>
+    <%= image_tag "i_cloud.png" %>
+      <!-- <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1596751303335-ca42b3ca50c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=626&q=80)"></div> -->
+      <%= image_tag "i_obituary.png" %>
       <div class="card__content">
         <p class="card__category">Set rules for</p>
         <h3 class="card__heading">My obituary</h3>
      </div>
     <% end %>
     <%= link_to funeral_documents_path(@funeral), class: "card" do%>
-      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1562240020-ce31ccb0fa7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)"></div>
+      <!-- <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1562240020-ce31ccb0fa7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)"></div> -->
+      <%= image_tag "i_letter.png" %>
       <div class="card__content">
         <p class="card__category">Store</p>
         <h3 class="card__heading">My documents</h3>
      </div>
     <% end %>
     <%= link_to playlist_path(@funeral), class: "card" do%>
-      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=680&q=80"></div>
+      <!-- <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=680&q=80"></div> -->
+      <%= image_tag "i_music2.png" %>
       <div class="card__content">
         <p class="card__category">Define</p>
         <h3 class="card__heading">My music</h3>
      </div>
     <% end %>
     <%= link_to funeral_create_rep_path(@funeral), class: "card" do%>
-      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1522621032211-ac0031dfbddc?ixlib=rb-1.2.1&auto=format&fit=crop&w=333&q=80)"></div>
+      <!-- <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1522621032211-ac0031dfbddc?ixlib=rb-1.2.1&auto=format&fit=crop&w=333&q=80)"></div> -->
+      <%= image_tag "i_angel.png" %>
       <div class="card__content">
         <p class="card__category">Set</p>
         <h3 class="card__heading">My Representative</h3>

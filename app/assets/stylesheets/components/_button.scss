@@ -59,7 +59,7 @@
   // border: 3px solid $main1;
 }
 
-
+// button 100 % width
 .btn-lj-big-m3 {
   color: $main2;
   // border: 3px solid $main1;
@@ -77,9 +77,33 @@
   transition: opacity 0.3s ease;
 }
 
-.btn-lj-big-m4:hover {
+.btn-lj-big-m3:hover {
   opacity: 1;
   color: $main2;
+  // border: 3px solid $main1;
+}
+
+
+.btn-lj-big-m4 {
+  color: $main1;
+  // border: 3px solid $main1;
+  border: 1px solid #3E2F5B;
+  // box-sizing: border-box;
+  height: 50px;
+  width: 220px;
+  text-align: center;
+  background-color: white;
+  border-radius: 4px;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-lj-big-m4:hover {
+  opacity: 1;
+  color: $main1;
   // border: 3px solid $main1;
 }
 
