@@ -64,13 +64,13 @@ body{
   border-color: transparent;
   height: 300px;
   width: 20vw;
-  // border: 3px solid $main1;
+  border: 3px solid $main1;
   border-radius: var(--spacing-l);
   transition: 100ms linear;
 }
 
 .card:hover {
-  background-color: $main1;
+  // background-color: $main1;
   // background: linear-gradient(90deg, rgba(62,47,91,1) 0%, rgba(255,255,255,0) 100%);
 }
 
@@ -82,20 +82,29 @@ body{
   color:white!important;
 }
 
-.card:hover img {
-  display: none;
+.card:hover .card__content {
+  background-color: $main1;
 }
+
+// .card:hover img {
+//   display: none;
+// }
 
 .card img {
     position: absolute;
-    top: 10%;
-    left: 29%;
-    width: 50%;
+    top: 3%;
+    left: 23%;
+    width: 47%;
     transition:
     filter 200ms linear,
     transform 200ms linear;
     z-index: 18;
 }
+
+// .card a {
+//     color: $main1!important;
+// }
+
 
 .card:before{
   content: '';
@@ -146,7 +155,8 @@ body{
   left: 0;
   padding: var(--spacing-l);
   position: absolute;
-  top: 50%;
+  top: 48%;
+  width:100%;
 }
 
 .card .card__content:hover {
