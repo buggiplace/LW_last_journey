@@ -7,6 +7,8 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("trix")
+require("@rails/actiontext")
 
 // custom compontent imports
 // require ("components/navbar-new")
@@ -41,30 +43,15 @@ import { initSelect2 } from '../components/init_select2';
 // import { initSelect2 } from '../components/init_select2';
 
 import { initChoices } from '../components/init_choices';
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  initChoices();
-});
-
-// document.addEventListener("turbolinks:load", function() {
-//   initSelect2();
-// });
-
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-});
-
-require("trix")
-require("@rails/actiontext")
-
-
+import { filterBurialType } from '../components/filter_burial_type';
 import { initMapbox } from '../plugins/init_mapbox';
-
+import "controllers"
 document.addEventListener('turbolinks:load', () => {
+  // Call your functions here, e.g:
+  // initChoices();
   initMapbox();
-})
+  filterBurialType();
+});
 
 // import { scrollFooter } from '../components/footer';
 
-import "controllers"
