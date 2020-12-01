@@ -15,7 +15,8 @@
 
       <!-- deactivated this below input_html: { multiple: true } -->
       <%= f.input :photos, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
-      <%= f.input :spotify_list, label: "Spotify: Paste the Spotify URI. Click on SHARE in your spotify playlist and copy the bottom Spotify URI"%>
+       <!-- deactivated the spotify list here, because we use the one from Playlist -->
+      <%#= f.input :spotify_list, label: "Spotify: Paste the Spotify URI. Click on SHARE in your spotify playlist and copy the bottom Spotify URI"%>
 
       <%= f.input :guestlist, label: "Enter your VIP funeral guests", input_html: {multiple: true, class: "js-choice select-multiple"} %>
 
