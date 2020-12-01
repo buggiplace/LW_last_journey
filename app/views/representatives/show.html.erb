@@ -1,59 +1,64 @@
 <% if @funeral.representative == current_user%>
-Hello <%= @funeral.representative.first_name%>.
-<br>
-You are the representative of:
-<%= @funeral.user.first_name%>
-<br>
-<br>
-<br>
-Last words of <%= @funeral.user.first_name%> for the obituary:
-<br>
-"<%= @funeral.obituary.last_words%>""
-<br>
-<br>
-Spotify playlist for the obituary:
-<br>
- <%= @funeral.obituary.spotify_list%>
- <br>
- Guestlist:
- <br>
- <%= @funeral.obituary.guestlist%>
 
-<br>
+<div class="container d-flex align-items-center justify-content-center flex-row">
+  <div>
+    <h2>Hello <%= @funeral.representative.first_name %> </h2>
+    <p>Look at the last wishes of <%= @funeral.user.first_name %> and edit the obituary</p>
+  </div>
+  <%= image_tag "i_angel.jpg", class: "illustration-angel" %>
+</div>
 
 
+<div class="container d-flex justify-content-center align-items-center flex-column">
 
-  <%= simple_form_for(@funeral.obituary) do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="sectionwrapper1">
+    <%= image_tag "i_cloud.jpg", class: "illustration-cloud" %>
+    <div class="container form-exit d-flex flex-row justify-content-between align-items-center">
+        <div>
+          <h3>Funeral Wish</h3>
+            <p>Burial Type: <%= @funeral.funeral_type.burial_type %></p>
+            <p>Other Wishes: <%= @funeral.funeral_type.comment %></p>
+          <h3>Digital Will</h3>
+            <p>Accounts to cancel: <% @funeral.digital_will.cancel_accounts.each do |account| %>
+                <%= account %>,
+            <% end %> </p>
+            <p>Other Wishes: <%= @funeral.digital_will.comment %> </p>
+        </div>
+      </div>
+    </div>
 
-      <%= f.input :death_date%>
-      <%= f.input :death_location%>
-      <%= f.input :funeral_time%>
-      <%= f.input :funeral_location%>
-      <%= f.input :funeral_info%>
-<!-- deactivated code block below bc of conflicts with heroku -->
-<!--       <div class="form-inputs">
-        <%#= f.rich_text_area :rich_body %>
-      </div> -->
 
-      <!-- deactivated this below input_html: { multiple: true } -->
+  <div class="form-design">
+      <%= simple_form_for(@funeral.obituary) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+        <h4 class="d-flex flex-start">Obituary Page</h4>
+        <h2 class="d-flex flex-start">Prepare the obituary content</h2>
+        <%= f.input :death_date, html5:true%>
+        <%= f.input :death_location, label: 'Death Location', input_html: {class: 'textfield'}%>
+        <%= f.input :funeral_time, html5:true%>
+        <%= f.input :funeral_location, label: 'Funeral Location', input_html: {class: 'textfield'}%>
+        <%= f.input :funeral_info, label: 'What else do you want to say about the funeral?', :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 5}%>
+    </div>
 
 
-      <%= f.button :submit, class: "btn btn-lj-big-g" %>
 
-  <% end %>
+    <div class="sectionwrapper1">
+      <%= image_tag "i_cloud.jpg", class: "illustration-cloud" %>
+      <div class="container form-exit d-flex flex-row justify-content-between align-items-center">
+        <h3>Once you are ready, press on Publish</h3>
+<!--         Publishing does not work yet -->
+        <%= f.button :submit, value: "Save", class: "btn btn-lj-big-m2" %>
+        <%= f.submit name: "redirect_to", value: "Publish", class: "btn btn-lj-big-m2"%>
+        <% end %>
+      </div>
+    </div>
+</div>
 
-<!--
-    t.string "last_words"
-    t.string "spotify_list"
-    t.datetime "death_date"
-    t.string "death_location"
-    t.datetime "funeral_time"
-    t.string "funeral_location"
-    t.string "funeral_info"
 
- -->
+
+
+<!-- if a user is not authorized they see the following: -->
 <% else %>
 Go away. You are not authorized.
 <% end %>
