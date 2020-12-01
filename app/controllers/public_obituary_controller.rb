@@ -5,6 +5,7 @@ class PublicObituaryController < ApplicationController
   before_action :find_obituary
 
   def show
+    @exclude_banner = true
     @condolence = Condolence.new
   end
 
