@@ -6,6 +6,7 @@ class FuneralTypesController < ApplicationController
     @banner_url = "https://images.unsplash.com/photo-1544813545-4827b64fcacb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
     @banner_title = "My Funeral"
     @locations = Location.all
+    @locations = @locations.where(cemetery_type: params[:burial_type]) if params[:burial_type].present?
     # the `geocoded` scope filters only locations with coordinates (latitude & longitude)
     @markers = @locations.geocoded.map do |location|
       {

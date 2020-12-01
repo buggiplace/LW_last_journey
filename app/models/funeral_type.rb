@@ -12,6 +12,6 @@ class FuneralType < ApplicationRecord
     will_save_change_to_loc_street? && will_save_change_to_loc_zip? && will_save_change_to_loc_city?
   end
 
-CATEGORIES = ["Burial", "Burial at sea", "Tree funeral", "Woodland burial", "Diamond burial", "Urn burial", "Sky burial", "Undecided"]
+CATEGORIES = ["Burial", "Burial at sea 🌊", "Tree funeral", "Woodland burial", "Diamond burial", "Urn burial", "Sky burial", "Undecided"]
 
 end

@@ -11,6 +11,17 @@
 
 
   <div class="form-design">
+      <%= form_tag funeral_type_path(@funeral_type), method: :get do %>
+      <% FuneralType::CATEGORIES.each do |category| %>
+        <%= radio_button_tag :burial_type, category, params[:burial_type]  %>
+        <%= label_tag category %>
+        <% end %>
+      <%= submit_tag "Filter", class: "btn btn-primary" %>
+      <% end %>
+
+    f.input :title, :as => :hidden, :input_html => { :value => params[:burial_type] }
+
+
       <%= simple_form_for(@funeral_type) do |f| %>
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
