@@ -1,3 +1,4 @@
+
 <h1><%= @obituary %></h1>
 
 <ul>
@@ -5,6 +6,9 @@
     <li>
       <%= condolence.first_name %>
       <%= condolence.content %>
+      <% if policy(condolence).destroy? %>
+        <%= link_to 'Delete', condolence_path(condolence), method: 'delete', data: { confirm: "Are you sure?" } %>
+      <% end %>
     </li>
   <% end %>
 </ul>

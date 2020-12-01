@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'locations/index'
-  get 'condolences/new'
-  get 'condolences/create'
+  resources 'condolences', only: [:destroy]
   devise_for :users
   root to: 'pages#home'
   get "/blog", to: 'pages#blog'
