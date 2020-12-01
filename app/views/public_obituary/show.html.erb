@@ -1,3 +1,8 @@
+<!-- app/views/offers/show.html.erb -->
+<% content_for :meta_title, @banner_title %>
+<% content_for :meta_description, @banner_title %>
+<% content_for :meta_image, @banner_url %>
+
 <% if @obituary.public %>
 
 <h2>Last Words of <%= @obituary.funeral.user.first_name%></h2>
