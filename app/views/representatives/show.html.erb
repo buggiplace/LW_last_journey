@@ -26,21 +26,29 @@
             <p>Other Wishes: <%= @funeral.digital_will.comment %> </p>
         </div>
         <div class="category-box">
-          <h3>Digital Will</h3>
+          <h3>Funeral Playlist</h3>
             <p>Accounts to cancel: <% @funeral.digital_will.cancel_accounts.each do |account| %>
                 <%= account %>,
             <% end %> </p>
             <p>Other Wishes: <%= @funeral.digital_will.comment %> </p>
         </div>
-        <div class="category-box">
-          <h3>Digital Will</h3>
-            <p>Accounts to cancel: <% @funeral.digital_will.cancel_accounts.each do |account| %>
-                <%= account %>,
-            <% end %> </p>
-            <p>Other Wishes: <%= @funeral.digital_will.comment %> </p>
-        </div>
+
       </div>
+
     </div>
+    <div id="document" class="category-box ">
+        <h3>Documents</h3>
+          <ul class="picturelist mt-5">
+          <% @funeral.documents.each do |document| %>
+            <li class="d-flex justify-content-center flex-column align-items-center preview-doc">
+              <div class="pdf-preview">
+                <%= cl_image_tag document.file.key, format: :jpg%>
+              </div>
+              <%= link_to document.file_name, cloudinary_url(document.file.key), target: "_blank"%>
+            </li>
+          <% end %>
+         </ul>
+      </div>
 
 
   <div class="form-design">
