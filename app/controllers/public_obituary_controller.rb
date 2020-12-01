@@ -6,8 +6,8 @@ class PublicObituaryController < ApplicationController
 
   def show
     @condolence = Condolence.new
-  end  
-  
+  end
+
   def create_condolences
     @obituary = Obituary.find(params[:obituary_id])
     @condolence = @obituary.funeral.condolences.build(condolence_params)
@@ -20,7 +20,7 @@ class PublicObituaryController < ApplicationController
 
   private
 
-  def condolence_params 
+  def condolence_params
     params.require(:condolence).permit(:first_name, :last_name, :content)
   end
 
@@ -30,6 +30,6 @@ class PublicObituaryController < ApplicationController
     @disable_nav = true
 
     @banner_url = "https://images.unsplash.com/photo-1544813545-4827b64fcacb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
-    @banner_title = "#{@obituary.funeral.user.first_name}'s Obituary"
+    @banner_title = "Obituary of #{@obituary.funeral.user.first_name}"
   end
 end

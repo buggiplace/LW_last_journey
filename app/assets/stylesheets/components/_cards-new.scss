@@ -56,6 +56,22 @@ body{
     grid-template-columns: repeat(3, 1fr);
   }
 }
+// Lenas section
+.category-container {
+  padding: 0;
+}
+
+.category-box {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    background-color: #ECEAEF;
+    /* height: 134px; */
+    border-radius: 20px;
+    border: 3px solid #3E2F5B;
+    /* margin-right: 5px; */
+    width: 45%;
+    padding: 15px;
+  }
 
 .card{
   list-style: none;
