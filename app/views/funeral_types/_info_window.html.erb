@@ -1,4 +1,9 @@
-<h2><%= location.name %></h2>
-<p><%= location.cemetery_type %></p>
-<p><%= location.address %></p>
-<button id="cemetery-<%= location.id %>">Select</button>
+<div data-target="location.cemetery">
+  <h2 class="location_name"><%= location.name %></h2>
+  <p1><strong><%= location.cemetery_type %></strong></p1>
+  <br>
+  <p2><%= location.address %></p2>
+  <br>
+  <button class="btn-lj-small-info" data-action="click->location#check">Select</button>
+</div>
+
