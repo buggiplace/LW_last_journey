@@ -31,8 +31,8 @@
                 input_html: {class: 'category-selector'},
                 collection: FuneralType::CATEGORIES %>
         <h4 class="d-flex flex-start default-space-top">Funeral Location</h4>
-        <h2 class="d-flex flex-start">One last trip</h2>
-        <p>Select your eternal hunting grounds on the map (keep calm - there is enough space for everyone)</p>
+        <h2 class="d-flex flex-start">Keep calm - there is enough space for everyone</h2>
+        <p>Select your eternal hunting grounds on the map</p>
           <div id="map"
                style="width: 100%; height: 400px;"
                data-markers="<%= @markers.to_json %>"
@@ -40,7 +40,7 @@
           </div>
         <%#= f.input :loc_street, label: 'Street'%>
         <%#= f.input :loc_zip, label: 'Zip code'%>
-        <%= f.input :loc_city, label: 'Current selection', input_html: {class: 'textfield', data: { target: "location.cityName" }} %>
+        <%= f.input :loc_city, label: 'Location selected from map', input_html: {class: 'textfield', data: { target: "location.cityName" }} %>
         <h4 class="d-flex flex-start default-space-top">Further preferences</h4>
         <h2 class="d-flex flex-start">My last post-it on the fridge</h2>
         <%= f.input :comment, label: 'Further funeral preferences, like location decoration, dresscode...', :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 5}%>
