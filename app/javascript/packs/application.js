@@ -66,3 +66,5 @@ document.addEventListener('turbolinks:load', () => {
 })
 
 // import { scrollFooter } from '../components/footer';
+
+import "controllers"

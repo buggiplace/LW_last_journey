@@ -16,6 +16,14 @@ body {
 //   font-size: 30px;
 // }
 
+a {
+  color: $main1;
+}
+
+a:hover{
+  color: $main1;
+}
+
 h1 {
     color: $main1;
     font-weight: 700;

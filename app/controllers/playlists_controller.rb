@@ -4,8 +4,10 @@ class PlaylistsController < ApplicationController
   def show
     @exclude_banner = true
     @banner_title = "My Music"
-    @embed_spotify_url = @playlist.spotify_url.match(/......................$/)
     @spotify_profile_url = @playlist.spotify_profile_url
+    if @playlist.spotify_url != nil
+      @embed_spotify_url = @playlist.spotify_url.match(/......................$/)
+    end
     @banner_url = "https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=680&q=80"
   end
 
