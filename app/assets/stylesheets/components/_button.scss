@@ -73,14 +73,15 @@
   padding: 10px;
   font-weight: 600;
   font-size: 1.1rem;
-  opacity: 0.6;
+  opacity: 1;
   transition: opacity 0.3s ease;
 }
 
 .btn-lj-big-m2:hover {
   opacity: 1;
-  color: $main2;
-  // border: 3px solid $main1;
+  color: $main1;
+  border: 3px solid $main1;
+  background-color: transparent;
 }
 
 // button 100 % width
