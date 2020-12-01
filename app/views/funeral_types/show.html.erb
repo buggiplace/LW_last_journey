@@ -7,7 +7,7 @@
   <%= image_tag "i_angel.jpg", class: "illustration-angel" %>
 </div>
 
-<div class="container d-flex justify-content-center align-items-center flex-column">
+<div class="container d-flex justify-content-center align-items-center flex-column" data-controller="location">
 
 
   <div class="form-design">
@@ -32,7 +32,7 @@
           </div>
         <%#= f.input :loc_street, label: 'Street'%>
         <%#= f.input :loc_zip, label: 'Zip code'%>
-        <%= f.input :loc_city, label: 'Current selection', input_html: {class: 'textfield'} %>
+        <%= f.input :loc_city, label: 'Current selection', input_html: {class: 'textfield', data: { target: "location.cityName" }} %>
         <h4 class="d-flex flex-start default-space-top">Further preferences</h4>
         <h2 class="d-flex flex-start">My last post-it on the fridge</h2>
         <%= f.input :comment, label: 'Further funeral preferences, like location decoration, dresscode...', :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 5}%>
