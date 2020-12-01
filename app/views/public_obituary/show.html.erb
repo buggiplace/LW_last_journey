@@ -1,3 +1,8 @@
+<!-- app/views/offers/show.html.erb -->
+<% content_for :meta_title, @banner_title %>
+<% content_for :meta_description, @banner_title %>
+<% content_for :meta_image, @banner_url %>
+
 <% if @obituary.public %>
 <div class="container d-flex justify-content-center align-items-center flex-column">
   <h2>In memory of</h2>
