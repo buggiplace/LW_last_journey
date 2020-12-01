@@ -1,7 +1,37 @@
 <% if @obituary.public %>
 
-<h3>Last Words of <%= @obituary.funeral.user.first_name%></h3>
+<h2>Last Words of <%= @obituary.funeral.user.first_name%></h2>
 "<%= @obituary.last_words %>"
+
+<h2>Death Date</h2>
+"<%= @obituary.death_date %>"
+
+<h2>Death Location</h2>
+"<%= @obituary.death_location %>"
+
+<h2>Funeral time</h2>
+"<%= @obituary.funeral_time %>"
+
+<h2>Funeral Location</h2>
+"<%= @obituary.funeral_location %>"
+
+<h2>Funeral Info</h2>
+"<%= @obituary.funeral_info%>"
+
+
+<h2>Spotify list</h2>
+"<%= @obituary.spotify_list %>"
+
+    <div class="container d-flex justify-content-center align-items-center flex-column">
+
+      <% if @obituary.spotify_list.present? %>
+        <div class = "d-flex justify-content-center align-items-center spotifyplayer mt-5">
+          <iframe src="https://open.spotify.com/embed/playlist/<%=@obituary.spotify_list %>" width="100%" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+      <% end %>
+    </div>
+
+
 <ul>
   <% @obituary.funeral.condolences.each do |condolence| %>
     <li>
