@@ -1,6 +1,7 @@
+<% if @obituary.public %>
 
-<h1><%= @obituary %></h1>
-
+<h3>Last Words of <%= @obituary.funeral.user.first_name%></h3>
+"<%= @obituary.last_words %>"
 <ul>
   <% @obituary.funeral.condolences.each do |condolence| %>
     <li>
@@ -21,4 +22,8 @@
   <div class="form-actions d-flex justify-content-center align-items-center">
     <%= f.button :submit, class: "btn btn-lj-big-g" %>
   </div>
+<% end %>
+
+<% else %>
+This site is not public.
 <% end %>
