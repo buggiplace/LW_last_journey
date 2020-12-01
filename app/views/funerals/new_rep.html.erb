@@ -21,18 +21,24 @@
 
 <div class="container d-flex justify-content-center align-items-center flex-column" data-controller="location">
 
-
   <div class="form-design">
-      <%= form_tag funeral_create_rep_path(@funeral), method: :post do %>
-        <h4 class="d-flex flex-start">Assign Representative</h4>
+      <%= form_tag funeral_create_rep_path(@funeral), method: :post, class: "form-design" do %>
+        <% if @funeral.representative.present? %>
+         <h3 class="d-flex flex-start">Currently assigned:
+          <%= @funeral.representative.first_name %>  <%= @funeral.representative.last_name %>
+         </h3>
+        <% end%>
+        <br>
+        <h4 class="d-flex flex-start">Assign new representative</h4>
         <%= label_tag(:first_name, "First Name:") %>
         <%= text_field_tag :first_name%>
         <%= label_tag(:last_name, "Last Name:") %>
         <%= text_field_tag :last_name%>
         <%= label_tag(:email, "Email:") %>
         <%= text_field_tag :email %>
-<!--         <%= submit_tag %> -->
+
     </div>
+
 
     <div class="sectionwrapper1">
       <%= image_tag "i_cloud.jpg", class: "illustration-cloud" %>
@@ -43,7 +49,8 @@
         <%#= f.button :submit, class: "btn btn-lj-big-m2" %>
         <%#= f.submit "save and leave", class: "btn btn-lj-big-m2" %>
         <%#= link_to 'submit', funerals_dashboard_path, :onclick => "$('#edit_funeral_type_4').submit()" %>
-        <%= submit_tag %>
+        <%#= submit_tag %>
+             <%= submit_tag %>
         <%#= f.submit name: "redirect_to", value: "Save & exit", class: "btn btn-lj-big-m2"%>
         <% end %>
       </div>
