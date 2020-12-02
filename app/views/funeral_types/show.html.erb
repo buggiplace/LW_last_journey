@@ -1,7 +1,7 @@
-<%= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-light m-1'%>
+<%#= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-light m-1'%>
 <div class="container d-flex align-items-center justify-content-center flex-row">
   <div>
-    <h2>Funeral type</h2>
+    <h2>My funeral</h2>
     <p>Your life is unique - and so will be your last journey. What kind of resting place do you imagine for yourself? Do you fancy a specific physical space? How much resources should it take to take care of that place? Do you have a personal connection to a place? Do you want it to be a place to retrun to? Whatever you do, make sure the neighboorhood is to your liking 😇.</p>
   </div>
   <%= image_tag "i_angel.jpg", class: "illustration-angel" %>
@@ -53,11 +53,6 @@
       <%= image_tag "i_cloud.jpg", class: "illustration-cloud" %>
       <div class="container form-exit d-flex flex-row justify-content-between align-items-center">
         <h3>All good here, let's move on to the next section</h3>
-        <%#= link_to 'Save', funerals_dashboard_path, class: 'btn btn-lj-big-m2'%>
-        <%#= link_to 'Save & Exit', funerals_dashboard_path, class: 'btn btn-lj-big-m2'%>
-        <%#= f.button :submit, class: "btn btn-lj-big-m2" %>
-        <%#= f.submit "save and leave", class: "btn btn-lj-big-m2" %>
-        <%#= link_to 'submit', funerals_dashboard_path, :onclick => "$('#edit_funeral_type_4').submit()" %>
         <%= f.button :submit, value: "Save", class: "btn btn-lj-big-m2" %>
         <%= f.submit name: "redirect_to", value: "Save & exit", class: "btn btn-lj-big-m2"%>
         <% end %>
