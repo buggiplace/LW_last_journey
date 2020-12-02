@@ -14,6 +14,7 @@ class FuneralsController < ApplicationController
   end
 
   def new_rep
+    @exclude_banner = true
     authorize @funeral
     @representative = User.new
   end

@@ -51,6 +51,25 @@
       </div>
       <% end %>
       </div>
+
+<!-- app/views/offers/show.html.erb -->
+<% content_for :meta_title, @banner_title %>
+<% content_for :meta_description, @banner_title %>
+<% content_for :meta_image, @banner_url %>
+
+<% if @obituary.public %>
+<div class="container d-flex justify-content-center align-items-center flex-column">
+  <h2>In memory of</h2>
+  <h1><%= @obituary.funeral.user.first_name%></h1>
+
+<div class="obituary-wrapper">
+  <div class="container category-container d-flex flex-wrap justify-content-between align-items-top">
+    <div class="category-box">
+      <h3>We miss you</h3>
+      <% if @obituary.photos.last.present? %>
+        <%= cl_image_tag @obituary.photos.last.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+
     </div>
   </div>
 
