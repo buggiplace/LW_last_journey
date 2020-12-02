@@ -65,7 +65,7 @@ body{
   background-color: white;
   border-color: transparent;
   height: 300px;
-  width: 20vw;
+  width: 300px;
   border: 3px solid $main1;
   border-radius: var(--spacing-l);
   transition: 100ms linear;
@@ -91,6 +91,9 @@ body{
 // .card:hover img {
 //   display: none;
 // }
+
+
+
 
 .card img {
     position: absolute;
@@ -149,7 +152,7 @@ body{
 
 // below for illustrations
 .card-grid:hover > .card:not(:hover) img {
-  filter: brightness(0.7) saturate(0.9) contrast(1.2) blur(2px);
+  filter: brightness(0.8) saturate(0.9) contrast(1.1);
 }
 
 
@@ -174,8 +177,30 @@ body{
 
 .card__heading{
   color: $main1;
-  font-size: 1.9rem;
+  font-size: 1.8rem;
   text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
-  line-height: 1.4;
+  line-height: 1.6;
   // word-spacing: 100vw;
+}
+
+// CARD HEADING SIZE DEPENDENT ON SCREEN SIZE
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .card__heading {
+    font-size: 1rem;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .card__heading {
+    font-size: 1.4rem;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .card__heading {
+    font-size: 1.6rem;
+  }
 }
