@@ -2,16 +2,18 @@ class DigitalWillsController < ApplicationController
   before_action :find_digital_will
 
   def show
-    @exclude_banner = false
+    @exclude_banner = true
     @banner_title = "Digital Will"
     @banner_url = "https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
   end
 
   def update
-    if @digital_will.update(digital_will_params)
-      redirect_to digital_will_path
-    else
-      render "/digital_will/show"
+      if @digital_will.update(digital_will_params)
+        if params[:redirect_to] == "Save & exit"
+          redirect_to funerals_dashboard_path
+      else
+        render "/digital_will/show"
+      end
     end
   end
 

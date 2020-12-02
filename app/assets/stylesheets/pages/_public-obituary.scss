@@ -1,0 +1,145 @@
+//based on wrapper .sectionwrapper1
+
+.obituary-wrapper {
+    position: relative;
+    width: 100%;
+}
+//based on .category-box from representative view, but full width
+.category-box-full {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    background-color: #ECEAEF;
+    /* height: 134px; */
+    border-radius: 20px;
+    border: 3px solid #3E2F5B;
+    /* margin-right: 5px; */
+    width: 100%;
+    padding: 15px;
+  }
+
+//below classes from mo for the proposal that is above lenas
+
+.cursiv-style h1 {
+  font-family: 'Niconne', cursive;
+  font-size: 32px;
+  color: black;
+  font-weight: bold;
+}
+
+.cursiv-style h2 {
+ font-family: 'Niconne', cursive;
+  font-size: 27px;
+  font-weight: bold;
+  color: black;
+}
+
+.cursiv-style h3 {
+  font-family: 'Niconne', cursive;
+  font-size: 25px;
+
+  color: black;
+}
+
+.cursiv-style label {
+  font-family: 'Niconne', cursive;
+  font-size: 25px;
+
+  color: black;
+}
+
+.cursiv-style p {
+  font-family: 'Niconne', cursive;
+  font-size: 20px;
+  color: black;
+}
+
+.border-top {
+  border-top: 2px dotted black;
+}
+
+.notice {
+  border: 10px solid black;
+  padding: 30px;
+  padding-top: 3%;
+  height: 100vh;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.default-padding-top {
+  padding-top: 10px;
+}
+
+.default-padding-box {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 2%;
+
+}
+
+.notice img {
+  padding-top: 3%;
+
+}
+
+.notice ul {
+  font-family: 'Niconne', cursive;
+  font-size: 30px;
+}
+
+//cards for condolences
+
+.condolences {
+  border: 10px solid black;
+  padding: 30px;
+  padding-top: 3%;
+}
+
+
+.card-condolence {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  //box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+
+}
+
+.card-condolence img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-condolence h2 {
+
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+.card-condolence p {
+
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.card-condolence a {
+
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.card-condolence .card-condolence-infos {
+  padding: 16px;
+  flex-grow: 1;
+}

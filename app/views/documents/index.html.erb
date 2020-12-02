@@ -13,7 +13,7 @@
       <label class="btn upload-photo">
         Add a file!
         <span style="display:none;">
-          <%= f.input :file, as: :file%>
+          <%= f.input :photo, as: :file, input_html: { class: 'd-none'} %>
         </span>
       </label>
       <p><i>Please be aware that in Germany only the original signed documents are legally binding.</i></p>
@@ -32,20 +32,26 @@
 
     <ul class="picturelist documents-grid mt-5">
       <% @documents.each do |document| %>
-        <li class="d-flex justify-content-center flex-column align-items-center document-single">
+        <li class="d-flex justify-content-around flex-row align-items-center document-single">
           <%= link_to cloudinary_url(document.file.key), target: "_blank" do %>
-          <%= cl_image_tag document.file.key, format: :jpg, height: 400, width: 500, crop: :fill %>
+          <%= cl_image_tag document.file.key, format: :jpg, height: 267, width: 210, crop: :fill %>
           <% end %>
-          <p>Filename: <%= document.file_name %></p>
-          <%= link_to 'Delete', funeral_document_path(@funeral, document), method: 'delete', data: { confirm: "Are you sure?" }, class: "btn upload-photo mt-3 mb-2" %>
-        </li>
+            <div>
+              <p>Filename: <%= document.file_name %></p>
+              <%= link_to 'Delete', funeral_document_path(@funeral, document), method: 'delete', data: { confirm: "Are you sure?" }, class: "btn upload-photo mt-3 mb-2" %>
+            </div>
+          </li>
       <% end %>
       </ul>
     </div>
+
+
+    <div class="sectionwrapper1">
+      <%= image_tag "i_cloud.jpg", class: "illustration-cloud" %>
+      <div class="container form-exit d-flex flex-row justify-content-between align-items-center">
+        <h3>All good here, let's move on to the next section</h3>
+        <%= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-lj-big-m2'%>
+      </div>
+    </div>
+
 </div>
-
-<div class="container d-flex justify-content-center mt-5">
-    <%= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-secondary btn-lg btn-block'%>
-</div>
-
-

@@ -40,11 +40,12 @@ import { initSelect2 } from '../components/init_select2';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-import { initChoices } from '../components/init_choices';
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  initChoices();
-});
+// import { initChoices } from '../components/init_choices';
+// document.addEventListener('turbolinks:load', () => {
+//   // Call your functions here, e.g:
+//   initChoices();
+// });
+
 
 // document.addEventListener("turbolinks:load", function() {
 //   initSelect2();
@@ -64,6 +65,10 @@ import { initMapbox } from '../plugins/init_mapbox';
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
+
+// import { previewImageOnFileSelect } from '../components/photo-preview.js';
+
+
 
 // import { scrollFooter } from '../components/footer';
 
