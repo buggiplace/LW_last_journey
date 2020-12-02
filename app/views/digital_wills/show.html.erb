@@ -2,7 +2,7 @@
 
 <div class="container d-flex align-items-center justify-content-center flex-column mt-5">
   <div>
-    <h2>My digital will</h2>
+    <h2>Your digital will</h2>
     <p>Well, you won't be completely gone, once you are gone. Contracts, data and liabilities stay as they are when no one looks after them. That could cause problems for those who inherit or they miss out on all of your wealth 😉. Make sure there will be no surprises by managing your digital afterlife already now.</p>
   </div>
   <!-- <div class="d-flex flex-row justify-content-between"> -->
@@ -38,15 +38,11 @@
             <h2 class="d-flex flex-start">One last thing...</h2>
             <%= f.input :hardware, input_html: {class: 'select-input textfield'}, label: 'Indicate what to do with your hardware (e.g. hard-drives, mobile phones...)' %>
             <%= f.input :comment, input_html: {class: 'select-input textfield'}, label: 'Anything else that needs to be taken care of?', :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 5}%>
-          <div class="sectionwrapper1">
-      <%= image_tag "i_cloud.jpg", class: "illustration-cloud" %>
-      <div class="container form-exit d-flex flex-row justify-content-between align-items-center">
-        <h3>All good here, let's move on to the next section</h3>
-        <%= f.button :submit, value: "Save", class: "btn btn-lj-big-m2" %>
-        <%= f.submit name: "redirect_to", value: "Save & exit", class: "btn btn-lj-big-m2"%>
+          <div class="form-actions">
+            <%= f.button :submit, value: "Save", class: "btn btn-lj-big-m2" %>
+            <%= f.submit name: "redirect_to", value: "Save & exit", class: "btn btn-lj-big-m4", label: "Save & Leave" %>
+          </div>
         <% end %>
-      </div>
-    </div>
       </div>
 </div>
 
