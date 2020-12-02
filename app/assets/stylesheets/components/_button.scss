@@ -26,17 +26,17 @@
 }
 
 
-
-.btn-lj-big {
-  color: white;
-  border: 1px solid white;
-  padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: lighter;
-  font-size: 1.3rem;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
+// not in use
+// .btn-lj-big {
+//   color: white;
+//   border: 1px solid white;
+//   padding: 8px 24px;
+//   border-radius: 50px;
+//   font-weight: lighter;
+//   font-size: 1.3rem;
+//   opacity: 0.6;
+//   transition: opacity 0.3s ease;
+// }
 
 .btn-lj-big:hover {
   opacity: 1;
@@ -61,7 +61,7 @@
   border: 3px solid $main1;
 }
 
-// Main color in the back
+// Main color in the back - applied on all views
 .btn-lj-big-m2 {
   color: $main2;
   // border: 3px solid $main1;
@@ -88,8 +88,36 @@
   background-color: transparent;
 }
 
+// (mo) button below is the contrary of our main button, that is applied on all views
+.btn-lj-big-m2-contrary {
+  color: $main1;
+  // border: 3px solid $main1;
+  border: 3px solid #3E2F5B;
+  // box-sizing: border-box;
+  height: 50px;
+  width: 220px;
+  // margin: 0px 10px;
+  line-height: initial;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
 
-// button 100 % width with CONTRARY COLORS
+.btn-lj-big-m2-contrary:hover {
+  opacity: 1;
+  color: $main2;
+  border: 3px solid $main1;
+  background-color: $main1;
+}
+
+
+
+// (max) button 100 % width with CONTRARY COLORS
 .btn-lj-big-m3-contrary {
   color: #3E2F5B;
   // border: 3px solid $main1;
@@ -131,29 +159,29 @@
   // border: 3px solid $main1;
 }
 
+// button below not in use
+// .btn-lj-big-m4 {
+//   color: $main1;
+//   // border: 3px solid $main1;
+//   border: 1px solid #3E2F5B;
+//   // box-sizing: border-box;
+//   height: 50px;
+//   width: 220px;
+//   text-align: center;
+//   background-color: white;
+//   border-radius: 4px;
+//   padding: 10px;
+//   font-weight: 600;
+//   font-size: 1.1rem;
+//   opacity: 0.6;
+//   transition: opacity 0.3s ease;
+// }
 
-.btn-lj-big-m4 {
-  color: $main1;
-  // border: 3px solid $main1;
-  border: 1px solid #3E2F5B;
-  // box-sizing: border-box;
-  height: 50px;
-  width: 220px;
-  text-align: center;
-  background-color: white;
-  border-radius: 4px;
-  padding: 10px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
-
-.btn-lj-big-m4:hover {
-  opacity: 1;
-  color: $main1;
-  // border: 3px solid $main1;
-}
+// .btn-lj-big-m4:hover {
+//   opacity: 1;
+//   color: $main1;
+//   // border: 3px solid $main1;
+// }
 
 
 //upload photo button in main color outlined
