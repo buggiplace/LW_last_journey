@@ -11,36 +11,37 @@
 
 
   <div class="form-design">
-      <%= form_tag funeral_type_path(@funeral_type), method: :get do %>
-      <% FuneralType::CATEGORIES.each do |category| %>
-        <%= radio_button_tag :burial_type, category, params[:burial_type]  %>
-        <%= label_tag category %>
-        <% end %>
-      <%= submit_tag "Filter", class: "btn btn-primary" %>
-      <% end %>
+      <%#= form_tag funeral_type_path(@funeral_type), method: :get do %>
+      <%# FuneralType::CATEGORIES.each do |category| %>
+        <%#= radio_button_tag :burial_type, category, params[:burial_type]  %>
+        <%#= label_tag category %>
+        <%# end %>
+      <%#= submit_tag "Filter", class: "btn btn-primary" %>
+      <%# end %>
 
       <%= simple_form_for(@funeral_type) do |f| %>
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-        <h4 class="d-flex flex-start">Burial Type</h4>
+        <h4 class="d-flex flex-start" id="anchor_burial_type">Burial Type</h4>
         <h2 class="d-flex flex-start">Where great spirits find their rest</h2>
         <%= f.input :burial_type, label: 'Choose your preferred burial type.',
                 as: :radio_buttons, collection_wrapper_tag: 'div',
                 collection_wrapper_class: 'category-wrapper',
                 item_wrapper_class: 'category-item',
                 input_html: {class: 'category-selector'},
-                collection: FuneralType::CATEGORIES %>
+                collection: FuneralType::CATEGORIES,
+                checked: params[:burial_type]%>
         <h4 class="d-flex flex-start default-space-top">Funeral Location</h4>
         <h2 class="d-flex flex-start">Keep calm - there is enough space for everyone</h2>
         <p>Select your eternal hunting grounds on the map</p>
           <div id="map"
-               style="width: 100%; height: 400px;"
+               style="width: 100%; height: 400px; margin-bottom: -0.5px;"
                data-markers="<%= @markers.to_json %>"
                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
         <%#= f.input :loc_street, label: 'Street'%>
         <%#= f.input :loc_zip, label: 'Zip code'%>
-        <%= f.input :loc_city, label: 'Location selected from map', input_html: {class: 'textfield', data: { target: "location.cityName" }} %>
+        <%= f.input :loc_city, label: 'Location as selected from map', input_html: {class: 'textfield', data: { target: "location.cityName" }} %>
         <h4 class="d-flex flex-start default-space-top">Further preferences</h4>
         <h2 class="d-flex flex-start">My last post-it on the fridge</h2>
         <%= f.input :comment, label: 'Further funeral preferences, like location decoration, dresscode...', :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 5}%>
