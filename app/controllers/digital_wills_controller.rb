@@ -11,10 +11,12 @@ class DigitalWillsController < ApplicationController
       if @digital_will.update(digital_will_params)
         if params[:redirect_to] == "Save & exit"
           redirect_to funerals_dashboard_path
+        else
+          redirect_to digital_will_path(@digital_will)
+        end
       else
         render "/digital_will/show"
       end
-    end
   end
 
 private
