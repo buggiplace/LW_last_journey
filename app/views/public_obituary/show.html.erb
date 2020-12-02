@@ -3,110 +3,127 @@
 <% content_for :meta_image, @banner_url %>
   <% if @obituary.public %>
 
-<div class="container">
-  <div class="cursiv-style notice pt-5 mb-5">
+<div class="container d-flex flex-column align-items-center">
+  <div class="font-style notice pt-5 mb-5">
     <h2>In memory of</h2>
     <h1><%= @obituary.funeral.user.first_name%></h1>
       <% if @obituary.photos.last.present? %>
       <%=  cl_image_tag(@obituary.photos.last.key, :transformation=>[
         {:effect=>"cartoonify"},
         {:radius=>"max"},
-        {:effect=>"outline:100", :color=>"black"},
+        {:effect=>"outline:50", :color=>"black"},
         {:height=>180, :crop=>"scale"}
         ]) %>
       <% end %>
-    <div class="notice-infos">
-    <h3 class="mt-3"><%= @obituary.last_words %></h3>
+    <div class="notice-infos text-center">
+    <p class="mt-4 text-center font-italic">"<%=@obituary.last_words %>"</p>
         <div>
-          <h3 class="border-top default-padding-top"><%= @obituary.funeral.user.first_name%>'s decease</h3>
-          <p>Sadly, we have to announce that <%= @obituary.funeral.user.first_name%> has passed away
+          <p class="border-top default-padding-top">Sadly, we have to announce that <%= @obituary.funeral.user.first_name%> has passed away
           on <%= @obituary.death_date %> in <%= @obituary.death_location %></p>
+          <p class="default-padding-top">The funeral will take place on <%= @obituary.funeral_time %> in <%= @obituary.funeral_location %></p>
+          <p class="default-padding-top">Please note the following: <%= @obituary.funeral_info%> </p>
         </div>
         <div>
-          <h3 class="border-top default-padding-top"><%= @obituary.funeral.user.first_name%>'s last words</h3>
-          <p><%= @obituary.funeral.user.first_name%> prepared some topics
-          for the case of her decease and wanted to share some last words with you</p>
-        </div>
-        <div>
-          <h3 class="border-top default-padding-top"><%= @obituary.funeral.user.first_name%>'s Funeral</h3>
-          <p>The funeral will take place on <%= @obituary.funeral_time %> in <%= @obituary.funeral_location %>.
-           Please note the following: <%= @obituary.funeral_info%> </p>
-        </div>
-        <div>
-          <h3 class="border-top default-padding-top"><%= @obituary.funeral.user.first_name%>'s legacy</h3>
-          <p><%= @obituary.funeral.user.first_name%> has provided a set of
+          <p class="border-top text-center default-padding-top"><%= @obituary.funeral.user.first_name%> has provided a set of
             photos and her favourite music to share with you. Please find them in the
             section below</p>
         </div>
       </div>
-
   </div>
 </div>
 
-    <div class="container d-flex flex-column justify-content-center mt-5">
-      <div class="d-flex flex-column cursiv-style condolences align-self-center">
-      <h2 class="align-self-center">Leave a condolence</h2>
-      <div class="">
-        <%= simple_form_for(@condolence, url: create_condolence_path(@obituary)) do |f| %>
-          <div class="form-inputs p-5 d-flex justify-content-center flex-column">
-            <%= f.input :first_name, input_html: {class: 'cursiv-style'} %>
-            <%= f.input :last_name %>
-            <%= f.input :content %>
-          <div class="form-actions d-flex justify-content-center align-items-center">
-            <%= f.button :submit, class: "btn btn-lj-big-m2" %>
-          </div>
-          <% end %>
-        </div>
-      </div>
-      </div>
-  </div>
 
-<div class="container d-flex flex-column justify-content-center">
-  <div class="d-flex flex-column cursiv-style condolences  align-self-center mt-5">
-      <h2 class="align-self-center mb-5">Condolences</h2>
-      <% @obituary.funeral.condolences.each do |condolence| %>
-        <div class="card-condolence">
-            <div class="card-condolence-infos">
-              <h2><%= condolence.content %></h2>
-              <p>from: <%= condolence.first_name %><%= condolence.last_name %></p>
-              <% if policy(condolence).destroy? %>
-                  <%= link_to 'Delete', condolence_path(condolence), method: 'delete', data: { confirm: "Are you sure?" } %>
-              <% end %>
-          </div>
-      </div>
-      <% end %>
-    </div>
-</div>
-
-
-
-
-    <% if @obituary.photos.last.present? %>
-    <div class="container">
-        <div id="carouselExampleSlidesOnly" class="carousel slide gallery" data-ride="carousel" data-interval="2000">
-          <div class="carousel-inner mb-5">
-            <div class="carousel-item active carousel-pic">
-                  <%=  cl_image_tag(@obituary.photos.last.key, :transformation=>[
-                {:effect=>"cartoonify"},
-                {:width=>400, :height=>400, :crop=>"pad"}
-                ]) %>
-                <!-- <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2534&q=80" class="d-block w-100" alt="..."> -->
-            </div>
-            <% @obituary.photos.each do |picture| %>
-            <div class="carousel-item carousel-pic">
-              <%=  cl_image_tag(picture.key, :transformation=>[
-                {:effect=>"cartoonify"},
-                {:width=>400, :height=>400, :crop=>"pad"}
-                ]) %>
+      <div class="container d-flex flex-column justify-content-center mt-5">
+        <div class="d-flex flex-column font-style condolences align-self-center" id="condolence_1">
+        <h2 class="align-self-center">Leave a condolence</h2>
+        <div class="">
+          <%= simple_form_for(@condolence, url: create_condolence_path(@obituary)) do |f| %>
+            <div class="form-inputs p-4 d-flex justify-content-center flex-column">
+              <div class="d-flex justify-content-between">
+              <%= f.input :first_name, input_html: {class: 'textfield font-style'}, placeholder: "..." %>
+              <%= f.input :last_name, input_html: {class: 'textfield font-style'}, placeholder: "..." %>
+              </div>
+              <%= f.input :content, label: 'Your condolence:', :as => :text, :input_html => {:class => "font-style textfield", :style=> 'width: 100%;', 'rows' => 5}, placeholder: "Say what you have on your heart"%>
+            <div class="form-actions d-flex justify-content-center align-items-center">
+              <%= f.button :submit, class: "btn btn-lj-big-m2-contrary" %>
             </div>
             <% end %>
           </div>
         </div>
+
+        <div class="d-flex flex-column font-style align-self-center mt-5">
+          <h2 class="align-self-center mb-5">Condolences</h2>
+            <div class="card-condolence-wrapper">
+          <% @obituary.funeral.condolences.each do |condolence| %>
+            <div class="card-condolence">
+                <div class="card-condolence-infos">
+                  <h3 class="font-italic"><%= condolence.content %></h3>
+                  <p>from: <%= condolence.first_name %><%= condolence.last_name %></p>
+                  <% if policy(condolence).destroy? %>
+                      <%= link_to 'Delete', condolence_path(condolence), method: 'delete', data: { confirm: "Are you sure?" } %>
+                  <% end %>
+              </div>
+          </div>
+          <% end %>
+          </div>
+        </div>
+
+        </div>
     </div>
-  <% end %>
+
+
+<br>
+<br>
+<br>
+<br>
+
+<br>
+
+
+<div class="carousel-box">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="500">
+      <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <%=  cl_image_tag(@obituary.photos.last.key, :transformation=>[
+                    {:effect=>"cartoonify"},
+                    {:width=>1000, :height=>500, :crop=>"fit"}
+                    ]) %>
+                </div>
+
+                <% @obituary.photos.each do |picture| %>
+                <div class="carousel-item">
+                  <%=  cl_image_tag(picture.key, :transformation=>[
+                    {:effect=>"cartoonify"},
+                    {:width=>1000, :height=>500, :crop=>"fit"}
+                    ]) %>
+                </div>
+
+                <% end %>
+    <!--       <img class="d-block w-100" src="..." alt="First slide"> -->
+      </div>
+
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- below old playlist -->
 
           <div class="container d-flex flex-column justify-content-center">
-            <div class="d-flex cursiv-style spotify-public  align-self-center mt-5">
+            <div class="d-flex font-style spotify-public  align-self-center mt-5">
               <h2 class="align-self-center mb-2">Playlist</h2>
               <div class="">
                 <% if @obituary.funeral.playlist.spotify_profile_url.present? %>
@@ -127,3 +144,7 @@
   <% else %>
     This site is not public.
   <% end %>
+
+<!--   <script type="text/javascript">
+    document.getElementById("condolence_2").style.height = (document.getElementById("condolence_1").clientHeight) + "px";
+</script> -->
