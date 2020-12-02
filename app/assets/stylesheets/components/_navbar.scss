@@ -20,8 +20,18 @@
   width: 100%;
 }
 
+
+.dropdown-menu {
+  border-radius: 20px;
+  background-color: $main2;
+}
+
 .dropdown-item:hover {
-  background-color: rgba(30, 221, 136, 1.0);
+  color: white;
+}
+
+.dropdown-item:hover {
+  background-color: $main1;
 }
 
 
