@@ -18,7 +18,7 @@
               input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item',
 
               label: 'Indicate if you wish a Facebook obituary page?'%>
-            <%= f.input :cancel_accounts, input_html: {class: 'textfield'}, label: 'Indicate all accounts that should cancelled', placeholder: "e.g. Spotify, Disney+, DailyNews"' %>
+            <%= f.input :cancel_accounts, input_html: {class: 'textfield'}, label: 'Indicate all accounts that should cancelled', placeholder: "e.g. Spotify, Disney+, DailyNews" %>
             <h4 class="d-flex flex-center default-space-top">Bank accounts</h4>
             <h2 class="d-flex flex-start">My bank accounts</h2>
             <p>List all your bank accounts below</p>
@@ -41,7 +41,7 @@
             <%= f.input :comment, input_html: {class: 'select-input textfield'}, label: 'Anything else that needs to be taken care of?', :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 5}, placeholder: "e.g. Make sure that no one accesses my iPhone or online accounts."%>
 
           <div class="form-actions">
-            <%= f.button :submit, value: "Save", class: "btn btn-lj-big-m2" %>
+            <%#= f.button :submit, value: "Save", class: "btn btn-lj-big-m2" %>
             <%= f.submit name: "redirect_to", value: "Save & exit", class: "btn btn-lj-big-m4", label: "Save & Leave" %>
           </div>
         <% end %>
