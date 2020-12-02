@@ -44,7 +44,6 @@ lisa = User.create!(first_name: 'Lisa',
                     birth_date: Date.new(1977, 3, 3),
                     email: "lisa@test.com",
                     password: "12345678")
-# funeral = Funeral.create!(user: lena, representative_email: simon.email)
 
 
 puts 'Create funerals'
@@ -53,10 +52,8 @@ puts 'Adding some meat to Lisas Funeral account'
 
 lisa.funeral.funeral_type.update(
   burial_type: 'Burial',
-  comment: 'Please no flowers. I really hate flowers!',
-  loc_street: 'Giersstrasse 19',
-  loc_zip: '13088',
-  loc_city: 'Berlin')
+  comment: 'Please no flowers. I really hate flowers!'
+  )
 lisa.funeral.playlist.update(
   spotify_url: 'spotify:playlist:09vrf9JgCt1AD06mqwlubq',
   spotify_profile_url: "spotify:user:buggiplace")
@@ -73,33 +70,39 @@ lisa.funeral.digital_will.update(
 lisa.funeral.obituary.update(
   last_words: 'Thank you for a wonderful life. Keep on rockin! I do not regret anything and am more than thankful
   for all the great memories I treasure with my friends and family. Enjoy everyday and start coding! ',
-  guestlist: ["Tim.Mueller@gmx.de", "Jana.Schuhmann@gmail.com", "Luisa.Sidiqi@web.de", "Robin.Funie@gmx.net", "Sabrina.Setluar@gmail.com"]
+  guestlist: ["Tim.Mueller@gmx.de", "Jana.Schuhmann@gmail.com", "Luisa.Sidiqi@web.de", "Robin.Funie@gmx.net", "Sabrina.Setluar@gmail.com"],
+  death_location: "Berlin",
+  funeral_location: "Berlin",
+  funeral_info: "Please wear something colorful and bring a party hat.",
+  death_date: "2020-10-01T00:00",
+  funeral_time: "2020-12-05T11:00"
   )
 
 lisa.funeral.representative = simon
 lisa.funeral.save
 
 
-filepath2 = Rails.root.join('db', 'profile_mask.jpg')
-lisa.funeral.obituary.photos.attach(io: File.open(filepath2), filename: "Profile_mask.jpg", content_type: "image/jpg")
+filepath2 = Rails.root.join('db', 'mountain.JPG')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath2), filename: "mountain.jpg", content_type: "image/jpg")
 
-filepath3 = Rails.root.join('db', 'friends.JPG')
-lisa.funeral.obituary.photos.attach(io: File.open(filepath3), filename: "friends.JPG", content_type: "image/jpg")
+filepath3 = Rails.root.join('db', 'Fachschaft.JPG')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath3), filename: "Fachschaft.JPG", content_type: "image/jpg")
 
-filepath4 = Rails.root.join('db', 'Kapstadt.JPG')
-lisa.funeral.obituary.photos.attach(io: File.open(filepath4), filename: "Kapstadt.JPG", content_type: "image/jpg")
+filepath4 = Rails.root.join('db', 'rainbow.JPG')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath4), filename: "rainbow.JPG", content_type: "image/jpg")
 
-filepath5 = Rails.root.join('db', 'magdeburg.JPG')
-lisa.funeral.obituary.photos.attach(io: File.open(filepath5), filename: "magdeburg.JPG", content_type: "image/jpg")
+filepath5 = Rails.root.join('db', 'Oma.JPG')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath5), filename: "oma.JPG", content_type: "image/jpg")
 
-filepath6 = Rails.root.join('db', 'Fachschaft.JPG')
-lisa.funeral.obituary.photos.attach(io: File.open(filepath6), filename: "fachschaft.JPG", content_type: "image/jpg")
+filepath6 = Rails.root.join('db', 'castle.JPG')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath6), filename: "castle.JPG", content_type: "image/jpg")
 
-filepath9 = Rails.root.join('db', 'Patient_will.pdf')
-document_patient_will = lisa.funeral.documents.create()
-document_patient_will.file.attach(io: File.open(filepath4), filename: "Patient_will.pdf", content_type: "application/pdf")
+filepath7 = Rails.root.join('db', 'jump.JPG')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath7), filename: "jump.JPG", content_type: "image/jpg")
 
-
+# filepath9 = Rails.root.join('db', 'Patient_will.pdf')
+# document_patient_will = lisa.funeral.documents.create()
+# document_patient_will.file.attach(io: File.open(filepath4), filename: "Patient_will.pdf", content_type: "application/pdf")
 
 
 puts "Funeral seed finished"
