@@ -18,12 +18,18 @@
         <% end%>
         <br>
         <h4 class="d-flex flex-start">Assign new representative</h4>
+        <div class="form-design">
         <%= label_tag(:first_name, "First Name:") %>
-        <%= text_field_tag :first_name%>
+        <%= text_field_tag :first_name, nil, class: "textfield"  %>
+       <!--  </div>
+        <div class="form-design"> -->
         <%= label_tag(:last_name, "Last Name:") %>
-        <%= text_field_tag :last_name%>
+        <%= text_field_tag :last_name, nil, class: "textfield"%>
+        <!-- </div>
+        <div class="form-design"> -->
         <%= label_tag(:email, "Email:") %>
-        <%= text_field_tag :email %>
+        <%= text_field_tag :email, nil, class: "textfield" %>
+        </div>
     </div>
 
 
@@ -37,7 +43,7 @@
         <%#= f.submit "save and leave", class: "btn btn-lj-big-m2" %>
         <%#= link_to 'submit', funerals_dashboard_path, :onclick => "$('#edit_funeral_type_4').submit()" %>
         <%#= submit_tag %>
-             <%= submit_tag %>
+             <%= submit_tag "Submit", class: "btn btn-lj-big-m2" %>
         <%#= f.submit name: "redirect_to", value: "Save & exit", class: "btn btn-lj-big-m2"%>
         <% end %>
       </div>
