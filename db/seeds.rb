@@ -53,10 +53,8 @@ puts 'Adding some meat to Lisas Funeral account'
 
 lisa.funeral.funeral_type.update(
   burial_type: 'Burial',
-  comment: 'Please no flowers. I really hate flowers!',
-  loc_street: 'Giersstrasse 19',
-  loc_zip: '13088',
-  loc_city: 'Berlin')
+  comment: 'Please no flowers. I really hate flowers!'
+  )
 lisa.funeral.playlist.update(
   spotify_url: 'spotify:playlist:09vrf9JgCt1AD06mqwlubq',
   spotify_profile_url: "spotify:user:buggiplace")
@@ -73,7 +71,10 @@ lisa.funeral.digital_will.update(
 lisa.funeral.obituary.update(
   last_words: 'Thank you for a wonderful life. Keep on rockin! I do not regret anything and am more than thankful
   for all the great memories I treasure with my friends and family. Enjoy everyday and start coding! ',
-  guestlist: ["Tim.Mueller@gmx.de", "Jana.Schuhmann@gmail.com", "Luisa.Sidiqi@web.de", "Robin.Funie@gmx.net", "Sabrina.Setluar@gmail.com"]
+  guestlist: ["Tim.Mueller@gmx.de", "Jana.Schuhmann@gmail.com", "Luisa.Sidiqi@web.de", "Robin.Funie@gmx.net", "Sabrina.Setluar@gmail.com"],
+  death_location: "Berlin",
+  funeral_location: "Berlin",
+  funeral_info: "Please wear something colorful and bring a party hat."
   )
 
 lisa.funeral.representative = simon
@@ -99,7 +100,8 @@ filepath9 = Rails.root.join('db', 'Patient_will.pdf')
 document_patient_will = lisa.funeral.documents.create()
 document_patient_will.file.attach(io: File.open(filepath4), filename: "Patient_will.pdf", content_type: "application/pdf")
 
-
+filepath10 = Rails.root.join('db', 'organ_donor.pdf')
+document_patient_will.file.attach(io: File.open(filepath10), filename: "organ_donor.pdf", content_type: "application/pdf")
 
 
 puts "Funeral seed finished"
