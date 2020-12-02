@@ -1,12 +1,8 @@
-<%= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-light m-1'%>
+<%#= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-light m-1'%>
 <div class="container d-flex align-items-center justify-content-center flex-row">
   <div>
-    <h2>"Music is the soundtrack of your life" - Dick Clark</h2>
-    <p>There are a ton of ways to find your last words or create something meaningful to you or your beloved family and friends.
-Sometimes music helps to say a lot more - to remember certain moments, get a bit emotional, to laugh, to cry or to just dance.
-Determine what you want them to remember thinking of you. Create the soundtrack of your life in Spotify and connect your playlist.
-This can be shared with your friends and family after your funeral to remember you the way you want. But also think about the funeral itself.
-Music means a lot to you and is an important part of everyones' funeral. List the songs you wish to be played during your ceremony.</p>
+    <h2>"My music</h2>
+    <p>There are many ways to express meaningful last words to your loved ones. Music can help you finding the right last words. Create your personal life's sioundtrack in Spotify and connect your playlist in here. The playlist will become part of your obituary page and will invoke all sorts of shared memories for your loved ones.</p>
   </div>
   <%= image_tag "i_music.png", class: "illustration-music" %>
 </div>
@@ -18,10 +14,11 @@ Music means a lot to you and is an important part of everyones' funeral. List th
           <%= f.error_notification %>
           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
           <h4 class="d-flex flex-center">Playlist</h4>
-          <h2 class="d-flex flex-start">Publish your playlist</h2>
+          <h2 class="d-flex flex-start">The soundtrack of your life</h2>
             <div class="form-inputs p-5 d-flex justify-content-center flex-column">
-              <%= f.input :spotify_url, input_html: {class: 'textfield-music'}, label: 'Please insert your favorite spotify url and save it for your descendants. For you, it will already magically appear below 😇 ' %>
-              <%= f.input :spotify_profile_url, input_html: {class: 'textfield-music'}, label: 'If you like, put in your spotify profile URI here, so that anyone can follow all of your playlists' %>
+
+              <%= f.input :spotify_url, input_html: {class: 'textfield-music'}, label: 'Insert your spotify url below and save it for your descendants 😇 ', placeholder: "spotify:playlist:09vrf9JgCt1AD06mqwlubq" %>
+              <%= f.input :spotify_profile_url, input_html: {class: 'textfield-music'}, label: 'Connect your entire spotify profile URI here for your descendantsfollow all of your playlists', placeholder: "spotify:user:buggiplace" %>
                 <div class="form-actions d-flex justify-content-center align-items-center flex-column mt-5">
                   <%#= f.button :submit, class: "btn btn-lj-big-g" %>
                   <%= f.button :submit, value: "Save", class: "btn btn-lj-big-m2 mb-2" %>

@@ -1,4 +1,4 @@
-<%= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-light m-1'%>
+<%#= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-light m-1'%>
 
 <div class="container d-flex justify-content-center flex-column align-items-center mt-2">
     <div class="form-design sectionwrapper4">
@@ -8,15 +8,15 @@
       <div>
         <%= image_tag "i_cloud.png", class: "illustration-cloud-documents1" %>
       </div>
-      <h4 class="d-flex flex-start">Upload Documents</h4>
-      <h2 class="d-flex flex-start">Make the most important documents available to your trusted person.</h2>
+      <h4 class="d-flex flex-start">Document upload</h4>
+      <h2 class="d-flex flex-start">Beaurocracy outlasting you </h2>
       <label class="btn upload-photo">
         Add a file!
         <span style="display:none;">
           <%= f.input :documents, as: :file, input_html: { multiple: true } %>
         </span>
       </label>
-      <p><i>Please be aware that in Germany only the original signed documents are legally binding.</i></p>
+      <p><i>Be aware that in Germany only signed original documents are legally binding.</i></p>
       <%= f.button :submit, class: "btn btn-lj-big-m2 flex-start" %>
     <% end %>
 
