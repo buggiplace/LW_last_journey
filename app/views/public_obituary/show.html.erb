@@ -7,12 +7,14 @@
   <div class="cursiv-style notice pt-5 mb-5">
     <h2>In memory of</h2>
     <h1><%= @obituary.funeral.user.first_name%></h1>
+    <% if @obituary.photos.present? %>
       <%=  cl_image_tag(@obituary.photos.last.key, :transformation=>[
         {:effect=>"cartoonify"},
         {:radius=>"max"},
         {:effect=>"outline:100", :color=>"black"},
         {:height=>180, :crop=>"scale"}
         ]) %>
+
     <div class="notice-infos">
     <h3 class="mt-3"><%= @obituary.last_words %></h3>
         <div>

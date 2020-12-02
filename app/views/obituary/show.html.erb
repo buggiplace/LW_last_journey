@@ -7,7 +7,8 @@
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-      <%= f.input :last_words, :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 10} %>
+      <%= f.input :last_words, :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 10}, placeholder: "e.g. Thank you for a wonderful life. Keep on rockin! I do not regret anything and am more than thankful
+  for all the great memories." %>
 <!-- deactivated code block below bc of conflicts with heroku -->
 <!--       <div class="form-inputs">
         <%#= f.rich_text_area :rich_body %>
@@ -18,7 +19,7 @@
        <!-- deactivated the spotify list here, because we use the one from Playlist -->
       <%#= f.input :spotify_list, label: "Spotify: Paste the Spotify URI. Click on SHARE in your spotify playlist and copy the bottom Spotify URI"%>
 
-      <%= f.input :guestlist, label: "Enter your VIP funeral guests", input_html: {multiple: true, class: "js-choice select-multiple textfield"} %>
+      <%= f.input :guestlist, label: "Enter your VIP funeral guests", input_html: {multiple: true, class: "js-choice select-multiple textfield"}, placeholder: "e.g. Tim.Mueller@gmx.de" %>
 
       <%= f.button :submit, class: "btn btn-lj-big-m2" %>
 

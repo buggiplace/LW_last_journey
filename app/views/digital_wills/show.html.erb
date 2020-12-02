@@ -16,15 +16,16 @@
 
             <%= f.input :facebook_obituary, as: :radio_buttons,
               input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item',
+
               label: 'Indicate if you wish a Facebook obituary page?'%>
-            <%= f.input :cancel_accounts, input_html: {class: 'textfield'}, label: 'Indicate all accounts that should cancelled, e.g. Netflix, Amazon Prime...' %>
+            <%= f.input :cancel_accounts, input_html: {class: 'textfield'}, label: 'Indicate all accounts that should cancelled', placeholder: "e.g. Spotify, Disney+, DailyNews"' %>
             <h4 class="d-flex flex-center default-space-top">Bank accounts</h4>
             <h2 class="d-flex flex-start">My bank accounts</h2>
             <p>List all your bank accounts below</p>
             <div class="d-flex flex-row justify-content-between">
               <%= f.input :bank_account_1, input_html: {class: ''}, collection: DigitalWill::BANKS, label: '1st bank account' %>
               <%= f.input :bank_account_2, input_html: {class: ''}, collection: DigitalWill::BANKS, label: '2nd bank account' %>
-              <%= f.input :bank_account_3, input_html: {class: 'select-input textfield'}, label: "Your chance to go wild about further accounts etc. You're welcome."  %>
+              <%= f.input :bank_account_3, input_html: {class: 'select-input textfield'}, label: "Your chance to go wild about further accounts etc. You're welcome.", placeholder: "e.g. Sparkasse Hintertupfingen"  %>
             </div>
             <h4 class="d-flex flex-center default-space-top">Insurance accounts</h4>
             <h2 class="d-flex flex-start">My insurance accounts</h2>
@@ -32,12 +33,13 @@
             <div class="d-flex flex-row justify-content-between">
               <%= f.input :insurance_account_1, input_html: {class: ''}, collection: DigitalWill::INSURANCE, label: '1st insurance' %>
               <%= f.input :insurance_account_2, input_html: {class: ''}, collection: DigitalWill::INSURANCE, label: '2nd insurance' %>
-              <%= f.input :insurance_account_3, input_html: {class: 'select-input textfield'}, label: "Your chance to go wild about further accounts etc. You're welcome." %>
+              <%= f.input :insurance_account_3, input_html: {class: 'select-input textfield'}, label: "Your chance to go wild about further accounts etc. You're welcome.", placeholder: "e.g. Versicherung Hintertupfingen" %>
             </div>
             <h4 class="d-flex flex-center default-space-top">Other topics</h4>
             <h2 class="d-flex flex-start">One last thing...</h2>
-            <%= f.input :hardware, input_html: {class: 'select-input textfield'}, label: 'Indicate what to do with your hardware (e.g. hard-drives, mobile phones...)' %>
-            <%= f.input :comment, input_html: {class: 'select-input textfield'}, label: 'Anything else that needs to be taken care of?', :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 5}%>
+            <%= f.input :hardware, input_html: {class: 'select-input textfield'}, label: 'Indicate what to do with your hardware (e.g. hard-drives, mobile phones...)', placeholder: "e.g. Please destroy all my hard drives and delete everything from my laptop." %>
+            <%= f.input :comment, input_html: {class: 'select-input textfield'}, label: 'Anything else that needs to be taken care of?', :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 5}, placeholder: "e.g. Make sure that no one accesses my iPhone or online accounts."%>
+
           <div class="form-actions">
             <%= f.button :submit, value: "Save", class: "btn btn-lj-big-m2" %>
             <%= f.submit name: "redirect_to", value: "Save & exit", class: "btn btn-lj-big-m4", label: "Save & Leave" %>

@@ -16,8 +16,9 @@
           <h4 class="d-flex flex-center">Playlist</h4>
           <h2 class="d-flex flex-start">The soundtrack of your life</h2>
             <div class="form-inputs p-5 d-flex justify-content-center flex-column">
-              <%= f.input :spotify_url, input_html: {class: 'textfield-music'}, label: 'Insert your spotify url below and save it for your descendants 😇 ' %>
-              <%= f.input :spotify_profile_url, input_html: {class: 'textfield-music'}, label: 'Connect your entire spotify profile URI here for your descendantsfollow all of your playlists' %>
+
+              <%= f.input :spotify_url, input_html: {class: 'textfield-music'}, label: 'Insert your spotify url below and save it for your descendants 😇 ', placeholder: "spotify:playlist:09vrf9JgCt1AD06mqwlubq" %>
+              <%= f.input :spotify_profile_url, input_html: {class: 'textfield-music'}, label: 'Connect your entire spotify profile URI here for your descendantsfollow all of your playlists', placeholder: "spotify:user:buggiplace" %>
                 <div class="form-actions d-flex justify-content-center align-items-center flex-column mt-5">
                   <%#= f.button :submit, class: "btn btn-lj-big-g" %>
                   <%= f.button :submit, value: "Save", class: "btn btn-lj-big-m2 mb-2" %>
