@@ -79,6 +79,9 @@ lisa.funeral.obituary.update(
 lisa.funeral.representative = simon
 lisa.funeral.save
 
+lisa.funeral.obituary.photo.attach(io: File.open("profile_mask.jpg"), filename: "some-image.jpg", content_type: "image/jpg")
+# lisa.funeral.obituary.attach(io: File.open('profile_mask.jpg'), filename: 'avatar.png')
+# lisa.funeral.obituary.analyze
 
 # file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
 # lisa.funeral.obituary.photos.attach(io: file, filename: 'Magdeburg.png', content_type: 'image/png')
