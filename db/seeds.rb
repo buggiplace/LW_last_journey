@@ -87,43 +87,43 @@ lisa.funeral.save
 
 puts "Funeral seed finished"
 
-# puts 'Create condolences'
+puts 'Create condolences'
 
-# lisa.funeral.condolences.create!(
-# first_name: 'Jane',
-# last_name: 'Doe',
-# content: 'You were a brilliant coder! Your team misses you!',
-# funeral_id: lisa.funeral_id)
+lisa.funeral.condolences.create!(
+first_name: 'Jane',
+last_name: 'Doe',
+content: 'You were a brilliant coder! Your team misses you!',
+funeral: lisa.funeral)
 
-# lisa.funeral.condolences.create!(
-# first_name: 'John',
-# last_name: 'Smith',
-# content: 'Giphy Queen! Thank you for all the laughs and jokes.
-# I miss you and will drink some Aperol Spritz in Memory of you.',
-# funeral_id: lisa.funeral_id)
+lisa.funeral.condolences.create!(
+first_name: 'John',
+last_name: 'Smith',
+content: 'Giphy Queen! Thank you for all the laughs and jokes.
+I miss you and will drink some Aperol Spritz in Memory of you.',
+funeral: lisa.funeral)
 
-# puts "Condolences seed finished"
-
-
-puts 'Create funeral locations'
-
-Location.create!(street: 'Am Hafen 20', zip: '25992', city: 'List', name: 'Nordseehafen List/Sylt', cemetery_type: 'Burial at sea')
-Location.create!(street: 'Schwedenkai 1', zip: '24103', city: 'Kiel', name: 'Seehafen Kiel', cemetery_type: 'Burial at sea')
-Location.create!(street: 'Kopenhagener Str. 3', zip: '23966', city: 'Wismar', name: 'Ostseehafen Wismar', cemetery_type: 'Burial at sea')
-Location.create!(street: 'Hafendeichstraße 17', zip: '26465', city: 'Langeoog', name: 'Nordseehafen Langeoog', cemetery_type: 'Burial at sea')
-
-require 'csv'
-csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
-filepath = Rails.root.join('db', 'address_seed5.csv') # previously 'address_seed4.csv'
-    CSV.foreach(filepath, csv_options) do |row|
-      Location.create!(
-          street: row['street'], # previously address_street
-          zip: row['zip'], # previously address_zip
-          city: row['city'], # previously address_city
-          name: row['name'], # previously Faker::Company.name,
-          cemetery_type: row['cemetery_type'], # new
-        )
-    end
+puts "Condolences seed finished"
 
 
-puts 'Funeral locations seed finished'
+# puts 'Create funeral locations'
+
+# Location.create!(street: 'Am Hafen 20', zip: '25992', city: 'List', name: 'Nordseehafen List/Sylt', cemetery_type: 'Burial at sea')
+# Location.create!(street: 'Schwedenkai 1', zip: '24103', city: 'Kiel', name: 'Seehafen Kiel', cemetery_type: 'Burial at sea')
+# Location.create!(street: 'Kopenhagener Str. 3', zip: '23966', city: 'Wismar', name: 'Ostseehafen Wismar', cemetery_type: 'Burial at sea')
+# Location.create!(street: 'Hafendeichstraße 17', zip: '26465', city: 'Langeoog', name: 'Nordseehafen Langeoog', cemetery_type: 'Burial at sea')
+
+# require 'csv'
+# csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
+# filepath = Rails.root.join('db', 'address_seed5.csv') # previously 'address_seed4.csv'
+#     CSV.foreach(filepath, csv_options) do |row|
+#       Location.create!(
+#           street: row['street'], # previously address_street
+#           zip: row['zip'], # previously address_zip
+#           city: row['city'], # previously address_city
+#           name: row['name'], # previously Faker::Company.name,
+#           cemetery_type: row['cemetery_type'], # new
+#         )
+#     end
+
+
+# puts 'Funeral locations seed finished'
