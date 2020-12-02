@@ -43,7 +43,7 @@ import { initSelect2 } from '../components/init_select2';
 // import { initSelect2 } from '../components/init_select2';
 
 
-import { initChoices } from '../components/init_choices';
+//import { initChoices } from '../components/init_choices';
 import { filterBurialType } from '../components/filter_burial_type';
 
 import { initMapbox } from '../plugins/init_mapbox';
