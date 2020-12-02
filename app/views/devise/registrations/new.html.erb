@@ -16,6 +16,8 @@
                 input_html: { autocomplete: "last-name" }%>
     <%= f.input :birth_date,
                 required: true,
+                start_year: Date.today.year - 110,
+                end_year: Date.today.year,
                 input_html: { autocomplete: "birthday" }%>
     <%= f.input :password,
                 required: true,
