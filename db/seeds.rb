@@ -75,16 +75,20 @@ lisa.funeral.obituary.update(
   for all the great memories I treasure with my friends and family. Enjoy everyday and start coding! ',
   guestlist: ["Tim.Mueller@gmx.de", "Jana.Schuhmann@gmail.com", "Luisa.Sidiqi@web.de", "Robin.Funie@gmx.net", "Sabrina.Setluar@gmail.com"]
   )
-# Insert a picutre to obituary https://res.cloudinary.com/dogxjtllu/image/upload/v1606859263/IMG_7426_btiox6.jpg
+
 lisa.funeral.representative = simon
 lisa.funeral.save
 
-# lisa.funeral.obituary.photo.attach(io: File.open("profile_mask.jpg"), filename: "some-image.jpg", content_type: "image/jpg")
-# lisa.funeral.obituary.attach(io: File.open('profile_mask.jpg'), filename: 'avatar.png')
-# lisa.funeral.obituary.analyze
 
-# file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-# lisa.funeral.obituary.photos.attach(io: file, filename: 'Magdeburg.png', content_type: 'image/png')
+filepath2 = Rails.root.join('db', 'profile_mask.jpg')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath2), filename: "Profile_mask.jpg", content_type: "image/jpg")
+
+filepath4 = Rails.root.join('db', 'Patient_will.pdf')
+document_patient_will = lisa.funeral.documents.create()
+document_patient_will.file.attach(io: File.open(filepath4), filename: "Patient_will.pdf", content_type: "application/pdf")
+
+# filepath3 = Rails.root.join('db', 'Enjoy_life.jpg')
+# lisa.funeral.obituary.photos.attach(io: File.open(filepath3), filename: "enjoy_life.jpg", content_type: "image/jpg")
 
 
 
