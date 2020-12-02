@@ -1,6 +1,6 @@
 // custom last journey buttons
 
-// map popup btn
+// map popup btn for map
 .btn-lj-small-info {
   color: $main2;
   // border: 3px solid $main1;
@@ -24,6 +24,8 @@
   color: $main2;
   // border: 3px solid $main1;
 }
+
+
 
 .btn-lj-big {
   color: white;
@@ -67,7 +69,7 @@
   // box-sizing: border-box;
   height: 50px;
   width: 220px;
-  margin: 0px 10px;
+  // margin: 0px 10px;
   line-height: initial;
   text-align: center;
   background-color: $main1;
@@ -154,10 +156,10 @@
 }
 
 
-
+//upload photo button in main color outlined
 .upload-photo {
-  color: #1EDD88;
-  border: 1px solid #1EDD88;
+  color: $main1;
+  border: 1px solid $main1;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
@@ -165,6 +167,8 @@
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
+
+
 
 
 // below lewagon buttons

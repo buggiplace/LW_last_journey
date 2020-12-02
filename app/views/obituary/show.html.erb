@@ -7,7 +7,7 @@
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-      <%= f.input :last_words%>
+      <%= f.input :last_words, :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 10} %>
 <!-- deactivated code block below bc of conflicts with heroku -->
 <!--       <div class="form-inputs">
         <%#= f.rich_text_area :rich_body %>
@@ -15,11 +15,12 @@
 
       <!-- deactivated this below input_html: { multiple: true } -->
       <%= f.input :photos, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
-      <%= f.input :spotify_list, label: "Spotify: Paste the Spotify URI. Click on SHARE in your spotify playlist and copy the bottom Spotify URI"%>
+       <!-- deactivated the spotify list here, because we use the one from Playlist -->
+      <%#= f.input :spotify_list, label: "Spotify: Paste the Spotify URI. Click on SHARE in your spotify playlist and copy the bottom Spotify URI"%>
 
-      <%= f.input :guestlist, label: "Enter your VIP funeral guests", input_html: {multiple: true, class: "js-choice select-multiple"} %>
+      <%= f.input :guestlist, label: "Enter your VIP funeral guests", input_html: {multiple: true, class: "js-choice select-multiple textfield"} %>
 
-      <%= f.button :submit, class: "btn btn-lj-big-g" %>
+      <%= f.button :submit, class: "btn btn-lj-big-m2" %>
 
   <% end %>
 </div>
@@ -43,5 +44,6 @@
 <br>
 <div class="d-flex justify-content-center">
     <%= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-secondary btn-lg btn-block'%>
+</div>
 </div>
 

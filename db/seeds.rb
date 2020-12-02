@@ -25,7 +25,7 @@ Location.destroy_all
 # puts "User Seed done - x added"
 
 
-puts 'Create 2 demo accounts'
+puts 'Create 2 users and 1 representative'
 simon = User.create!(first_name: 'Simon',
                      last_name: 'Turbo',
                      birth_date: Date.new(1989, 2, 1),
@@ -47,11 +47,11 @@ lisa = User.create!(first_name: 'Lisa',
 
 puts 'Create funerals'
 
-puts 'Create 1 funeral'
+puts 'Adding some meat to Lisas Funeral account'
 
 lisa.funeral.funeral_type.update(
   burial_type: 'Burial',
-  comment: 'Please no flowers. I really hate flowers',
+  comment: 'Please no flowers. I really hate flowers!',
   loc_street: 'Giersstrasse 19',
   loc_zip: '13088',
   loc_city: 'Berlin')
@@ -69,8 +69,10 @@ lisa.funeral.digital_will.update(
   comment: 'Make sure my parents never get the naked pictures from my Laptop'
   )
 lisa.funeral.obituary.update(
-  last_words: 'Thank you for a wonderful life. Keep on rockin!'
+  last_words: 'Thank you for a wonderful life. Keep on rockin! I do not regret anything and am more than thankful
+  for all the great memories I treasure with my friends and family. Enjoy everyday and start coding! '
   )
+# Insert a picutre to obituary https://res.cloudinary.com/dogxjtllu/image/upload/v1606859263/IMG_7426_btiox6.jpg
 lisa.funeral.representative = simon
 lisa.funeral.save
 

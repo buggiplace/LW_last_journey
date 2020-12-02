@@ -5,7 +5,11 @@ class PublicObituaryController < ApplicationController
   before_action :find_obituary
 
   def show
+    @exclude_banner = true
     @condolence = Condolence.new
+    if @obituary.funeral.playlist.spotify_url != nil
+      @embed_spotify_url = @obituary.funeral.playlist.spotify_url.match(/......................$/)
+    end
   end
 
   def create_condolences

@@ -1,0 +1,133 @@
+
+
+  <h1>BELOW UNCHANGED FROM TUESDAY</h1>
+
+
+<div class="container d-flex justify-content-center align-items-center flex-column">
+  <h2>In memory of</h2>
+  <h1><%= @obituary.funeral.user.first_name%></h1>
+
+<div class="obituary-wrapper">
+  <div class="container category-container d-flex flex-wrap justify-content-between align-items-top">
+    <div class="category-box">
+      <h3>We miss you</h3>
+      <% if @obituary.photos.last.present? %>
+        <%= cl_image_tag @obituary.photos.last.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+
+    </div>
+  </div>
+
+  <div class="container d-flex flex-column justify-content-center cursiv-style condolences mt-5">
+    <h2 class="align-self-center">Condolences</h2>
+    <% @obituary.funeral.condolences.each do |condolence| %>
+      <div class="card-condolence">
+          <div class="card-condolence-infos">
+            <h2><%= condolence.content %></h2>
+            <p><%= condolence.first_name %><%= condolence.last_name %></p>
+            <% if policy(condolence).destroy? %>
+                <%= link_to 'Delete', condolence_path(condolence), method: 'delete', data: { confirm: "Are you sure?" } %>
+            <% end %>
+        </div>
+    </div>
+    <% end %>
+  </div>
+
+
+
+
+  <div class="container d-flex justify-content-center align-items-center flex-column">
+    <h2>In memory of</h2>
+    <h1><%= @obituary.funeral.user.first_name%></h1>
+
+  <div class="obituary-wrapper">
+    <div class="container category-container d-flex flex-wrap justify-content-between align-items-top">
+      <div class="category-box">
+        <h3>We miss you</h3>
+          <%= cl_image_tag @obituary.photos.last.key, height: 300, width: 400, crop: :fill %>
+      </div>
+      <div class="category-box">
+        <h3>Details</h3>
+        <h4>Death Date</h4>
+          <%= @obituary.death_date %>
+        <h4>Death Location</h4>
+          <%= @obituary.death_location %>
+        <h4>Funeral time</h4>
+          <%= @obituary.funeral_time %>
+        <h4>Funeral Location</h4>
+          <%= @obituary.funeral_location %>
+        <h4>Funeral Info</h4>
+          <%= @obituary.funeral_info%>
+      </div>
+     </div>
+  </div>
+
+
+    <div class="obituary-wrapper">
+      <div class="container category-container d-flex flex-wrap justify-content-between align-items-top">
+          <div class="category-box">
+            <h3>My last words</h3>
+              <p>"<%= @obituary.last_words %>"</p>
+          </div>
+          <div class="category-box">
+            <h3>Playlist</h3>
+              <div class="container d-flex justify-content-center align-items-center flex-column">
+                <% if @obituary.funeral.playlist.spotify_profile_url.present? %>
+                  <div class = "d-flex justify-content-center align-items-center mt-5">
+                    <iframe src="https://open.spotify.com/follow/1/?uri=<%=@obituary.funeral.playlist.spotify_profile_url%>&size=detail&theme=light" width="220" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+                  </div>
+                <% end %>
+
+                <% if @embed_spotify_url.present? %>
+                  <div class = "d-flex justify-content-center align-items-center spotifyplayer mt-5">
+                    <iframe src="https://open.spotify.com/embed/playlist/<%=@embed_spotify_url %>" width="100%" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                  </div>
+                <% end %>
+              </div>
+          </div>
+      </div>
+    </div>
+
+
+
+  <div class="obituary-wrapper">
+  <h2>Photo Preview</h2>
+  <% @obituary.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+  </div>
+  <br>
+  <br>
+  <h2>Leave a condolence</h2>
+
+  <div class="obituary-wrapper">
+    <div class="category-box-full">
+    <%= simple_form_for(@condolence, url: create_condolence_path(@obituary)) do |f| %>
+      <div class="form-inputs p-5 d-flex justify-content-center flex-column">
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :content %>
+      <div class="form-actions d-flex justify-content-center align-items-center">
+        <%= f.button :submit, class: "btn btn-lj-big-g" %>
+      </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="obituary-wrapper">
+    <div class="category-box-full">
+    <h2>Condolences </h2>
+        <ul>
+          <% @obituary.funeral.condolences.each do |condolence| %>
+            <li>
+              <%= condolence.first_name %>
+              <%= condolence.content %>
+              <% if policy(condolence).destroy? %>
+                <%= link_to 'Delete', condolence_path(condolence), method: 'delete', data: { confirm: "Are you sure?" } %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+    </div>
+  </div>

@@ -1,4 +1,16 @@
 
+// digital will
+
+.illustration-digital{
+  position: absolute;
+  top: 22%;
+  right: 8%;
+  width: 20%;
+  z-index: 10;
+}
+
+
+
 // playlist / music illustrations
 
 .illustration-music{
@@ -6,6 +18,16 @@
   margin: 50px;
 }
 
+.illustration-cloud-documents1 {
+  position: absolute;
+  // width: 518px;
+  height: 200px;
+  // right: -200px;
+  right: -20%;
+  top: 5%;
+  // top: 5%;
+  z-index: 1;
+}
 
 // funeral types illustrations
 .illustration-angel{
