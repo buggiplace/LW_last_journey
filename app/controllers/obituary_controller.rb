@@ -2,7 +2,7 @@ class ObituaryController < ApplicationController
   before_action :find_obituary
 
   def show
-    @exclude_banner = false
+    @exclude_banner = true
     @banner_title = "My obituary"
     @banner_url = "https://images.unsplash.com/photo-1596751303335-ca42b3ca50c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=626&q=80"
   end
