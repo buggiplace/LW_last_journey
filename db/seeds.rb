@@ -75,34 +75,51 @@ lisa.funeral.obituary.update(
   for all the great memories I treasure with my friends and family. Enjoy everyday and start coding! ',
   guestlist: ["Tim.Mueller@gmx.de", "Jana.Schuhmann@gmail.com", "Luisa.Sidiqi@web.de", "Robin.Funie@gmx.net", "Sabrina.Setluar@gmail.com"]
   )
-# Insert a picutre to obituary https://res.cloudinary.com/dogxjtllu/image/upload/v1606859263/IMG_7426_btiox6.jpg
+
 lisa.funeral.representative = simon
 lisa.funeral.save
 
 
-# file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-# lisa.funeral.obituary.photos.attach(io: file, filename: 'Magdeburg.png', content_type: 'image/png')
+filepath2 = Rails.root.join('db', 'profile_mask.jpg')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath2), filename: "Profile_mask.jpg", content_type: "image/jpg")
+
+filepath3 = Rails.root.join('db', 'friends.JPG')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath3), filename: "friends.JPG", content_type: "image/jpg")
+
+filepath4 = Rails.root.join('db', 'Kapstadt.JPG')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath4), filename: "Kapstadt.JPG", content_type: "image/jpg")
+
+filepath5 = Rails.root.join('db', 'magdeburg.JPG')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath5), filename: "magdeburg.JPG", content_type: "image/jpg")
+
+filepath6 = Rails.root.join('db', 'Fachschaft.JPG')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath6), filename: "fachschaft.JPG", content_type: "image/jpg")
+
+filepath9 = Rails.root.join('db', 'Patient_will.pdf')
+document_patient_will = lisa.funeral.documents.create()
+document_patient_will.file.attach(io: File.open(filepath4), filename: "Patient_will.pdf", content_type: "application/pdf")
+
 
 
 
 puts "Funeral seed finished"
 
-# puts 'Create condolences'
+puts 'Create condolences'
 
-# lisa.funeral.condolences.create!(
-# first_name: 'Jane',
-# last_name: 'Doe',
-# content: 'You were a brilliant coder! Your team misses you!',
-# funeral_id: lisa.funeral_id)
+lisa.funeral.condolences.create!(
+first_name: 'Jane',
+last_name: 'Doe',
+content: 'You were a brilliant coder! Your team misses you!',
+funeral: lisa.funeral)
 
-# lisa.funeral.condolences.create!(
-# first_name: 'John',
-# last_name: 'Smith',
-# content: 'Giphy Queen! Thank you for all the laughs and jokes.
-# I miss you and will drink some Aperol Spritz in Memory of you.',
-# funeral_id: lisa.funeral_id)
+lisa.funeral.condolences.create!(
+first_name: 'John',
+last_name: 'Smith',
+content: 'Giphy Queen! Thank you for all the laughs and jokes.
+I miss you and will drink some Aperol Spritz in Memory of you.',
+funeral: lisa.funeral)
 
-# puts "Condolences seed finished"
+puts "Condolences seed finished"
 
 
 puts 'Create funeral locations'

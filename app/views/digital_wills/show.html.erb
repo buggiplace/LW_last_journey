@@ -1,39 +1,45 @@
-<%= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-light m-1'%>
+<%#= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-light m-1'%>
 
 <div class="container d-flex align-items-center justify-content-center flex-column mt-5">
-  <h2>What are your wishes and preferences regarding your digital after life? </h2>
-  <p>Apparantly once we are gone we are not fully gone. Contracts, data and liabilities stay as they are when no one looks after them. That can potentially cause problems for those who inherit or they miss out on wealth you may not have thought of. We would like to give you a couple of examples and make you think of the accounts, contracts, bonus cards etc. you have and your loved ones should take care of. </p>
+  <div>
+    <h2>Your digital will</h2>
+    <p>Well, you won't be completely gone, once you are gone. Contracts, data and liabilities stay as they are when no one looks after them. That could cause problems for those who inherit or they miss out on all of your wealth 😉. Make sure there will be no surprises by managing your digital afterlife already now.</p>
+  </div>
   <!-- <div class="d-flex flex-row justify-content-between"> -->
     <%= image_tag "i_misc.png", class: "illustration-digital" %>
       <div class="form-design sectionwrapper5">
         <%= simple_form_for(@digital_will) do |f| %>
           <%= f.error_notification %>
           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-            <h4 class="d-flex flex-center ">Manage</h4>
-            <h2 class="d-flex flex-start">Your digital accounts </h2>
+            <h4 class="d-flex flex-center default-space-top">Accounts & memberships</h4>
+            <h2 class="d-flex flex-start">I'm outta here... </h2>
 
             <%= f.input :facebook_obituary, as: :radio_buttons,
               input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item',
-              label: 'If you have a Facebook account, do you wish it to become an obituary page?'%>
-            <%= f.input :cancel_accounts, input_html: {class: 'textfield'}, label: 'The following accounts need to be cancelled, e.g. Netflix?' %>
-            <h4 class="d-flex flex-center default-space-top">Manage</h4>
-            <h2 class="d-flex flex-start">Your bank accounts</h2>
+
+              label: 'Indicate if you wish a Facebook obituary page?'%>
+            <%= f.input :cancel_accounts, input_html: {class: 'textfield'}, label: 'Indicate all accounts that should cancelled', placeholder: "e.g. Spotify, Disney+, DailyNews"' %>
+            <h4 class="d-flex flex-center default-space-top">Bank accounts</h4>
+            <h2 class="d-flex flex-start">My bank accounts</h2>
+            <p>List all your bank accounts below</p>
             <div class="d-flex flex-row justify-content-between">
               <%= f.input :bank_account_1, input_html: {class: ''}, collection: DigitalWill::BANKS, label: '1st bank account' %>
               <%= f.input :bank_account_2, input_html: {class: ''}, collection: DigitalWill::BANKS, label: '2nd bank account' %>
-              <%= f.input :bank_account_3, input_html: {class: 'select-input textfield'}, label: 'If above not applicable or additional accounts, please name them here' %>
+              <%= f.input :bank_account_3, input_html: {class: 'select-input textfield'}, label: "Your chance to go wild about further accounts etc. You're welcome.", placeholder: "e.g. Sparkasse Hintertupfingen"  %>
             </div>
-            <h4 class="d-flex flex-center default-space-top">Manage</h4>
-            <h2 class="d-flex flex-start">Your insurance accounts</h2>
+            <h4 class="d-flex flex-center default-space-top">Insurance accounts</h4>
+            <h2 class="d-flex flex-start">My insurance accounts</h2>
+            <p>List all your insurance accounts below</p>
             <div class="d-flex flex-row justify-content-between">
               <%= f.input :insurance_account_1, input_html: {class: ''}, collection: DigitalWill::INSURANCE, label: '1st insurance' %>
               <%= f.input :insurance_account_2, input_html: {class: ''}, collection: DigitalWill::INSURANCE, label: '2nd insurance' %>
-              <%= f.input :insurance_account_3, input_html: {class: 'select-input textfield'}, label: 'If above not applicable or additional accounts, please name them here' %>
+              <%= f.input :insurance_account_3, input_html: {class: 'select-input textfield'}, label: "Your chance to go wild about further accounts etc. You're welcome.", placeholder: "e.g. Versicherung Hintertupfingen" %>
             </div>
-            <h4 class="d-flex flex-center default-space-top">Manage</h4>
-            <h2 class="d-flex flex-start">Other topics</h2>
-            <%= f.input :hardware, input_html: {class: 'select-input textfield'}, label: 'What should happen to your hardware (e.g. hard-drives, mobile phone)?' %>
-            <%= f.input :comment, input_html: {class: 'select-input textfield'}, label: 'Please state a general comment about things that need to be taken care of.', :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 5}%>
+            <h4 class="d-flex flex-center default-space-top">Other topics</h4>
+            <h2 class="d-flex flex-start">One last thing...</h2>
+            <%= f.input :hardware, input_html: {class: 'select-input textfield'}, label: 'Indicate what to do with your hardware (e.g. hard-drives, mobile phones...)', placeholder: "e.g. Please destroy all my hard drives and delete everything from my laptop." %>
+            <%= f.input :comment, input_html: {class: 'select-input textfield'}, label: 'Anything else that needs to be taken care of?', :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 5}, placeholder: "e.g. Make sure that no one accesses my iPhone or online accounts."%>
+
           <div class="form-actions">
             <%= f.button :submit, value: "Save", class: "btn btn-lj-big-m2" %>
             <%= f.submit name: "redirect_to", value: "Save & exit", class: "btn btn-lj-big-m4", label: "Save & Leave" %>
