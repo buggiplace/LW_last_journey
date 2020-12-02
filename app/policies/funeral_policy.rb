@@ -3,6 +3,18 @@ class FuneralPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def index_documents?
+    record.user == user
+  end
+
+  def create_documents?
+    record.user == user
+  end
+
+  def destroy_documents?
+    record.user == user
+  end
+
   class Scope < Scope
     def resolve
       scope.all
