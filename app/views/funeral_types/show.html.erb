@@ -2,7 +2,7 @@
 <div class="container d-flex align-items-center justify-content-center flex-row">
   <div>
     <h2>Funeral type</h2>
-    <p>There is no one template for planning your last journey. It all depends on your preferences. What kind of resting place do you imagine for yourself? Do you fancy a specific physical space? How much resources should it take to take care of that place? Do you have a personal connection to a place? Do you want this place to last and become a place for your family and friends to retrun to? </p>
+    <p>Every family is different, and not everyone wants the same type of funeral. Funeral practices are influenced by religious and cultural traditions, costs, and personal preferences - which one is yours?</p>
   </div>
   <%= image_tag "i_angel.jpg", class: "illustration-angel" %>
 </div>
@@ -35,7 +35,7 @@
         <%= f.input :loc_city, label: 'Current selection', input_html: {class: 'textfield', data: { target: "location.cityName" }} %>
           <h4 class="d-flex flex-start default-space-top">Further preferences</h4>
           <h2 class="d-flex flex-start">My last post-it on the fridge</h2>
-        <%= f.input :comment, label: 'Further funeral preferences, like location decoration, dresscode...', :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 5}%>
+        <%= f.input :comment, label: 'Further funeral preferences: location, decoration, dresscode - your party, your rules.', :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 5}%>
     </div>
 
     <div class="sectionwrapper1">
