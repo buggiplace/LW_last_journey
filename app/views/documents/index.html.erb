@@ -7,7 +7,7 @@
   </div>
 
     <div class="form-design sectionwrapper4">
-    <%= simple_form_for([@funeral, @document]) do |f| %>
+    <%= simple_form_for(@funeral, url: funeral_documents_path(@funeral), method: :post) do |f| %>
       <%= f.error :base %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
       <div>
@@ -18,31 +18,21 @@
       <label class="btn upload-photo">
         Add a file!
         <span style="display:none;">
-          <%= f.input :file, as: :file%>
+          <%= f.input :documents, as: :file, input_html: { multiple: true } %>
         </span>
       </label>
       <p><i>Disclaimer: In Germany only signed original documents are legally binding.</i></p>
       <%= f.button :submit, class: "btn btn-lj-big-m2 flex-start" %>
     <% end %>
 
-    <!-- <ul class="picturelist mt-5"> -->
-      <%# @documents.each do |document| %>
-        <!-- <li class="d-flex justify-content-center flex-column align-items-center "> -->
-          <%#= cl_image_tag document.file.key, format: :jpg, height: 400, width: 500, crop: :fill %>
-          <%#= link_to cloudinary_url(document.file.key), target: "_blank"%>
-          <%#= link_to 'Delete', funeral_document_path(@funeral, document), method: 'delete', data: { confirm: "Are you sure?" } %>
-        <!-- </li> -->
-      <%# end %>
-    <!-- </ul> -->
-
     <ul class="picturelist documents-grid mt-5">
-      <% @documents.each do |document| %>
+      <% @funeral.documents.each do |document| %>
         <li class="d-flex justify-content-around flex-row align-items-center document-single">
           <%= link_to cloudinary_url(document.file.key), target: "_blank" do %>
           <%= cl_image_tag document.file.key, format: :jpg, height: 134, width: 105, crop: :fill %>
           <% end %>
             <div>
-              <p>Filename: <%= document.file_name %></p>
+              <p>Filename: <%= document.filename %></p>
               <%= link_to 'Delete', funeral_document_path(@funeral, document), method: 'delete', data: { confirm: "Are you sure?" }, class: "btn upload-photo mt-3 mb-2" %>
             </div>
           </li>
