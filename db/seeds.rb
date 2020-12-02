@@ -79,7 +79,7 @@ lisa.funeral.obituary.update(
 lisa.funeral.representative = simon
 lisa.funeral.save
 
-lisa.funeral.obituary.photo.attach(io: File.open("profile_mask.jpg"), filename: "some-image.jpg", content_type: "image/jpg")
+# lisa.funeral.obituary.photo.attach(io: File.open("profile_mask.jpg"), filename: "some-image.jpg", content_type: "image/jpg")
 # lisa.funeral.obituary.attach(io: File.open('profile_mask.jpg'), filename: 'avatar.png')
 # lisa.funeral.obituary.analyze
 

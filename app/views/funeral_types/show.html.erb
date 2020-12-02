@@ -46,7 +46,8 @@
         <h4 class="d-flex flex-start default-space-top">Further preferences</h4>
         <h2 class="d-flex flex-start">My last post-it on the fridge</h2>
 
-        <%= f.input :comment, label: 'Further funeral preferences, like location decoration, dresscode...', :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 5}%>
+        <%= f.input :comment, label: 'Further funeral preferences, like location decoration, dresscode...',
+        :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 5}, placeholder: "Please wear something colorful to my funeral and sing my favorite songs together."%>
     </div>
 
     <div class="sectionwrapper1">
