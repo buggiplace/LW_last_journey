@@ -1,6 +1,6 @@
 <%#= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-light m-1'%>
 
-<div class="container d-flex align-items-center justify-content-center flex-column mt-5">
+<div class="container d-flex align-items-center justify-content-center flex-column">
   <div>
     <h2>Your digital will</h2>
     <p>Well, you won't be completely gone, once you are gone. Contracts, data and liabilities stay as they are when no one looks after them. That could cause problems for those who inherit or they miss out on all of your wealth 😉. Make sure there will be no surprises by managing your digital afterlife already now.</p>
@@ -23,23 +23,24 @@
             <h2 class="d-flex flex-start">My bank accounts</h2>
             <p>List all your bank accounts below</p>
             <div class="d-flex flex-row justify-content-between">
-              <%= f.input :bank_account_1, input_html: {class: ''}, collection: DigitalWill::BANKS, label: '1st bank account' %>
-              <%= f.input :bank_account_2, input_html: {class: ''}, collection: DigitalWill::BANKS, label: '2nd bank account' %>
+              <%= f.input :bank_account_1, input_html: {class: 'textfield'}, collection: DigitalWill::BANKS, label: '1st bank account' %>
+              <%= f.input :bank_account_2, input_html: {class: 'textfield'}, collection: DigitalWill::BANKS, label: '2nd bank account' %>
               <%= f.input :bank_account_3, input_html: {class: 'select-input textfield'}, label: "Your chance to go wild about further accounts etc. You're welcome.", placeholder: "e.g. Sparkasse Hintertupfingen"  %>
             </div>
             <h4 class="d-flex flex-center default-space-top">Insurance accounts</h4>
             <h2 class="d-flex flex-start">My insurance accounts</h2>
             <p>List all your insurance accounts below</p>
             <div class="d-flex flex-row justify-content-between">
-              <%= f.input :insurance_account_1, input_html: {class: ''}, collection: DigitalWill::INSURANCE, label: '1st insurance' %>
-              <%= f.input :insurance_account_2, input_html: {class: ''}, collection: DigitalWill::INSURANCE, label: '2nd insurance' %>
+              <%= f.input :insurance_account_1, input_html: {class: 'textfield'}, collection: DigitalWill::INSURANCE, label: '1st insurance' %>
+              <%= f.input :insurance_account_2, input_html: {class: 'textfield'}, collection: DigitalWill::INSURANCE, label: '2nd insurance' %>
               <%= f.input :insurance_account_3, input_html: {class: 'select-input textfield'}, label: "Your chance to go wild about further accounts etc. You're welcome.", placeholder: "e.g. Versicherung Hintertupfingen" %>
             </div>
             <h4 class="d-flex flex-center default-space-top">Other topics</h4>
             <h2 class="d-flex flex-start">One last thing...</h2>
             <%= f.input :hardware, input_html: {class: 'select-input textfield'}, label: 'Indicate what to do with your hardware (e.g. hard-drives, mobile phones...)', placeholder: "e.g. Please destroy all my hard drives and delete everything from my laptop." %>
+            <div class="mt-3">
             <%= f.input :comment, input_html: {class: 'select-input textfield'}, label: 'Anything else that needs to be taken care of?', :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 5}, placeholder: "e.g. Make sure that no one accesses my iPhone or online accounts."%>
-
+            </div>
           <div class="form-actions">
             <%#= f.button :submit, value: "Save", class: "btn btn-lj-big-m2" %>
             <%= f.submit name: "redirect_to", value: "Save & exit", class: "btn btn-lj-big-m4", label: "Save & Leave" %>

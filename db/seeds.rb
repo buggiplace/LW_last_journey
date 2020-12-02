@@ -58,7 +58,7 @@ lisa.funeral.playlist.update(
   spotify_url: 'spotify:playlist:09vrf9JgCt1AD06mqwlubq',
   spotify_profile_url: "spotify:user:buggiplace")
 lisa.funeral.digital_will.update(
-  cancel_accounts: ["Spotify", "Netflix"],
+  cancel_accounts: ["Spotify,", "Netflix,", "Ebay Plus"],
   facebook_obituary: 'false',
   bank_account_1: 'n26',
   bank_account_2: 'Coinbase',
@@ -112,14 +112,14 @@ puts 'Create condolences'
 lisa.funeral.condolences.create!(
 first_name: 'Jane',
 last_name: 'Doe',
-content: 'You were a brilliant coder! Your team misses you!',
+content: 'You were a brilliant coder 👩‍💻! Your team misses you ♥️!',
 funeral: lisa.funeral)
 
 lisa.funeral.condolences.create!(
 first_name: 'John',
 last_name: 'Smith',
 content: 'Giphy Queen! Thank you for all the laughs and jokes.
-I miss you and will drink some Aperol Spritz in Memory of you.',
+I miss you and will drink some Aperol Spritz 🍹 in Memory of you.',
 funeral: lisa.funeral)
 
 puts "Condolences seed finished"
@@ -135,15 +135,15 @@ Location.create!(street: 'Hafendeichstraße 17', zip: '26465', city: 'Langeoog',
 require 'csv'
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
 filepath = Rails.root.join('db', 'address_seed5.csv') # previously 'address_seed4.csv'
-    CSV.foreach(filepath, csv_options) do |row|
-      Location.create!(
-          street: row['street'], # previously address_street
-          zip: row['zip'], # previously address_zip
-          city: row['city'], # previously address_city
-          name: row['name'], # previously Faker::Company.name,
-          cemetery_type: row['cemetery_type'], # new
-        )
-    end
+     CSV.foreach(filepath, csv_options) do |row|
+       Location.create!(
+           street: row['street'], # previously address_street
+           zip: row['zip'], # previously address_zip
+           city: row['city'], # previously address_city
+           name: row['name'], # previously Faker::Company.name,
+           cemetery_type: row['cemetery_type'], # new
+         )
+     end
 
 
-puts 'Funeral locations seed finished'
+ puts 'Funeral locations seed finished'
