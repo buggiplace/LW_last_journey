@@ -109,14 +109,14 @@ puts 'Create condolences'
 lisa.funeral.condolences.create!(
 first_name: 'Jane',
 last_name: 'Doe',
-content: 'You were a brilliant coder! Your team misses you!',
+content: 'You were a brilliant coder 👩‍💻! Your team misses you ♥️!',
 funeral: lisa.funeral)
 
 lisa.funeral.condolences.create!(
 first_name: 'John',
 last_name: 'Smith',
 content: 'Giphy Queen! Thank you for all the laughs and jokes.
-I miss you and will drink some Aperol Spritz in Memory of you.',
+I miss you and will drink some Aperol Spritz 🍹 in Memory of you.',
 funeral: lisa.funeral)
 
 puts "Condolences seed finished"
