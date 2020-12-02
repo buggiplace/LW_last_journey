@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require "open-uri"
+
 puts "Starting seed"
 
 puts "Cleaning old seeds"
@@ -70,72 +72,37 @@ lisa.funeral.digital_will.update(
   )
 lisa.funeral.obituary.update(
   last_words: 'Thank you for a wonderful life. Keep on rockin! I do not regret anything and am more than thankful
-  for all the great memories I treasure with my friends and family. Enjoy everyday and start coding! '
+  for all the great memories I treasure with my friends and family. Enjoy everyday and start coding! ',
+  guestlist: ["Tim.Mueller@gmx.de", "Jana.Schuhmann@gmail.com", "Luisa.Sidiqi@web.de", "Robin.Funie@gmx.net", "Sabrina.Setluar@gmail.com"]
   )
 # Insert a picutre to obituary https://res.cloudinary.com/dogxjtllu/image/upload/v1606859263/IMG_7426_btiox6.jpg
 lisa.funeral.representative = simon
 lisa.funeral.save
 
-# simon.funeral = funeral
+
+# file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+# lisa.funeral.obituary.photos.attach(io: file, filename: 'Magdeburg.png', content_type: 'image/png')
 
 
-# Funeral.create!(
-#   preferences: {
-#     'teststring': "test123",
-#     'funeral_type': {
-#       'type': 'Peace forest',
-#       'funeral_comment': 'I would like a lot of white candles at the memorial service',
-#       'location': 'xxxx'
-#     },
-#     'music': {
-#       'spotify_link': 'https://open.spotify.com/playlist/09vrf9JgCt1AD06mqwlubq?si=Hd9IknaZTQCbIzL6MbxORQ'
-#     },
-#     'documents': {
-#       'Organ_donor_card': 'https://images.unsplash.com/photo-1564069114553-7215e1ff1890?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80',
-#       'Last_will': 'https://images.unsplash.com/photo-1564069114553-7215e1ff1890?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80',
-#       'doc_comment': 'Original documents can be found in my office desk at the end of the room.'
-#     },
-#     'representative': {
-#       'first_name': 'Simon',
-#       'last_name': 'Geierbach',
-#       'email': 'simon.geierbach@gmail.com',
-#       'rep_comment': 'Hang in there, buddy! Please make sure my parents dont get to see my nude pictures in whatsapp.'
-#     },
-#     'digital_will': {
-#       'cancel_accounts': ['LinkedIn', 'Spotify', 'Facebook', 'Twitter'],
-#       'facebook_obituary': 'No',
-#       'bank_accounts': ['Sparkasse ****2456', 'N26: ****2456', 'Coinbase'],
-#       'insurance_accounts': ['HUB24: ****2635', 'Clark: ****4659'],
-#       'hardware': 'Please destroy my harddrives',
-#       'dig_comment': 'Yes, you can!'
-#     },
-#     'obituary': {
-#       'last_words': 'Thank you, I had a jolly good time with everyone. On my funeral I would like all of you drink a shot and throw the glasses on the wall! Tschaka!',
-#       'spotify_list': 'Yes',
-#       'death_date': '',
-#       'death_location': '',
-#       'funeral_time': '',
-#       'funeral_location': '',
-#       'funeral_info': '',
-#       'obituary_quote': '',
-#       'obituary_intro': '',
-#       'obituary_relatives': '',
-#       'obituary_other': ''
-#     }
-#   },
-#   user: lena
-# )
-# picture_one: row['picture_link'],
 
 puts "Funeral seed finished"
 
-puts 'Create condolences'
+# puts 'Create condolences'
 
+# lisa.funeral.condolences.create!(
+# first_name: 'Jane',
+# last_name: 'Doe',
+# content: 'You were a brilliant coder! Your team misses you!',
+# funeral_id: lisa.funeral_id)
 
-# funeral.condolences.create!(first_name: 'Jane', last_name: 'Doe')
-# funeral.condolences.create!(first_name: 'John', last_name: 'Smith')
+# lisa.funeral.condolences.create!(
+# first_name: 'John',
+# last_name: 'Smith',
+# content: 'Giphy Queen! Thank you for all the laughs and jokes.
+# I miss you and will drink some Aperol Spritz in Memory of you.',
+# funeral_id: lisa.funeral_id)
 
-puts "Condolences seed finished"
+# puts "Condolences seed finished"
 
 
 puts 'Create funeral locations'
