@@ -19,52 +19,7 @@
 
 //below classes from mo for the proposal that is above lenas
 
-.cursiv-style h1 {
-  font-family: 'Niconne', cursive;
-  font-size: 32px;
-  color: black;
-  font-weight: bold;
-}
-
-.cursiv-style h2 {
- font-family: 'Niconne', cursive;
-  font-size: 27px;
-  font-weight: bold;
-  color: black;
-}
-
-.cursiv-style h3 {
-  font-family: 'Niconne', cursive;
-  font-size: 25px;
-
-  color: black;
-}
-
-.cursiv-style label {
-  font-family: 'Niconne', cursive;
-  font-size: 25px;
-
-  color: black;
-}
-
-.cursiv-style p {
-  font-family: 'Niconne', cursive;
-  font-size: 20px;
-  color: black;
-}
-
-.border-top {
-  border-top: 2px dotted black;
-}
-
-.notice {
-  border: 10px solid black;
-  padding: 30px;
-  padding-top: 3%;
-  height: 100vh;
-  overflow: hidden;
-  white-space: nowrap;
-}
+// padding helper
 
 .default-padding-top {
   padding-top: 10px;
@@ -74,35 +29,98 @@
   padding-left: 5%;
   padding-right: 5%;
   padding-bottom: 2%;
+}
 
+.nopadding-box {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+
+// cursiv text style
+
+.cursiv-style h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 32px;
+  color: black;
+  font-weight: bold;
+}
+
+.cursiv-style h2 {
+ font-family: 'Cinzel', serif;
+  font-size: 27px;
+  font-weight: bold;
+  color: black;
+}
+
+.cursiv-style h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 25px;
+
+  color: black;
+}
+
+.cursiv-style label {
+  font-family: 'Cinzel', serif;
+  font-size: 25px;
+
+  color: black;
+}
+
+.cursiv-style p {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  color: black;
+}
+
+.border-top {
+  border-top: 2px dotted black;
+}
+
+
+// main notice section at top
+
+.notice {
+  border: 10px solid black;
+  height: 100%;
+  overflow: hidden;
+  // flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // padding: 30px;
+  // padding-top: 3%;
+  // white-space: nowrap;
+}
+
+.notice-infos {
+  width: 700px;
+  align-self: center;
 }
 
 .notice img {
-  padding-top: 3%;
-
-}
-
-.notice ul {
-  font-family: 'Niconne', cursive;
-  font-size: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 //cards for condolences
 
 .condolences {
   border: 10px solid black;
-  padding: 30px;
-  padding-top: 3%;
+  width: 50%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  // padding: 30px;
+  // padding-top: 3%;
 }
 
 
 .card-condolence {
   overflow: hidden;
-  height: 120px;
+  min-height: 120px;
+  height: 100%;
   background: white;
-  //box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-top: 1px solid black;
-  border-bottom: 1px solid black;
   display: flex;
   align-items: center;
 
@@ -143,3 +161,28 @@
   padding: 16px;
   flex-grow: 1;
 }
+
+// spotify player box
+
+.spotify-public {
+  border: 10px solid black;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  // flex-grow: 1;
+
+  // padding: 30px;
+  // padding-top: 3%;
+}
+
+.gallery {
+  width: 400px;
+  height: 400px;
+  border: 10px solid black;
+}
+
