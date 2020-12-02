@@ -75,7 +75,7 @@ lisa.funeral.obituary.update(
   funeral_location: "Berlin",
   funeral_info: "Please wear something colorful and bring a party hat.",
   death_date: "2020-10-01T00:00",
-  funeral_time: "2020-12-03T18:56"
+  funeral_time: "2020-12-05T11:00"
   )
 
 lisa.funeral.representative = simon
