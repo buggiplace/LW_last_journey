@@ -12,7 +12,9 @@
   <div class="container category-container d-flex flex-wrap justify-content-between align-items-top">
     <div class="category-box">
       <h3>We miss you</h3>
+      <% if @obituary.photos.last.present? %>
         <%= cl_image_tag @obituary.photos.last.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
     </div>
     <div class="category-box">
       <h3>Details</h3>
