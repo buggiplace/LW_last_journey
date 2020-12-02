@@ -13,5 +13,5 @@ class FuneralType < ApplicationRecord
   end
 
 # CATEGORIES = ["Burial", "Burial at sea", "Tree funeral", "Woodland burial", "Diamond burial", "Urn burial", "Sky burial", "Undecided"]
-CATEGORIES = ["Cemetery burial", "Burial at sea", "Tree burial", "Forest burial", "Diamond cremation", "Urn cremeation", "Sky burial", "Undecided"]
+CATEGORIES = ["Cemetery burial", "Burial at sea", "Tree burial", "Forest burial", "Diamond cremation", "Urn cremation", "Sky burial", "Undecided"]
 end

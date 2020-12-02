@@ -32,9 +32,12 @@
   color: rgba(61,47,91,1);
 }
 
-// .mapboxgl-popup-close-btn {
-//   right: 40px !important;
-// }
+.mapboxgl-popup-close-button {
+  right: 11px;
+  font-size: 20px;
+  color: rgba(61,47,91,0.6);
+  font-weight: 900;
+}
 
 
 #map {
