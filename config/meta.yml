@@ -1,5 +1,5 @@
 meta_product_name: "Last Journey"
 meta_title: "Last Journey - Organize your own funeral and have everything planned for the last great adventure of life."
 meta_description: "Organize your own funeral and have everything planned for the last great adventure of life."
-meta_image: "i_cover.jpg" # should exist in `app/assets/images/`
+meta_image: "image_1200x630.png" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account" # required for Twitter Cards
