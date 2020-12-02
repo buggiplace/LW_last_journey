@@ -1,3 +1,28 @@
+    <% if @obituary.photos.last.present? %>
+    <div class="container d-flex justify-content-center">
+      <div class="carousel-box">
+        <div id="carouselExampleSlidesOnly" class="carousel slide gallery" data-ride="carousel" data-interval="2000">
+          <div class="carousel-inner">
+            <div class="carousel-item active carousel-pic">
+                  <%=  cl_image_tag(@obituary.photos.last.key, :transformation=>[
+                {:effect=>"cartoonify"},
+                {:width=>400, :height=>400, :crop=>"pad"}
+                ]) %>
+                <!-- <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2534&q=80" class="d-block w-100" alt="..."> -->
+            </div>
+            <% @obituary.photos.each do |picture| %>
+            <div class="carousel-item carousel-pic">
+              <%=  cl_image_tag(picture.key, :transformation=>[
+                {:effect=>"cartoonify"},
+                {:width=>400, :height=>400, :crop=>"pad"}
+                ]) %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 
 
   <h1>BELOW UNCHANGED FROM TUESDAY</h1>
@@ -18,7 +43,7 @@
     </div>
   </div>
 
-  <div class="container d-flex flex-column justify-content-center cursiv-style condolences mt-5">
+  <div class="container d-flex flex-column justify-content-center font-style condolences mt-5">
     <h2 class="align-self-center">Condolences</h2>
     <% @obituary.funeral.condolences.each do |condolence| %>
       <div class="card-condolence">
