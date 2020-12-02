@@ -3,7 +3,7 @@
 <div class="container d-flex align-items-center justify-content-center flex-column mt-5">
   <div>
     <h2>Your digital will</h2>
-    <p>Well, you won't be completely gone, once you are gone. Contracts, data and liabilities stay as they are when no one looks after them. That could cause problems for those who inherit or they miss out on all of your wealth 😉. Make sure there will be no surprises by managing your digital afterlife already now.</p>
+    <p>Well, you won't be completely gone, once you are gone. Contracts, data and liabilities could cause problems for those who inherit. Manage this now. Or do want anyone to miss out on all of the wealth on your bank accounts? 😉</p>
   </div>
   <!-- <div class="d-flex flex-row justify-content-between"> -->
     <%= image_tag "i_misc.png", class: "illustration-digital" %>
@@ -17,8 +17,8 @@
             <%= f.input :facebook_obituary, as: :radio_buttons,
               input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item',
 
-              label: 'Indicate if you wish a Facebook obituary page?'%>
-            <%= f.input :cancel_accounts, input_html: {class: 'textfield'}, label: 'Indicate all accounts that should cancelled', placeholder: "e.g. Spotify, Disney+, DailyNews" %>
+              label: 'Indicate whether you fancy a Facebook obituary page'%>
+            <%= f.input :cancel_accounts, input_html: {class: 'textfield'}, label: 'Indicate all user accounts requiring cancellation', placeholder: "e.g. Spotify, Disney+, DailyNews" %>
             <h4 class="d-flex flex-center default-space-top">Bank accounts</h4>
             <h2 class="d-flex flex-start">My bank accounts</h2>
             <p>List all your bank accounts below</p>
@@ -40,12 +40,16 @@
             <%= f.input :hardware, input_html: {class: 'select-input textfield'}, label: 'Indicate what to do with your hardware (e.g. hard-drives, mobile phones...)', placeholder: "e.g. Please destroy all my hard drives and delete everything from my laptop." %>
             <%= f.input :comment, input_html: {class: 'select-input textfield'}, label: 'Anything else that needs to be taken care of?', :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 5}, placeholder: "e.g. Make sure that no one accesses my iPhone or online accounts."%>
 
-          <div class="form-actions">
-            <%#= f.button :submit, value: "Save", class: "btn btn-lj-big-m2" %>
-            <%= f.submit name: "redirect_to", value: "Save & exit", class: "btn btn-lj-big-m4", label: "Save & Leave" %>
+          <div class="sectionwrapper1">
+            <%= image_tag "i_cloud.jpg", class: "illustration-cloud" %>
+            <div class="container form-exit d-flex flex-row justify-content-between align-items-center">
+              <h3 class="checkout-text">You are on fire! Let's continue...</h3>
+              <%= f.button :submit, value: "Save", class: "btn btn-lj-big-m2" %>
+              <%= f.submit name: "redirect_to", value: "Save & exit", class: "btn btn-lj-big-m2"%>
+      <% end %>
+            </div>
           </div>
-        <% end %>
-      </div>
+    </div>
 </div>
 
 

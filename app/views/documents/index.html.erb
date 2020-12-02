@@ -1,6 +1,11 @@
 <%#= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-light m-1'%>
 
 <div class="container d-flex justify-content-center flex-column align-items-center mt-2">
+  <div>
+    <h2>My documents</h2>
+    <p>The bad news first: you are going to be outlived by bureaucracy. Good news: you come prepared. Upload all important documents here so that you can find peace while everything goes according to plan </p>
+  </div>
+
     <div class="form-design sectionwrapper4">
     <%= simple_form_for([@funeral, @document]) do |f| %>
       <%= f.error :base %>
@@ -9,14 +14,14 @@
         <%= image_tag "i_cloud.png", class: "illustration-cloud-documents1" %>
       </div>
       <h4 class="d-flex flex-start">Document upload</h4>
-      <h2 class="d-flex flex-start">Beaurocracy outlasting you </h2>
+      <h2 class="d-flex flex-start">Long live bureaucracy </h2>
       <label class="btn upload-photo">
         Add a file!
         <span style="display:none;">
           <%= f.input :file, as: :file%>
         </span>
       </label>
-      <p><i>Be aware that in Germany only signed original documents are legally binding.</i></p>
+      <p><i>Disclaimer: In Germany only signed original documents are legally binding.</i></p>
       <%= f.button :submit, class: "btn btn-lj-big-m2 flex-start" %>
     <% end %>
 
@@ -34,7 +39,7 @@
       <% @documents.each do |document| %>
         <li class="d-flex justify-content-around flex-row align-items-center document-single">
           <%= link_to cloudinary_url(document.file.key), target: "_blank" do %>
-          <%= cl_image_tag document.file.key, format: :jpg, height: 267, width: 210, crop: :fill %>
+          <%= cl_image_tag document.file.key, format: :jpg, height: 134, width: 105, crop: :fill %>
           <% end %>
             <div>
               <p>Filename: <%= document.file_name %></p>
@@ -49,7 +54,7 @@
     <div class="sectionwrapper1">
       <%= image_tag "i_cloud.jpg", class: "illustration-cloud" %>
       <div class="container form-exit d-flex flex-row justify-content-between align-items-center">
-        <h3>All good here, let's move on to the next section</h3>
+        <h3>Good to have this out of our way! Shall we...?</h3>
         <%= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-lj-big-m2'%>
       </div>
     </div>
