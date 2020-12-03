@@ -42,7 +42,7 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     if (markers.length > 0) {
       addMarkersToMap(map, markers);
-      setTimeout(fitMapToMarkers(map, markers),2000);
+      fitMapToMarkers(map, markers);
     }
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
                                       mapboxgl: mapboxgl }));
