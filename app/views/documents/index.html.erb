@@ -11,7 +11,7 @@
       <%= f.error :base %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
       <div>
-        <%= image_tag "i_cloud.png", class: "illustration-cloud-documents1" %>
+        <%= image_tag "i_letters.png", class: "illustration-cloud-documents1" %>
       </div>
       <h4 class="d-flex flex-start">Document upload</h4>
       <h2 class="d-flex flex-start">Long live bureaucracy </h2>
@@ -49,8 +49,9 @@
     <div class="sectionwrapper1">
       <%= image_tag "i_cloud.jpg", class: "illustration-cloud" %>
       <div class="container form-exit d-flex flex-row justify-content-between align-items-center">
-        <h3>Good to have this out of our way! Shall we...?</h3>
-        <%= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-lj-big-m2'%>
+        <h3 class="checkout-text">Good to have this out of our way! Shall we...?</h3>
+        <%= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-lj-big-m2 mr-5'%>
+      <%= image_tag "i_post.png", class: "illustration-cloud-documents1" %>
       </div>
     </div>
 
