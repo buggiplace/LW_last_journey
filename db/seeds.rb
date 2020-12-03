@@ -58,7 +58,7 @@ lisa.funeral.playlist.update(
   spotify_url: 'spotify:playlist:09vrf9JgCt1AD06mqwlubq',
   spotify_profile_url: "spotify:user:buggiplace")
 lisa.funeral.digital_will.update(
-  cancel_accounts: ["Spotify,", "Netflix,", "Ebay Plus"],
+  cancel_accounts: "Spotify, Netflix",
   facebook_obituary: 'false',
   bank_account_1: 'n26',
   bank_account_2: 'Coinbase',
