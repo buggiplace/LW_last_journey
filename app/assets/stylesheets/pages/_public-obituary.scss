@@ -140,7 +140,7 @@
 
 .font-style h1 {
   font-family: "Montserrat", "sans-serif";
-  font-size: 32px;
+  font-size: 25px;
   color: black;
   font-weight: bold;
   line-height: 1;
@@ -148,7 +148,7 @@
 
 .font-style h2 {
  font-family: "Montserrat", "sans-serif";
-  font-size: 27px;
+  font-size: 20px;
   font-weight: bold;
   color: black;
   line-height: 1;
@@ -156,22 +156,22 @@
 
 .font-style h3 {
   font-family: "Montserrat", "sans-serif";
-  font-size: 20px;
+  font-size: 18px;
 
   color: black;
 }
 
 .font-style label {
   font-family: "Montserrat", "sans-serif";
-  font-size: 25px;
+  font-size: 15px;
   font-weigth: lighter;
   color: black;
 }
 
 .font-style p {
   font-family: "Montserrat", "sans-serif";
-  line-height: 1.4;
-  font-size: 18px;
+  line-height: 1.2;
+  font-size: 16px;
   color: black;
 }
 
@@ -192,6 +192,7 @@
   flex-direction: column;
   align-items: center;
   padding-bottom: 30px;
+  background-color: snow;
   // padding-top: 3%;
   // white-space: nowrap;
 }
@@ -222,7 +223,7 @@
 
 .card-condolence-wrapper {
   overflow: scroll;
-  height: 500px;
+  height: 300px;
 }
 
 .condolence-input {
@@ -284,7 +285,7 @@
 .lj-carousel-box {
   border: 3px solid $main1;
   width: 75%;
-  height: 500px;
+  height: 400px;
   // padding-top: 30px;
   // padding-bottom: 20px;
   border-radius: 20px;

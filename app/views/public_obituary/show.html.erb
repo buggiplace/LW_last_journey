@@ -11,7 +11,8 @@
       <% if @obituary.photos.last.present? %>
       <%=  cl_image_tag(@obituary.photos.last.key, :transformation=>[
         {:effect=>"improve:outdoor"},
-        # {:overlay=>{:url=>"https://res.cloudinary.com/demo/image/upload/logos/cloudinary_full_logo_white_small.png"})},
+        {:background=>"snow"},
+
         {:radius=>"max"},
         {:effect=>"outline:50", :color=>"black"},
         {:height=>180, :crop=>"scale"}
@@ -20,10 +21,10 @@
     <div class="notice-infos text-center">
     <p class="mt-4 text-center font-italic">"<%=@obituary.last_words %>"</p>
         <div>
-          <p class="border-top default-padding-top">Sadly, we have to announce that <%= @obituary.funeral.user.first_name%> has passed away
+          <p class="border-top pt-2">Sadly, we have to announce that <%= @obituary.funeral.user.first_name%> has passed away
           on <%= @obituary.death_date.strftime('%e %B %Y') %> in <%= @obituary.death_location %></p>
-          <p class="default-padding-top">The funeral will take place on <%= @obituary.funeral_time.strftime('%e %B %Y at %H:%M') %> in <%= @obituary.funeral_location %></p>
-          <p class="default-padding-top">Please note the following: <%= @obituary.funeral_info%> </p>
+          <p class="">The funeral will take place on <%= @obituary.funeral_time.strftime('%e %B %Y at %H:%M') %> in <%= @obituary.funeral_location %></p>
+          <p class="">Please note the following: <%= @obituary.funeral_info%> </p>
         </div>
         <div>
           <p class="border-top text-center default-padding-top"><%= @obituary.funeral.user.first_name%> has provided a set of
@@ -111,7 +112,7 @@
 
           <div class="container d-flex flex-column justify-content-center">
             <div class="d-flex font-style spotify-public  align-self-center mt-5">
-              <h2 class="align-self-center mb-2"><%= @obituary.funeral.user.first_name%>'s favourite Playlist</h2>
+              <h2 class="align-self-center mb-5"><%= @obituary.funeral.user.first_name%>'s favourite Playlist</h2>
               <div class="">
                 <% if @obituary.funeral.playlist.spotify_profile_url.present? %>
                   <div class = "">
@@ -120,8 +121,8 @@
                 <% end %>
 
                 <% if @embed_spotify_url.present? %>
-                  <div class = "spotifyplayer">
-                    <iframe src="https://open.spotify.com/embed/playlist/<%=@embed_spotify_url %>" width="100%" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                  <div class = "spotifyplayer mb-5">
+                    <iframe src="https://open.spotify.com/embed/playlist/<%=@embed_spotify_url %>" width="350px" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                   </div>
                 <% end %>
               </div>
