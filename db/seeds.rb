@@ -135,15 +135,15 @@ Location.create!(street: 'Hafendeichstraße 17', zip: '26465', city: 'Langeoog',
 require 'csv'
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
 filepath = Rails.root.join('db', 'address_seed5.csv') # previously 'address_seed4.csv'
-     CSV.foreach(filepath, csv_options) do |row|
-       Location.create!(
-           street: row['street'], # previously address_street
-           zip: row['zip'], # previously address_zip
-           city: row['city'], # previously address_city
-           name: row['name'], # previously Faker::Company.name,
-           cemetery_type: row['cemetery_type'], # new
-         )
-     end
+      CSV.foreach(filepath, csv_options) do |row|
+        Location.create!(
+            street: row['street'], # previously address_street
+            zip: row['zip'], # previously address_zip
+            city: row['city'], # previously address_city
+            name: row['name'], # previously Faker::Company.name,
+            cemetery_type: row['cemetery_type'], # new
+          )
+      end
 
 
- puts 'Funeral locations seed finished'
+puts 'Funeral locations seed finished'
