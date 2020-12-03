@@ -6,60 +6,63 @@
     <p><%= @funeral.user.first_name %> has chosen you as her representative in case of her death. To make things easier for you during these diffcult times, <%= @funeral.user.first_name %> has been planning ahead with the help of Last Journey. The following data will help you administer her estate, organize the funeral and preserve her memory.</p>
   </div>
 
-  <%= image_tag "i_angel.jpg", class: "illustration-angel" %>
+  <%= image_tag "i_done.png", class: "illustration-angel" %>
 </div>
 
-<div class="container rep-header">
-<div>
-  <h4>Last will details</h4>
-  <h2><%= @funeral.user.first_name %> was prepared for this</h2>
-  <p>Please respect <%= @funeral.user.first_name %>'s preferences when handling her matters</p>
+
+<div class="container rep-header d-flex flex-column">
+    <div>
+      <h4>Last will details</h4>
+      <h2><%= @funeral.user.first_name %> was prepared for this</h2>
+      <p>Please respect <%= @funeral.user.first_name %>'s preferences when handling her matters</p>
+    </div>
 </div>
 
-<div class="container d-flex flex-row">
-  <div class="will-border">
-    <h5>Funeral preferences</h5>
-    <p><strong style="color:#3E2F5B">Burial Type:</strong> <%= @funeral.funeral_type.burial_type %></p>
-    <p><strong style="color:#3E2F5B">Burial Location:</strong> <%= @funeral.funeral_type.loc_city %></p>
-    <p><strong style="color:#3E2F5B">Funeral comments:</strong> <%= @funeral.funeral_type.comment %></p>
-  </div>
-  <br>
-  <div class="will-border">
-    <h5>Digital will preferences</h5>
-    <p><strong style="color:#3E2F5B">Accounts to cancel:</strong> <% @funeral.digital_will.cancel_accounts %>
-    <p><strong style="color:#3E2F5B">Facebook obituary wanted?</strong> <%= @funeral.digital_will.facebook_obituary %></p>
-    <p><strong style="color:#3E2F5B">Bank accounts:</strong> <%= @funeral.digital_will.bank_account_1 %>, <%= @funeral.digital_will.bank_account_2 %>, <%= @funeral.digital_will.bank_account_3 %></p>
-    <p><strong style="color:#3E2F5B">Insurance accounts:</strong> <%= @funeral.digital_will.insurance_account_1 %>, <%= @funeral.digital_will.insurance_account_2 %>, <%= @funeral.digital_will.insurance_account_3 %></p>
-    <p><strong style="color:#3E2F5B">Hardware instruction:</strong> <%= @funeral.digital_will.hardware %></p>
-    <p><strong style="color:#3E2F5B">Other digital will instructions:</strong> <%= @funeral.digital_will.comment %></p>
-    <br>
-  </div>
-</div>
-    <p class="mt-5">Please notice the following important documents provided by <%= @funeral.user.first_name %></p>
-</div>
-
-<div class="container will-border">
-
-  <h5>Important documents</h5>
-  <ul class="picturelist documents-grid mt-5">
-    <% @funeral.documents.each do |document| %>
-      <li class="d-flex justify-content-around flex-row align-items-center document-single">
-        <%= link_to cloudinary_url(document.key), target: "_blank" do %>
-        <%= cl_image_tag document.key, format: :jpg, height: 134, width: 105, crop: :fill, class: "doc_shadow" %>
-        <% end %>
-          <div class="d-flex flex-column align-items-center">
-            <p class="filename">Filename: </p>
-            <p class="filename"><%= document.filename %></p>
-            <div class="filename">
-              <%= link_to 'Delete', funeral_document_path(@funeral, document), method: 'delete', data: { confirm: "Are you sure?" }, class: "btn upload-photo mt-3 mb-2" %>
-            </div>
+    <div class="container">
+      <div class="d-flex flex-row justify-content-between rep-header">
+          <div class="will-border funeral-preferences-box">
+              <h5>Funeral preferences</h5>
+              <p><strong style="color:#3E2F5B">Burial Type:</strong> <%= @funeral.funeral_type.burial_type %></p>
+              <p><strong style="color:#3E2F5B">Burial Location:</strong> <%= @funeral.funeral_type.loc_city %></p>
+              <p><strong style="color:#3E2F5B">Funeral comments:</strong> <%= @funeral.funeral_type.comment %></p>
           </div>
-        </li>
-    <% end %>
-    </ul>
+          <div class="will-border digital-will-box">
+              <h5>Digital will preferences</h5>
+              <p><strong style="color:#3E2F5B">Accounts to cancel:</strong> <% @funeral.digital_will.cancel_accounts.each do |account| %>
+                            <%= account %>,
+                        <% end %> </p>
+              <p><strong style="color:#3E2F5B">Facebook obituary wanted?</strong> <%= @funeral.digital_will.facebook_obituary %></p>
+              <p><strong style="color:#3E2F5B">Bank accounts:</strong> <%= @funeral.digital_will.bank_account_1 %>, <%= @funeral.digital_will.bank_account_2 %>, <%= @funeral.digital_will.bank_account_3 %></p>
+              <p><strong style="color:#3E2F5B">Insurance accounts:</strong> <%= @funeral.digital_will.insurance_account_1 %>, <%= @funeral.digital_will.insurance_account_2 %>, <%= @funeral.digital_will.insurance_account_3 %></p>
+              <p><strong style="color:#3E2F5B">Hardware instruction:</strong> <%= @funeral.digital_will.hardware %></p>
+              <p><strong style="color:#3E2F5B">Other digital will instructions:</strong> <%= @funeral.digital_will.comment %></p>
+          </div>
+      </div>
+    </div>
+
+
+  <div class="container d-flex flex-column justify-content-between">
+      <p class="mt-5">Please notice the following important documents provided by <%= @funeral.user.first_name %></p>
+      <div class="container will-border important-documents-box">
+        <h5>Important documents</h5>
+        <ul class="picturelist documents-grid mt-5">
+          <% @funeral.documents.each do |document| %>
+            <li class="d-flex justify-content-around flex-row align-items-center document-single">
+              <%= link_to cloudinary_url(document.key), target: "_blank" do %>
+              <%= cl_image_tag document.key, format: :jpg, height: 134, width: 105, crop: :fill, class: "doc_shadow" %>
+              <% end %>
+                <div class="d-flex flex-column align-items-center">
+                  <p class="filename">Filename: </p>
+                  <p class="filename"><%= document.filename %></p>
+                  <div class="filename">
+                    <%= link_to 'Delete', funeral_document_path(@funeral, document), method: 'delete', data: { confirm: "Are you sure?" }, class: "btn upload-photo mt-3 mb-2" %>
+                  </div>
+                </div>
+              </li>
+          <% end %>
+          </ul>
+    </div>
 </div>
-
-
 
 
 
