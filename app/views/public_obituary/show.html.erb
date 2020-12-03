@@ -3,13 +3,15 @@
 <% content_for :meta_image, @banner_url %>
   <% if @obituary.public %>
 
+
 <div class="container d-flex flex-column align-items-center">
   <div class="font-style notice pt-5 mb-5">
     <h2>In memory of</h2>
     <h1><%= @obituary.funeral.user.first_name%></h1>
       <% if @obituary.photos.last.present? %>
       <%=  cl_image_tag(@obituary.photos.last.key, :transformation=>[
-        {:effect=>"cartoonify"},
+        {:effect=>"improve:outdoor"},
+        # {:overlay=>{:url=>"https://res.cloudinary.com/demo/image/upload/logos/cloudinary_full_logo_white_small.png"})},
         {:radius=>"max"},
         {:effect=>"outline:50", :color=>"black"},
         {:height=>180, :crop=>"scale"}
@@ -19,8 +21,8 @@
     <p class="mt-4 text-center font-italic">"<%=@obituary.last_words %>"</p>
         <div>
           <p class="border-top default-padding-top">Sadly, we have to announce that <%= @obituary.funeral.user.first_name%> has passed away
-          on <%= @obituary.death_date %> in <%= @obituary.death_location %></p>
-          <p class="default-padding-top">The funeral will take place on <%= @obituary.funeral_time %> in <%= @obituary.funeral_location %></p>
+          on <%= @obituary.death_date.strftime('%e %B %Y') %> in <%= @obituary.death_location %></p>
+          <p class="default-padding-top">The funeral will take place on <%= @obituary.funeral_time.strftime('%e %B %Y at %H:%M') %> in <%= @obituary.funeral_location %></p>
           <p class="default-padding-top">Please note the following: <%= @obituary.funeral_info%> </p>
         </div>
         <div>
@@ -31,6 +33,7 @@
       </div>
   </div>
 </div>
+
 
 
       <div class="container d-flex flex-column justify-content-center mt-5">
@@ -61,7 +64,7 @@
                 <div class="card-condolence-infos">
                   <h3 class="font-italic"><%= condolence.content %></h3>
                   <p>from: <%= condolence.first_name %>  <%= condolence.last_name %></p>
-                  <p><%= condolence.created_at %></p>
+                  <p><%= condolence.created_at.strftime('%e %B %Y') %></p>
                   <% if policy(condolence).destroy? %>
                       <%= link_to 'Delete', condolence_path(condolence), method: 'delete', data: { confirm: "Are you sure?" } %>
                   <% end %>
@@ -156,4 +159,14 @@ function closeNav() {
   <% else %>
     This site is not public.
   <% end %>
-
+<!-- <script type="text/javascript">
+    document.getElementById("main").onclick = function () {
+        console.log("hello world")
+        location.href = "www.lewagon.com";
+    };
+</script> -->
+<!--
+  <script type="text/javascript">
+    document.getElementById("condolence_2").style.height = (document.getElementById("condolence_1").clientHeight) + "px";
+</script>
+ -->
