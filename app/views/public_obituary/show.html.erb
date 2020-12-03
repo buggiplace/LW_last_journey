@@ -61,7 +61,7 @@
                 <div class="card-condolence-infos">
                   <h3 class="font-italic"><%= condolence.content %></h3>
                   <p>from: <%= condolence.first_name %>  <%= condolence.last_name %></p>
-                  <p><%= condolence.created_at %></p>
+                  <p><%= condolence.created_at.strftime('%e %B %Y') %></p>
                   <% if policy(condolence).destroy? %>
                       <%= link_to 'Delete', condolence_path(condolence), method: 'delete', data: { confirm: "Are you sure?" } %>
                   <% end %>

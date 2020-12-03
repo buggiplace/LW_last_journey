@@ -42,9 +42,9 @@
           <% @funeral.documents.each do |document| %>
             <li class="d-flex justify-content-center flex-column align-items-center preview-doc">
               <div class="pdf-preview">
-                <%= cl_image_tag document.file.key, format: :jpg%>
+                <%= cl_image_tag document.key, format: :jpg%>
               </div>
-              <%= link_to document.file_name, cloudinary_url(document.file.key), target: "_blank"%>
+              <%= link_to document.filename, cloudinary_url(document.key), target: "_blank"%>
             </li>
           <% end %>
          </ul>
