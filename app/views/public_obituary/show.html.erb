@@ -124,18 +124,43 @@
             </div>
           </div>
 
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <%= image_tag "logo_tree_b.png", class: "checkout-tree" %>
+    <h1 class="glow" href="#">Thank you for for your attention</h1>
+    <p class="glow" href="#">and please stay with us for the time to come</p>
+    <img src="https://dwj199mwkel52.cloudfront.net/assets/core/svg/logo-lewagon-d3ef4212222c0b4116443049e84e03a45790419f2e3141677d4af8522b59404e.svg" width="210"/>
+  </div>
+</div>
+
+
+<div class="container mt-5">
+  <div class="d-flex align-items-center justify-content-center">
+    <span class="d-flex align-items-center justify-content-center"font-size:30px;cursor:pointer" onclick="openNav()"><%= image_tag "logo_tree_b.png", class: "checkout-tree" %></span>
+  </div>
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+  console.log("hello")
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+
   <% else %>
     This site is not public.
   <% end %>
-
-
-
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     document.getElementById("main").onclick = function () {
         console.log("hello world")
         location.href = "www.lewagon.com";
     };
-</script>
+</script> -->
 <!--
   <script type="text/javascript">
     document.getElementById("condolence_2").style.height = (document.getElementById("condolence_1").clientHeight) + "px";
