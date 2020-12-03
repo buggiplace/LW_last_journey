@@ -2,19 +2,64 @@
 
 <div class="container d-flex align-items-center justify-content-center flex-row">
   <div>
-    <h2>Hello <%= @funeral.representative.first_name %> </h2>
-    <p>Look at the last wishes of <%= @funeral.user.first_name %> and edit the obituary</p>
+    <h2>Hello <%= @funeral.representative.first_name %>, </h2>
+    <p><%= @funeral.user.first_name %> has chosen you as representative in case of death. To make things easier for you, she has been planning for this event with the help of Last Journey. The following data will help you administer her estate, organize the funeral and preserve her memory.</p>
   </div>
   <%= image_tag "i_angel.jpg", class: "illustration-angel" %>
 </div>
+
+<div class="container">
+<div>
+  <h4>Last will details</h4>
+  <h2><%= @funeral.user.first_name %> was prepared for this</h2>
+  <p>Please respect <%= @funeral.user.first_name %>'s preferences when sorting her matters</p>
+</div>
+
+<div>
+  <h3>Funeral preferences</h3>
+  <p>Burial Type: <%= @funeral.funeral_type.burial_type %></p>
+  <p>Burial Location: <%= @funeral.funeral_type.loc_city %></p>
+  <p>Funeral comments:</p>
+  <br>
+  <h3>Digital will preferences</h3>
+  <p>Accounts to be cancelled:</p>
+  <br>
+  <p>Bank accounts:</p>
+  <br>
+  <p>Insurance accounts:</p>
+  <p>Hardware instruction:</p>
+  <p>Other instructions:</p>
+</div>
+</div>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <div class="container d-flex justify-content-center align-items-center flex-column">
 
   <div class="sectionwrapper1">
+    <h4 class="d-flex flex-start">Last willdetails</h4>
+    <h2 class="d-flex flex-start"><%= @funeral.user.first_name %> was prepared for this</h2>
+    <p>Please respect <%= @funeral.user.first_name %>'s preferences when sorting her matters</p>
     <div class="container category-container d-flex flex-wrap justify-content-between align-items-top">
         <div class="category-box">
-          <h3>Funeral Wish</h3>
+          <h3>Funeral Preferences</h3>
             <p>Burial Type: <%= @funeral.funeral_type.burial_type %></p>
             <p>Other Wishes: <%= @funeral.funeral_type.comment %></p>
         </div>
@@ -36,41 +81,75 @@
       </div>
 
     </div>
-    <div id="document" class="category-box ">
+
+
+
+</div>
+
+
+
+    <div id="document" class="category-box">
         <h3>Documents</h3>
           <ul class="picturelist mt-5">
           <% @funeral.documents.each do |document| %>
             <li class="d-flex justify-content-center flex-column align-items-center preview-doc">
               <div class="pdf-preview">
-                <%= cl_image_tag document.file.key, format: :jpg%>
+                <%#= cl_image_tag document.file.key, format: :jpg%>
               </div>
-              <%= link_to document.file_name, cloudinary_url(document.file.key), target: "_blank"%>
+              <%#= link_to document.file_name, cloudinary_url(document.file.key), target: "_blank"%>
             </li>
           <% end %>
          </ul>
       </div>
 
+    <div>
+      <ul class="picturelist documents-grid mt-5">
+      <% @funeral.documents.each do |document| %>
+        <li class="d-flex justify-content-around flex-row align-items-center document-single">
+          <%#= link_to cloudinary_url(document.file.key), target: "_blank" do %>
+          <%#= cl_image_tag document.file.key, format: :jpg, height: 134, width: 105, crop: :fill %>
+          <% end %>
+            <div>
+              <p>Filename: <%#= document.filename %></p>
+              <%#= link_to 'Delete', funeral_document_path(@funeral, document), method: 'delete', data: { confirm: "Are you sure?" }, class: "btn upload-photo mt-3 mb-2" %>
+            </div>
+          </li>
+      </ul>
+    </div>
 
+
+
+
+
+
+
+  <div class="container d-flex">
   <div class="form-design">
       <%= simple_form_for(@funeral.obituary) do |f| %>
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-        <h4 class="d-flex flex-start">Obituary Page</h4>
-        <h2 class="d-flex flex-start">Prepare the obituary content</h2>
+        <div style="margin-top:70px"></div>
+        <h4 class="d-flex flex-start">Obituary Notice</h4>
+        <h2 class="d-flex flex-start">Just a few missing pieces</h2>
+        <p>Please fill in final missing details for <%= @funeral.user.first_name %>'s obituary notice. It will form part of her online memorial.</p>
         <%= f.input :death_date, html5:true, input_html: {class: 'textfield'}%>
-        <%= f.input :death_location, label: 'Death Location', input_html: {class: 'textfield'}%>
+        <%= f.input :death_location, label: 'Death location', input_html: {class: 'textfield'}%>
         <%= f.input :funeral_time, html5:true, input_html: {class: 'textfield'}%>
-        <%= f.input :funeral_location, label: 'Funeral Location', input_html: {class: 'textfield'}%>
-        <%= f.input :funeral_info, label: 'What else do you want to say about the funeral?', :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 5}%>
+        <%= f.input :funeral_location, label: 'Funeral location', input_html: {class: 'textfield'}%>
+        <%= f.input :funeral_info, label: 'Other guest announcements about the funeral', :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 5}%>
 <!--         <%#= f.input :public, label: 'Publish obituary now', input_html: {class: 'textfield'}%> -->
+        <div style="margin-top:80px"></div>
+        <h4 class="d-flex flex-start">Memorial Page</h4>
+        <h2 class="d-flex flex-start">May she rest in peace...</h2>
+        <p>Please click below to publish <%= @funeral.user.first_name %>'s online memorial. Invitations will be sent to her predefined guestlist via email. As representative you are able to change and moderate the content on the memorial page later.</p>
     </div>
-
+  </div>
 
 
     <div class="sectionwrapper1">
       <%= image_tag "i_cloud.jpg", class: "illustration-cloud" %>
       <div class="container form-exit d-flex flex-row justify-content-between align-items-center">
-        <h3>Once you are ready, press on Publish</h3>
+        <h3>Ready? Publish her online memorial</h3>
 <!--         Publishing does not work yet -->
         <%= f.button :submit, value: "Save", class: "btn btn-lj-big-m2" %>
         <%#= f.submit name: "redirect_to", value: "Submit", class: "btn btn-lj-big-m2"%>

@@ -1,0 +1,25 @@
+// main notice section at top
+
+.rep-dashboard {
+  border: 3px solid $main1;
+  border-radius: 20px;
+  height: 100%;
+  width: 75%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+  // padding-top: 3%;
+  // white-space: nowrap;
+}
+
+.rep-dashboard-infos {
+  width: 700px;
+  align-self: center;
+}
+
+.rep-dashboard img {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
