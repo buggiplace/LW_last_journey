@@ -74,7 +74,7 @@ lisa.funeral.obituary.update(
   death_location: "Berlin",
   funeral_location: "Berlin",
   funeral_info: "Please wear something colorful and bring a party hat.",
-  death_date: "2020-10-01T00:00",
+  death_date: "2020-10-01",
   funeral_time: "2020-12-05T11:00"
   )
 
