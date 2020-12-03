@@ -32,9 +32,11 @@
           <%= link_to cloudinary_url(document.key), target: "_blank" do %>
           <%= cl_image_tag document.key, format: :jpg, height: 134, width: 105, crop: :fill %>
           <% end %>
-            <div>
+            <div class="document-filename d-flex flex-column flex-start">
+              <div class="d-flex flex-column flex-start">
               <p>Filename: <%= document.filename %></p>
-              <%= link_to 'Delete', funeral_document_path(@funeral, document), method: 'delete', data: { confirm: "Are you sure?" }, class: "btn upload-photo mt-3 mb-2" %>
+              <%= link_to 'Delete', funeral_document_path(@funeral, document), method: 'delete', data: { confirm: "Are you sure?" }, class: "btn btn-lj-big-m2" %>
+              </div>
             </div>
           </li>
       <% end %>
