@@ -48,11 +48,24 @@ import { filterBurialType } from '../components/filter_burial_type';
 
 import { initMapbox } from '../plugins/init_mapbox';
 import "controllers"
+
+// document view: js to show preview of a selected file to upload
+const getFileName = () => {
+
+  if(window.location.href.includes('documents')) {
+    // funeral_document is the input that changes when a new file is selected
+    document.getElementById('funeral_documents').onchange = function (e) {
+      document.getElementById('preview-name').innerHTML = "File: " + e.target.files[0].name
+    }
+  }
+}
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initChoices();
   initMapbox();
   filterBurialType();
+  getFileName();
 });
 
 // import { previewImageOnFileSelect } from '../components/photo-preview.js';

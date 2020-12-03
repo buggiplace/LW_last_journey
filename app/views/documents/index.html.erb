@@ -21,6 +21,7 @@
           <%= f.input :documents, as: :file, input_html: { multiple: true } %>
         </span>
       </label>
+     <p><label id="preview-name"></label></p>
       <p><i>Disclaimer: In Germany only signed original documents are legally binding.</i></p>
       <%= f.button :submit, value: 'Upload', class: "btn btn-lj-big-m2 flex-start" %>
     <% end %>
