@@ -56,7 +56,7 @@
         </div>
 
         <div class="d-flex flex-column font-style align-self-center mt-5">
-          <h2 class="align-self-center mb-5">Condolences</h2>
+          <h2 class="align-self-center mb-3">Condolences</h2>
             <div class="card-condolence-wrapper">
           <% @obituary.funeral.condolences.order(created_at: :desc).each do |condolence| %>
           <!-- tried to build sorting below -->
@@ -129,15 +129,16 @@
             </div>
           </div>
 
-<div id="myNav" class="overlay">
-  <a href="javascript:void(0)" onclick="closeNav()">&times;</a>
-  <div class="overlay-content">
-    <%= image_tag "logo_tree_b.png", class: "checkout-tree" %>
-    <h1 class="glow" href="#">Thank you for for your attention</h1>
-    <p class="glow" href="#">and please stay with us for the time to come</p>
-    <img src="https://dwj199mwkel52.cloudfront.net/assets/core/svg/logo-lewagon-d3ef4212222c0b4116443049e84e03a45790419f2e3141677d4af8522b59404e.svg" width="210"/>
-  </div>
-</div>
+
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+        <%= image_tag "logo_tree_b.png", class: "checkout-tree" %>
+        <h1 class="glow" href="#">Thank you for for your attention</h1>
+        <p class="glow" href="#">and please stay with us for the time to come</p>
+        <img src="https://dwj199mwkel52.cloudfront.net/assets/core/svg/logo-lewagon-d3ef4212222c0b4116443049e84e03a45790419f2e3141677d4af8522b59404e.svg" width="210"/>
+      </div>
+    </div>
 
 
 <div class="container mt-5">
