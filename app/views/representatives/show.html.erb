@@ -16,41 +16,49 @@
   <p>Please respect <%= @funeral.user.first_name %>'s preferences when handling her matters</p>
 </div>
 
-<div>
-  <h5>Funeral preferences</h5>
-  <p>Burial Type: <%= @funeral.funeral_type.burial_type %></p>
-  <p>Burial Location: <%= @funeral.funeral_type.loc_city %></p>
-  <p>Funeral comments: <%= @funeral.funeral_type.comment %></p>
+<div class="container d-flex flex-row">
+  <div class="will-border">
+    <h5>Funeral preferences</h5>
+    <p><strong style="color:#3E2F5B">Burial Type:</strong> <%= @funeral.funeral_type.burial_type %></p>
+    <p><strong style="color:#3E2F5B">Burial Location:</strong> <%= @funeral.funeral_type.loc_city %></p>
+    <p><strong style="color:#3E2F5B">Funeral comments:</strong> <%= @funeral.funeral_type.comment %></p>
+  </div>
   <br>
-  <h5>Digital will preferences</h5>
-  <p>Accounts to cancel: <% @funeral.digital_will.cancel_accounts.each do |account| %>
-                <%= account %>,
-            <% end %> </p>
-  <p>Bank accounts: <%= @funeral.funeral_type.loc_city %></p>
-  <p>Insurance accounts: <%= @funeral.funeral_type.loc_city %></p>
-  <p>Hardware instruction: <%= @funeral.funeral_type.loc_city %></p>
-  <p>Other digital will instructions: <%= @funeral.digital_will.comment %></p>
+  <div class="will-border">
+    <h5>Digital will preferences</h5>
+    <p><strong style="color:#3E2F5B">Accounts to cancel:</strong> <% @funeral.digital_will.cancel_accounts.each do |account| %>
+                  <%= account %>,
+              <% end %> </p>
+    <p><strong style="color:#3E2F5B">Facebook obituary wanted?</strong> <%= @funeral.digital_will.facebook_obituary %></p>
+    <p><strong style="color:#3E2F5B">Bank accounts:</strong> <%= @funeral.digital_will.bank_account_1 %>, <%= @funeral.digital_will.bank_account_2 %>, <%= @funeral.digital_will.bank_account_3 %></p>
+    <p><strong style="color:#3E2F5B">Insurance accounts:</strong> <%= @funeral.digital_will.insurance_account_1 %>, <%= @funeral.digital_will.insurance_account_2 %>, <%= @funeral.digital_will.insurance_account_3 %></p>
+    <p><strong style="color:#3E2F5B">Hardware instruction:</strong> <%= @funeral.digital_will.hardware %></p>
+    <p><strong style="color:#3E2F5B">Other digital will instructions:</strong> <%= @funeral.digital_will.comment %></p>
+    <br>
+  </div>
 </div>
+    <p class="mt-5">Please notice the following important documents provided by <%= @funeral.user.first_name %></p>
 </div>
-<br>
 
+<div class="container will-border">
 
-<div class="container">
+  <h5>Important documents</h5>
   <ul class="picturelist documents-grid mt-5">
-<% @funeral.documents.each do |document| %>
-  <li class="d-flex justify-content-around flex-row align-items-center document-single">
-    <%= link_to cloudinary_url(document.key), target: "_blank" do %>
-    <%= cl_image_tag document.key, format: :jpg, height: 134, width: 105, crop: :fill %>
+    <% @funeral.documents.each do |document| %>
+      <li class="d-flex justify-content-around flex-row align-items-center document-single">
+        <%= link_to cloudinary_url(document.key), target: "_blank" do %>
+        <%= cl_image_tag document.key, format: :jpg, height: 134, width: 105, crop: :fill %>
+        <% end %>
+          <div class="d-flex flex-column align-items-center">
+            <p class="filename">Filename: </p>
+            <p class="filename"><%= document.filename %></p>
+            <div class="filename">
+              <%= link_to 'Delete', funeral_document_path(@funeral, document), method: 'delete', data: { confirm: "Are you sure?" }, class: "btn upload-photo mt-3 mb-2" %>
+            </div>
+          </div>
+        </li>
     <% end %>
-      <div class="document-filename d-flex flex-column flex-start">
-        <div class="d-flex flex-column flex-start">
-        <p>Filename: <%= document.filename %></p>
-        <%= link_to 'Delete', funeral_document_path(@funeral, document), method: 'delete', data: { confirm: "Are you sure?" }, class: "btn btn-lj-big-m2" %>
-        </div>
-      </div>
-    </li>
-<% end %>
-</ul>
+    </ul>
 </div>
 
 
