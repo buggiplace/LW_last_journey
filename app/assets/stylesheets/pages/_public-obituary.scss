@@ -115,7 +115,7 @@
     padding: 15px;
   }
 
-//below classes from mo for the proposal that is above lenas
+//below classes from mo
 
 // padding helper
 
@@ -143,6 +143,7 @@
   font-size: 32px;
   color: black;
   font-weight: bold;
+  line-height: 1;
 }
 
 .font-style h2 {
@@ -150,6 +151,7 @@
   font-size: 27px;
   font-weight: bold;
   color: black;
+  line-height: 1;
 }
 
 .font-style h3 {
@@ -162,13 +164,14 @@
 .font-style label {
   font-family: "Montserrat", "sans-serif";
   font-size: 25px;
-
+  font-weigth: lighter;
   color: black;
 }
 
 .font-style p {
   font-family: "Montserrat", "sans-serif";
-  font-size: 20px;
+  line-height: 1.4;
+  font-size: 18px;
   color: black;
 }
 
