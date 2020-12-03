@@ -14,6 +14,8 @@ class ObituaryController < ApplicationController
       end
       if current_user == @obituary.funeral.user
         redirect_to obituary_path
+      elsif @obituary.public
+        redirect_to public_obituary_path(@obituary)
       else
         redirect_to representative_path(@funeral)
       end

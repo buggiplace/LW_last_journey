@@ -52,9 +52,6 @@
                 <div class="d-flex flex-column align-items-center">
                   <p class="filename">Filename: </p>
                   <p class="filename"><%= document.filename %></p>
-                  <div class="filename">
-                    <%= link_to 'Delete', funeral_document_path(@funeral, document), method: 'delete', data: { confirm: "Are you sure?" }, class: "btn upload-photo mt-3 mb-2" %>
-                  </div>
                 </div>
               </li>
           <% end %>
