@@ -38,7 +38,7 @@
         <h2 class="align-self-center">Leave a condolence</h2>
         <div class="">
           <%= simple_form_for(@condolence, url: create_condolence_path(@obituary)) do |f| %>
-            <div class="form-inputs p-4 d-flex justify-content-center flex-column">
+            <div class="form-inputs condolence-input d-flex justify-content-center flex-column">
               <div class="d-flex justify-content-between">
               <%= f.input :first_name, input_html: {class: 'textfield font-style'}, placeholder: "..." %>
               <%= f.input :last_name, input_html: {class: 'textfield font-style'}, placeholder: "..." %>
@@ -55,10 +55,12 @@
           <h2 class="align-self-center mb-5">Condolences</h2>
             <div class="card-condolence-wrapper">
           <% @obituary.funeral.condolences.each do |condolence| %>
+          <!-- tried to build sorting below -->
+          <%# @obituary.funeral.condolences.order(:created_at).each do |condolence| %>
             <div class="card-condolence">
                 <div class="card-condolence-infos">
                   <h3 class="font-italic"><%= condolence.content %></h3>
-                  <p>from: <%= condolence.first_name %><%= condolence.last_name %></p>
+                  <p>from: <%= condolence.first_name %>  <%= condolence.last_name %></p>
                   <% if policy(condolence).destroy? %>
                       <%= link_to 'Delete', condolence_path(condolence), method: 'delete', data: { confirm: "Are you sure?" } %>
                   <% end %>
@@ -71,60 +73,41 @@
         </div>
     </div>
 
+  <div class="container d-flex align-items-center justify-content-center mt-5">
+    <div class="lj-carousel-box d-flex align-items-center justify-content-center">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="3000">
+          <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <%=  cl_image_tag(@obituary.photos.last.key, :transformation=>[
+                        # {:effect=>"cartoonify"},
+                        {:width=>1000, :height=>800, :crop=>"limit"}
+                        ]) %>
+                    </div>
 
-<br>
-<br>
-<br>
-<br>
-
-<br>
-
-
-<div class="carousel-box">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="500">
-      <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <%=  cl_image_tag(@obituary.photos.last.key, :transformation=>[
-                    {:effect=>"cartoonify"},
-                    {:width=>1000, :height=>500, :crop=>"fit"}
-                    ]) %>
-                </div>
-
-                <% @obituary.photos.each do |picture| %>
-                <div class="carousel-item">
-                  <%=  cl_image_tag(picture.key, :transformation=>[
-                    {:effect=>"cartoonify"},
-                    {:width=>1000, :height=>500, :crop=>"fit"}
-                    ]) %>
-                </div>
-
-                <% end %>
-    <!--       <img class="d-block w-100" src="..." alt="First slide"> -->
-      </div>
-
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+                    <% @obituary.photos.each do |picture| %>
+                    <div class="carousel-item">
+                      <%=  cl_image_tag(picture.key, :transformation=>[
+                        # {:effect=>"cartoonify"},
+                        {:width=>1000, :height=>800, :crop=>"limit"}
+                        ]) %>
+                    </div>
+                  <% end %>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
     </div>
 </div>
 
-
-
-
-
-
-
-
-<!-- below old playlist -->
-
           <div class="container d-flex flex-column justify-content-center">
             <div class="d-flex font-style spotify-public  align-self-center mt-5">
-              <h2 class="align-self-center mb-2">Playlist</h2>
+              <h2 class="align-self-center mb-2"><%= @obituary.funeral.user.first_name%>'s favourite Playlist</h2>
               <div class="">
                 <% if @obituary.funeral.playlist.spotify_profile_url.present? %>
                   <div class = "">
@@ -145,6 +128,16 @@
     This site is not public.
   <% end %>
 
-<!--   <script type="text/javascript">
+
+
+<script type="text/javascript">
+    document.getElementById("main").onclick = function () {
+        console.log("hello world")
+        location.href = "www.lewagon.com";
+    };
+</script>
+<!--
+  <script type="text/javascript">
     document.getElementById("condolence_2").style.height = (document.getElementById("condolence_1").clientHeight) + "px";
-</script> -->
+</script>
+ -->
