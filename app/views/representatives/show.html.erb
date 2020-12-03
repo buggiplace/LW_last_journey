@@ -2,75 +2,97 @@
 
 <div class="container d-flex align-items-center justify-content-center flex-row">
   <div>
-    <h2>Hello <%= @funeral.representative.first_name %> </h2>
-    <p>Look at the last wishes of <%= @funeral.user.first_name %> and edit the obituary</p>
+    <h2>Hello <%= @funeral.representative.first_name %>, </h2>
+    <p><%= @funeral.user.first_name %> has chosen you as her representative in case of her death. To make things easier for you during these diffcult times, <%= @funeral.user.first_name %> has been planning ahead with the help of Last Journey. The following data will help you administer her estate, organize the funeral and preserve her memory.</p>
   </div>
+
   <%= image_tag "i_angel.jpg", class: "illustration-angel" %>
 </div>
 
+<div class="container rep-header">
+<div>
+  <h4>Last will details</h4>
+  <h2><%= @funeral.user.first_name %> was prepared for this</h2>
+  <p>Please respect <%= @funeral.user.first_name %>'s preferences when handling her matters</p>
+</div>
 
-<div class="container d-flex justify-content-center align-items-center flex-column">
+<div class="container d-flex flex-row">
+  <div class="will-border">
+    <h5>Funeral preferences</h5>
+    <p><strong style="color:#3E2F5B">Burial Type:</strong> <%= @funeral.funeral_type.burial_type %></p>
+    <p><strong style="color:#3E2F5B">Burial Location:</strong> <%= @funeral.funeral_type.loc_city %></p>
+    <p><strong style="color:#3E2F5B">Funeral comments:</strong> <%= @funeral.funeral_type.comment %></p>
+  </div>
+  <br>
+  <div class="will-border">
+    <h5>Digital will preferences</h5>
+    <p><strong style="color:#3E2F5B">Accounts to cancel:</strong> <% @funeral.digital_will.cancel_accounts.each do |account| %>
+                  <%= account %>,
+              <% end %> </p>
+    <p><strong style="color:#3E2F5B">Facebook obituary wanted?</strong> <%= @funeral.digital_will.facebook_obituary %></p>
+    <p><strong style="color:#3E2F5B">Bank accounts:</strong> <%= @funeral.digital_will.bank_account_1 %>, <%= @funeral.digital_will.bank_account_2 %>, <%= @funeral.digital_will.bank_account_3 %></p>
+    <p><strong style="color:#3E2F5B">Insurance accounts:</strong> <%= @funeral.digital_will.insurance_account_1 %>, <%= @funeral.digital_will.insurance_account_2 %>, <%= @funeral.digital_will.insurance_account_3 %></p>
+    <p><strong style="color:#3E2F5B">Hardware instruction:</strong> <%= @funeral.digital_will.hardware %></p>
+    <p><strong style="color:#3E2F5B">Other digital will instructions:</strong> <%= @funeral.digital_will.comment %></p>
+    <br>
+  </div>
+</div>
+    <p class="mt-5">Please notice the following important documents provided by <%= @funeral.user.first_name %></p>
+</div>
 
-  <div class="sectionwrapper1">
-    <div class="container category-container d-flex flex-wrap justify-content-between align-items-top">
-        <div class="category-box">
-          <h3>Funeral Wish</h3>
-            <p>Burial Type: <%= @funeral.funeral_type.burial_type %></p>
-            <p>Other Wishes: <%= @funeral.funeral_type.comment %></p>
-        </div>
-        <div class="category-box">
-          <h3>Digital Will</h3>
-            <p>Accounts to cancel: <% @funeral.digital_will.cancel_accounts.each do |account| %>
-                <%= account %>,
-            <% end %> </p>
-            <p>Other Wishes: <%= @funeral.digital_will.comment %> </p>
-        </div>
-        <div class="category-box">
-          <h3>Funeral Playlist</h3>
-            <p>Accounts to cancel: <% @funeral.digital_will.cancel_accounts.each do |account| %>
-                <%= account %>,
-            <% end %> </p>
-            <p>Other Wishes: <%= @funeral.digital_will.comment %> </p>
-        </div>
+<div class="container will-border">
 
-      </div>
-
-    </div>
-    <div id="document" class="category-box ">
-        <h3>Documents</h3>
-          <ul class="picturelist mt-5">
-          <% @funeral.documents.each do |document| %>
-            <li class="d-flex justify-content-center flex-column align-items-center preview-doc">
-              <div class="pdf-preview">
-                <%= cl_image_tag document.key, format: :jpg%>
-              </div>
-              <%= link_to document.filename, cloudinary_url(document.key), target: "_blank"%>
-            </li>
-          <% end %>
-         </ul>
-      </div>
+  <h5>Important documents</h5>
+  <ul class="picturelist documents-grid mt-5">
+    <% @funeral.documents.each do |document| %>
+      <li class="d-flex justify-content-around flex-row align-items-center document-single">
+        <%= link_to cloudinary_url(document.key), target: "_blank" do %>
+        <%= cl_image_tag document.key, format: :jpg, height: 134, width: 105, crop: :fill %>
+        <% end %>
+          <div class="d-flex flex-column align-items-center">
+            <p class="filename">Filename: </p>
+            <p class="filename"><%= document.filename %></p>
+            <div class="filename">
+              <%= link_to 'Delete', funeral_document_path(@funeral, document), method: 'delete', data: { confirm: "Are you sure?" }, class: "btn upload-photo mt-3 mb-2" %>
+            </div>
+          </div>
+        </li>
+    <% end %>
+    </ul>
+</div>
 
 
+
+
+
+
+  <div class="container d-flex">
   <div class="form-design">
       <%= simple_form_for(@funeral.obituary) do |f| %>
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-        <h4 class="d-flex flex-start">Obituary Page</h4>
-        <h2 class="d-flex flex-start">Prepare the obituary content</h2>
+        <div style="margin-top:70px"></div>
+        <h4 class="d-flex flex-start">Obituary Notice</h4>
+        <h2 class="d-flex flex-start">Just a few missing pieces</h2>
+        <p>Please fill in final missing details for <%= @funeral.user.first_name %>'s obituary notice. It will form part of her online memorial.</p>
         <%= f.input :death_date, html5:true, input_html: {class: 'textfield'}%>
-        <%= f.input :death_location, label: 'Death Location', input_html: {class: 'textfield'}%>
+        <%= f.input :death_location, label: 'Death location', input_html: {class: 'textfield'}%>
         <%= f.input :funeral_time, html5:true, input_html: {class: 'textfield'}%>
-        <%= f.input :funeral_location, label: 'Funeral Location', input_html: {class: 'textfield'}%>
-        <%= f.input :funeral_info, label: 'What else do you want to say about the funeral?', :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 5}%>
+        <%= f.input :funeral_location, label: 'Funeral location', input_html: {class: 'textfield'}%>
+        <%= f.input :funeral_info, label: 'Other guest announcements about the funeral', :as => :text, :input_html => {:class => "textfield", :style=> 'width: 100%;', 'rows' => 5}%>
 <!--         <%#= f.input :public, label: 'Publish obituary now', input_html: {class: 'textfield'}%> -->
+        <div style="margin-top:80px"></div>
+        <h4 class="d-flex flex-start">Memorial Page</h4>
+        <h2 class="d-flex flex-start">May she rest in peace...</h2>
+        <p>Please click below to publish <%= @funeral.user.first_name %>'s online memorial. Invitations will be sent to her predefined guestlist via email. As representative you are able to change and moderate the content on the memorial page later.</p>
     </div>
-
+  </div>
 
 
     <div class="sectionwrapper1">
       <%= image_tag "i_cloud.jpg", class: "illustration-cloud" %>
       <div class="container form-exit d-flex flex-row justify-content-between align-items-center">
-        <h3>Once you are ready, press on Publish</h3>
+        <h3>Ready? Publish her online memorial</h3>
 <!--         Publishing does not work yet -->
         <%= f.button :submit, value: "Save", class: "btn btn-lj-big-m2" %>
         <%#= f.submit name: "redirect_to", value: "Submit", class: "btn btn-lj-big-m2"%>
