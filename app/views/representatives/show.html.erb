@@ -3,25 +3,26 @@
 <div class="container d-flex align-items-center justify-content-center flex-row">
   <div>
     <h2>Hello <%= @funeral.representative.first_name %>, </h2>
-    <p><%= @funeral.user.first_name %> has chosen you as representative in case of death. To make things easier for you, she has been planning for this event with the help of Last Journey. The following data will help you administer her estate, organize the funeral and preserve her memory.</p>
+    <p><%= @funeral.user.first_name %> has chosen you as her representative in case of her death. To make things easier for you during these diffcult times, <%= @funeral.user.first_name %> has been planning ahead with the help of Last Journey. The following data will help you administer her estate, organize the funeral and preserve her memory.</p>
   </div>
+
   <%= image_tag "i_angel.jpg", class: "illustration-angel" %>
 </div>
 
-<div class="container">
+<div class="container rep-header">
 <div>
-  <h4 class="form-design h4">Last will details</h4>
-  <h2 class="form-design h2"><%= @funeral.user.first_name %> was prepared for this</h2>
-  <p>Please respect <%= @funeral.user.first_name %>'s preferences when sorting her matters</p>
+  <h4>Last will details</h4>
+  <h2><%= @funeral.user.first_name %> was prepared for this</h2>
+  <p>Please respect <%= @funeral.user.first_name %>'s preferences when handling her matters</p>
 </div>
 
 <div>
-  <h3>Funeral preferences</h3>
+  <h5>Funeral preferences</h5>
   <p>Burial Type: <%= @funeral.funeral_type.burial_type %></p>
   <p>Burial Location: <%= @funeral.funeral_type.loc_city %></p>
   <p>Funeral comments: <%= @funeral.funeral_type.comment %></p>
   <br>
-  <h3>Digital will preferences</h3>
+  <h5>Digital will preferences</h5>
   <p>Accounts to cancel: <% @funeral.digital_will.cancel_accounts.each do |account| %>
                 <%= account %>,
             <% end %> </p>
