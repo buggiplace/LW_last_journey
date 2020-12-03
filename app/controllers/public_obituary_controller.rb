@@ -16,6 +16,9 @@ class PublicObituaryController < ApplicationController
     @obituary = Obituary.find(params[:obituary_id])
     @condolence = @obituary.funeral.condolences.build(condolence_params)
     if @condolence.save
+      @obituary.funeral.condolences
+      # tried to build sorting below
+      # @condolences = Condolence.order("created_at DESC").all
       redirect_to public_obituary_path(@obituary), notice: 'Condolence created!'
     else
       render 'show'
