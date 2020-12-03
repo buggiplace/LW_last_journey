@@ -54,13 +54,14 @@
         <div class="d-flex flex-column font-style align-self-center mt-5">
           <h2 class="align-self-center mb-5">Condolences</h2>
             <div class="card-condolence-wrapper">
-          <% @obituary.funeral.condolences.each do |condolence| %>
+          <% @obituary.funeral.condolences.order(created_at: :desc).each do |condolence| %>
           <!-- tried to build sorting below -->
           <%# @obituary.funeral.condolences.order(:created_at).each do |condolence| %>
             <div class="card-condolence">
                 <div class="card-condolence-infos">
                   <h3 class="font-italic"><%= condolence.content %></h3>
                   <p>from: <%= condolence.first_name %>  <%= condolence.last_name %></p>
+                  <p><%= condolence.created_at %></p>
                   <% if policy(condolence).destroy? %>
                       <%= link_to 'Delete', condolence_path(condolence), method: 'delete', data: { confirm: "Are you sure?" } %>
                   <% end %>
@@ -155,14 +156,4 @@ function closeNav() {
   <% else %>
     This site is not public.
   <% end %>
-<!-- <script type="text/javascript">
-    document.getElementById("main").onclick = function () {
-        console.log("hello world")
-        location.href = "www.lewagon.com";
-    };
-</script> -->
-<!--
-  <script type="text/javascript">
-    document.getElementById("condolence_2").style.height = (document.getElementById("condolence_1").clientHeight) + "px";
-</script>
- -->
+
