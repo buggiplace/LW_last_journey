@@ -22,14 +22,14 @@
     <p class="mt-4 text-center font-italic">"<%=@obituary.last_words %>"</p>
         <div>
           <p class="border-top pt-2">Sadly, we have to announce that <%= @obituary.funeral.user.first_name%> has passed away
-          on <%= @obituary.death_date.strftime('%e %B %Y') %> in <%= @obituary.death_location %></p>
-          <p class="">The funeral will take place on <%= @obituary.funeral_time.strftime('%e %B %Y at %H:%M') %> in <%= @obituary.funeral_location %></p>
+          on <%= @obituary.death_date.strftime('%e %B %Y') %> in <%= @obituary.death_location %>.</p>
+          <p class="">The funeral will take place on <%= @obituary.funeral_time.strftime('%e %B %Y at %H:%M') %> in <%= @obituary.funeral_location %>.</p>
           <p class="">Please note the following: <%= @obituary.funeral_info%> </p>
         </div>
         <div>
           <p class="border-top text-center default-padding-top"><%= @obituary.funeral.user.first_name%> has provided a set of
             photos and her favourite music to share with you. Please find them in the
-            section below</p>
+            section below.</p>
         </div>
       </div>
   </div>
