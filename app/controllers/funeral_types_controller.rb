@@ -18,6 +18,7 @@ class FuneralTypesController < ApplicationController
     end
   end
 
+
   def update
     if @funeral_type.update(funeral_type_params)
       if params[:redirect_to] == "Save & exit"

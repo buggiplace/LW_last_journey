@@ -32,7 +32,7 @@ const addMarkersToMap = (map, markers) => {
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
+  map.fitBounds(bounds, { padding: 50, maxZoom: 7 });
 };
 
 const initMapbox = () => {
@@ -42,7 +42,7 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     if (markers.length > 0) {
       addMarkersToMap(map, markers);
-      fitMapToMarkers(map, markers);
+      setTimeout(fitMapToMarkers(map, markers),2000);
     }
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
                                       mapboxgl: mapboxgl }));
