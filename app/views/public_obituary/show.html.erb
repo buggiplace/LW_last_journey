@@ -111,11 +111,11 @@
 </div>
 
           <div class="container d-flex flex-column justify-content-center">
-            <div class="d-flex font-style spotify-public  align-self-center mt-5">
+            <div class="d-flex font-style spotify-public align-self-center mt-5">
               <h2 class="align-self-center mb-5"><%= @obituary.funeral.user.first_name%>'s favourite Playlist</h2>
               <div class="">
                 <% if @obituary.funeral.playlist.spotify_profile_url.present? %>
-                  <div class = "">
+                  <div class = "mb-3">
                     <iframe src="https://open.spotify.com/follow/1/?uri=<%=@obituary.funeral.playlist.spotify_profile_url%>&size=detail&theme=light" width="220" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
                 </div>
                 <% end %>
