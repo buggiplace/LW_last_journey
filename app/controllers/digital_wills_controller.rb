@@ -28,6 +28,6 @@ private
 
   def digital_will_params
     params.require(:digital_will).permit(
-      :cancel_accounts, :bank_account_1, :bank_account_2, :bank_account_3, :insurance_account_1, :insurance_account_2, :insurance_account_3, :hardware, :comment)
+      :facebook_obituary, :cancel_accounts, :bank_account_1, :bank_account_2, :bank_account_3, :insurance_account_1, :insurance_account_2, :insurance_account_3, :hardware, :comment)
   end
 end

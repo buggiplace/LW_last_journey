@@ -1,4 +1,30 @@
+//
+.will-border {
+  border: 3px solid $main1;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.funeral-preferences-box {
+  width: 28%;
+  // margin-right: 10px;
+}
+
+
+.digital-will-box {
+  width: 70%;
+  // margin-left: 10px;
+}
+
+.important-documents-box {
+  width: 100%
+}
+
 // main notice section at top
+
+.doc_shadow {
+  box-shadow: 2px 2px 6px rgba(18, 18, 18, 0.4);
+}
 
 .rep-dashboard {
   border: 3px solid $main1;
@@ -26,16 +52,16 @@
 
 
 .rep-header {
-  h2 {
-    font-size: 30px !important;
-    font-weight: 600  !important;
-    // margin-bottom: 30px;
-    line-height: 37px  !important;
-  }
-   h4 {
-    font-size: 14px  !important;
-    font-weight: 600  !important;
-    // margin-bottom: 30px;
-    line-height: 17px  !important;
-  }
+    h2 {
+      font-size: 30px !important;
+      font-weight: 600  !important;
+      // margin-bottom: 30px;
+      line-height: 37px  !important;
+    }
+     h4 {
+      font-size: 14px  !important;
+      font-weight: 600  !important;
+      // margin-bottom: 30px;
+      line-height: 17px  !important;
+    }
   }
