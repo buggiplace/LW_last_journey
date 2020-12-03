@@ -122,6 +122,12 @@ content: 'Giphy Queen! Thank you for all the laughs and jokes.
 I miss you and will drink some Aperol Spritz 🍹 in Memory of you.',
 funeral: lisa.funeral)
 
+lisa.funeral.condolences.create!(
+first_name: 'Tina',
+last_name: 'Meyer',
+content: 'I will keep on dancing for you, at least when the clubs reopen! 💃 Your Ruby skills will not be forgotten 🤓.',
+funeral: lisa.funeral)
+
 puts "Condolences seed finished"
 
 
