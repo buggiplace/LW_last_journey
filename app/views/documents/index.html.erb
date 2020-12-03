@@ -22,15 +22,15 @@
         </span>
       </label>
       <p><i>Disclaimer: In Germany only signed original documents are legally binding.</i></p>
-      <%= f.button :submit, class: "btn btn-lj-big-m2 flex-start" %>
+      <%= f.button :submit, value: 'Add documents', class: "btn btn-lj-big-m2 flex-start" %>
     <% end %>
 
 
     <ul class="picturelist documents-grid mt-5">
       <% @funeral.documents.each do |document| %>
         <li class="d-flex justify-content-around flex-row align-items-center document-single">
-          <%= link_to cloudinary_url(document.file.key), target: "_blank" do %>
-          <%= cl_image_tag document.file.key, format: :jpg, height: 134, width: 105, crop: :fill %>
+          <%= link_to cloudinary_url(document.key), target: "_blank" do %>
+          <%= cl_image_tag document.key, format: :jpg, height: 134, width: 105, crop: :fill %>
           <% end %>
             <div>
               <p>Filename: <%= document.filename %></p>

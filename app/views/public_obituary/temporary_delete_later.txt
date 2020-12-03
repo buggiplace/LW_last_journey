@@ -1,3 +1,10 @@
+                      <%=  cl_image_tag(@obituary.photos.last.key, :transformation=>[
+                        # {:effect=>"cartoonify"},
+                        {:width=>1000, :height=>800, :crop=>"limit"}
+                        ]) %>
+
+
+
     <% if @obituary.photos.last.present? %>
     <div class="container d-flex justify-content-center">
       <div class="carousel-box">
