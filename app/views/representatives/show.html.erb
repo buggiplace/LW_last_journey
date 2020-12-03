@@ -9,6 +9,7 @@
   <%= image_tag "i_done.png", class: "illustration-angel" %>
 </div>
 
+
 <div class="container rep-header d-flex flex-column">
     <div>
       <h4>Last will details</h4>
@@ -48,7 +49,7 @@
           <% @funeral.documents.each do |document| %>
             <li class="d-flex justify-content-around flex-row align-items-center document-single">
               <%= link_to cloudinary_url(document.key), target: "_blank" do %>
-              <%= cl_image_tag document.key, format: :jpg, height: 134, width: 105, crop: :fill %>
+              <%= cl_image_tag document.key, format: :jpg, height: 134, width: 105, crop: :fill, class: "doc_shadow" %>
               <% end %>
                 <div class="d-flex flex-column align-items-center">
                   <p class="filename">Filename: </p>

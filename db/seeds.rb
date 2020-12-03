@@ -58,7 +58,7 @@ lisa.funeral.playlist.update(
   spotify_url: 'spotify:playlist:09vrf9JgCt1AD06mqwlubq',
   spotify_profile_url: "spotify:user:buggiplace")
 lisa.funeral.digital_will.update(
-  cancel_accounts: ["Spotify,", "Netflix,", "Ebay Plus"],
+  cancel_accounts: "Spotify, Netflix",
   facebook_obituary: 'false',
   bank_account_1: 'n26',
   bank_account_2: 'Coinbase',
@@ -85,8 +85,8 @@ lisa.funeral.save
 filepath2 = Rails.root.join('db', 'mountain.JPG')
 lisa.funeral.obituary.photos.attach(io: File.open(filepath2), filename: "mountain.jpg", content_type: "image/jpg")
 
-filepath3 = Rails.root.join('db', 'Fachschaft.JPG')
-lisa.funeral.obituary.photos.attach(io: File.open(filepath3), filename: "Fachschaft.JPG", content_type: "image/jpg")
+filepath3 = Rails.root.join('db', 'japan.JPG')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath3), filename: "japan.JPG", content_type: "image/jpg")
 
 filepath4 = Rails.root.join('db', 'rainbow.JPG')
 lisa.funeral.obituary.photos.attach(io: File.open(filepath4), filename: "rainbow.JPG", content_type: "image/jpg")
@@ -97,8 +97,8 @@ lisa.funeral.obituary.photos.attach(io: File.open(filepath5), filename: "oma.JPG
 filepath6 = Rails.root.join('db', 'castle.JPG')
 lisa.funeral.obituary.photos.attach(io: File.open(filepath6), filename: "castle.JPG", content_type: "image/jpg")
 
-filepath7 = Rails.root.join('db', 'jump.JPG')
-lisa.funeral.obituary.photos.attach(io: File.open(filepath7), filename: "jump.JPG", content_type: "image/jpg")
+filepath7 = Rails.root.join('db', 'jump_quadrat.JPG')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath7), filename: "jump_quadrat.JPG", content_type: "image/jpg")
 
 # filepath9 = Rails.root.join('db', 'Patient_will.pdf')
 # document_patient_will = lisa.funeral.documents.create()
@@ -135,15 +135,15 @@ Location.create!(street: 'Hafendeichstraße 17', zip: '26465', city: 'Langeoog',
 require 'csv'
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
 filepath = Rails.root.join('db', 'address_seed5.csv') # previously 'address_seed4.csv'
-     CSV.foreach(filepath, csv_options) do |row|
-       Location.create!(
-           street: row['street'], # previously address_street
-           zip: row['zip'], # previously address_zip
-           city: row['city'], # previously address_city
-           name: row['name'], # previously Faker::Company.name,
-           cemetery_type: row['cemetery_type'], # new
-         )
-     end
+      CSV.foreach(filepath, csv_options) do |row|
+        Location.create!(
+            street: row['street'], # previously address_street
+            zip: row['zip'], # previously address_zip
+            city: row['city'], # previously address_city
+            name: row['name'], # previously Faker::Company.name,
+            cemetery_type: row['cemetery_type'], # new
+          )
+      end
 
 
- puts 'Funeral locations seed finished'
+puts 'Funeral locations seed finished'
