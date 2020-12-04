@@ -17,7 +17,8 @@
         <%= link_to "Content", "#", class: "nav-link" %>
       </li> -->
       <li class="nav-item dropdown">
-          <%= image_tag "avatar.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false unless current_user && current_user.representative?  %>
+          <%= image_tag "avatar-lisa.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false unless current_user && current_user.representative?  %>
+          <%= image_tag "avatar-simon.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false unless current_user && current_user.owner?  %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to 'Dashboard', funerals_dashboard_path, class: "dropdown-item"%>
           <br>
@@ -46,4 +47,5 @@
 
 
 </div>
+
 

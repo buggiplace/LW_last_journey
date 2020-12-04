@@ -9,6 +9,17 @@
 // }
 
 
+// representative dashboard illustration
+.illustration-cloud-representative {
+  position: absolute;
+  width: 518px;
+  height: 268px;
+  left: -1%;
+  top: -110%;
+  z-index: 1;
+  width: -190px;
+}
+
 // digital will
 
 .illustration-digital{
@@ -19,6 +30,15 @@
   z-index: 10;
 }
 
+.illustration-cloud-wills {
+  position: absolute;
+  width: 518px;
+  height: 268px;
+  left: -15%;
+  top: -109%;
+  z-index: 1;
+  width: -190px;
+}
 
 // playlist / music illustrations
 
@@ -28,14 +48,8 @@
 }
 
 .illustration-cloud-documents1 {
-  position: absolute;
-  // width: 518px;
-  height: 200px;
-  // right: -200px;
-  right: -20%;
-  top: 5%;
-  // top: 5%;
-  z-index: 1;
+  width: 300px;
+  margin: 50px;
 }
 
 // funeral types illustrations

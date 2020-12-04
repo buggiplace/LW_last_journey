@@ -1,66 +1,5 @@
 // custom last journey buttons
 
-// map popup btn for map
-.btn-lj-small-info {
-  color: $main2;
-  // border: 3px solid $main1;
-  border: 1px solid #3E2F5B;
-  // box-sizing: border-box;
-  height: 40px;
-  width: 80px;
-  text-align: center;
-  background-color: $main1;
-  border-radius: 4px;
-  padding: 10px;
-  font-weight: 600;
-  font-size: 1rem;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-  margin-top: 10px;
-}
-
-.btn-lj-small-info:hover {
-  opacity: 1;
-  color: $main2;
-  // border: 3px solid $main1;
-}
-
-
-// not in use
-// .btn-lj-big {
-//   color: white;
-//   border: 1px solid white;
-//   padding: 8px 24px;
-//   border-radius: 50px;
-//   font-weight: lighter;
-//   font-size: 1.3rem;
-//   opacity: 0.6;
-//   transition: opacity 0.3s ease;
-// }
-
-.btn-lj-big:hover {
-  opacity: 1;
-  color: white;
-}
-
-// Main color in the front
-.btn-lj-big-m {
-  color: $main1;
-  border: 3px solid $main1;
-  padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
-
-.btn-lj-big-m:hover {
-  opacity: 1;
-  color: $main1;
-  border: 3px solid $main1;
-}
-
 // Main color in the back - applied on all views
 .btn-lj-big-m2 {
   color: $main2;
@@ -117,7 +56,10 @@
 
 
 
-// (max) button 100 % width with CONTRARY COLORS
+// HOME BUTTONS
+
+
+// (max) button 100 % width with CONTRARY COLORS applied on HOME
 .btn-lj-big-m3-contrary {
   color: #3E2F5B;
   // border: 3px solid $main1;
@@ -135,7 +77,14 @@
   transition: opacity 0.3s ease;
 }
 
-// button 100 % width
+.btn-lj-big-m3-contrary:hover {
+  // opacity: 1;
+  // color: $main2;
+  // border: 3px solid $main1;
+}
+
+
+// button 100 % width applied on HOME
 .btn-lj-big-m3 {
   color: $main2;
   // border: 3px solid $main1;
@@ -159,30 +108,30 @@
   // border: 3px solid $main1;
 }
 
-// button below not in use
-// .btn-lj-big-m4 {
-//   color: $main1;
-//   // border: 3px solid $main1;
-//   border: 1px solid #3E2F5B;
-//   // box-sizing: border-box;
-//   height: 50px;
-//   width: 220px;
-//   text-align: center;
-//   background-color: white;
-//   border-radius: 4px;
-//   padding: 10px;
-//   font-weight: 600;
-//   font-size: 1.1rem;
-//   opacity: 0.6;
-//   transition: opacity 0.3s ease;
-// }
+// map popup btn for map
+.btn-lj-small-info {
+  color: $main2;
+  // border: 3px solid $main1;
+  border: 1px solid #3E2F5B;
+  // box-sizing: border-box;
+  height: 40px;
+  width: 80px;
+  text-align: center;
+  background-color: $main1;
+  border-radius: 4px;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin-top: 10px;
+}
 
-// .btn-lj-big-m4:hover {
-//   opacity: 1;
-//   color: $main1;
-//   // border: 3px solid $main1;
-// }
-
+.btn-lj-small-info:hover {
+  opacity: 1;
+  color: $main2;
+  // border: 3px solid $main1;
+}
 
 //upload photo button in main color outlined
 .upload-photo {
@@ -195,6 +144,35 @@
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
+
+
+
+//not in use
+// // Main color in the front
+// .btn-lj-big-m {
+//   color: $main1;
+//   border: 3px solid $main1;
+//   padding: 8px 24px;
+//   border-radius: 50px;
+//   font-weight: 600;
+//   font-size: 1.1rem;
+//   opacity: 0.6;
+//   transition: opacity 0.3s ease;
+// }
+
+// .btn-lj-big-m:hover {
+//   opacity: 1;
+//   color: $main1;
+//   border: 3px solid $main1;
+// }
+
+
+
+
+
+
+
+
 
 
 

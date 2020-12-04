@@ -9,7 +9,8 @@
     <h2>In memory of</h2>
     <h1><%= @obituary.funeral.user.first_name%></h1>
       <% if @obituary.photos.last.present? %>
-      <%=  cl_image_tag(@obituary.photos.last.key, :transformation=>[
+      <%=  cl_image_tag("7y0faayuvcqb74nmh0lqnvwf5x9m.jpg", :transformation=>[
+        # @obituary.photos.last.key <- keep this for now
         {:effect=>"improve:outdoor"},
         {:background=>"snow"},
 
@@ -39,7 +40,7 @@
 
       <div class="container d-flex flex-column justify-content-center mt-5">
         <div class="d-flex flex-column font-style condolences align-self-center" id="condolence_1">
-        <h2 class="align-self-center">Leave a condolence</h2>
+        <h2 class="align-self-center mb-4">Leave a condolence</h2>
         <div class="">
           <%= simple_form_for(@condolence, url: create_condolence_path(@obituary)) do |f| %>
             <div class="form-inputs condolence-input d-flex justify-content-center flex-column">
@@ -130,7 +131,7 @@
           </div>
 
 
-    <div id="myNav" class="overlay">
+    <div id="pop-up-lj" class="overlay">
       <a href="javascript:void(0)" onclick="closeNav()">&times;</a>
       <div class="overlay-content">
         <%= image_tag "logo_tree_b.png", class: "checkout-tree" %>
@@ -149,12 +150,12 @@
 
 <script>
 function openNav() {
-  document.getElementById("myNav").style.width = "100%";
+  document.getElementById("pop-up-lj").style.width = "100%";
   console.log("hello")
 }
 
 function closeNav() {
-  document.getElementById("myNav").style.width = "0%";
+  document.getElementById("pop-up-lj").style.width = "0%";
 }
 </script>
 
