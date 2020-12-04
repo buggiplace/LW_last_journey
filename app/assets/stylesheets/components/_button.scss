@@ -63,13 +63,13 @@
 .btn-lj-big-m3-contrary {
   color: #3E2F5B;
   // border: 3px solid $main1;
-  border: 1px solid #3E2F5B;
+  border: 3px solid #3E2F5B;
   // box-sizing: border-box;
   height: 50px;
   width: 100%;
   text-align: center;
   background-color: $main2;
-  border-radius: 4px;
+  border-radius: 20px;
   padding: 10px;
   font-weight: 600;
   font-size: 1.1rem;
@@ -79,8 +79,9 @@
 
 .btn-lj-big-m3-contrary:hover {
   // opacity: 1;
-  // color: $main2;
-  // border: 3px solid $main1;
+  color: $main2;
+  border: 3px solid $main1;
+  background: $main1;
 }
 
 
@@ -94,7 +95,7 @@
   width: 100%;
   text-align: center;
   background-color: $main1;
-  border-radius: 4px;
+  border-radius: 20px;
   padding: 10px;
   font-weight: 600;
   font-size: 1.1rem;
@@ -103,8 +104,12 @@
 }
 
 .btn-lj-big-m3:hover {
-  opacity: 1;
-  color: $main2;
+  color: $main1;
+  border: 3px solid $main1;
+  background: $main2;
+
+  // opacity: 1;
+  // color: $main2;
   // border: 3px solid $main1;
 }
 
@@ -112,7 +117,7 @@
 .btn-lj-small-info {
   color: $main2;
   // border: 3px solid $main1;
-  border: 1px solid #3E2F5B;
+  border: 3px solid #3E2F5B;
   // box-sizing: border-box;
   height: 40px;
   width: 80px;
@@ -122,14 +127,16 @@
   padding: 10px;
   font-weight: 600;
   font-size: 1rem;
-  opacity: 0.6;
+  // opacity: 0.6;
   transition: opacity 0.3s ease;
   margin-top: 10px;
 }
 
 .btn-lj-small-info:hover {
-  opacity: 1;
-  color: $main2;
+  // opacity: 1;
+  color: $main1;
+  border: 3px solid #3E2F5B;
+  background-color: transparent;
   // border: 3px solid $main1;
 }
 
