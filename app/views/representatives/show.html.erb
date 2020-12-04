@@ -29,9 +29,15 @@
           <div class="will-border digital-will-box">
               <h5>Digital will preferences</h5>
               <p><strong style="color:#3E2F5B">Accounts to cancel:</strong> <% @funeral.digital_will.cancel_accounts %>
-              <p><strong style="color:#3E2F5B">Facebook obituary wanted?</strong> <%= @funeral.digital_will.facebook_obituary %></p>
-              <p><strong style="color:#3E2F5B">Bank accounts:</strong> <%= @funeral.digital_will.bank_account_1 %>, <%= @funeral.digital_will.bank_account_2 %>, <%= @funeral.digital_will.bank_account_3 %></p>
-              <p><strong style="color:#3E2F5B">Insurance accounts:</strong> <%= @funeral.digital_will.insurance_account_1 %>, <%= @funeral.digital_will.insurance_account_2 %>, <%= @funeral.digital_will.insurance_account_3 %></p>
+              <p><strong style="color:#3E2F5B">Facebook obituary wanted?</strong>
+                <% if  @funeral.digital_will.facebook_obituary%>
+                Yes
+                <% else %>
+                No
+                <% end %>
+              </p>
+              <p><strong style="color:#3E2F5B">Bank accounts:</strong> <%= @funeral.digital_will.bank_account_1 %>, <%= @funeral.digital_will.bank_account_2 %> <%= @funeral.digital_will.bank_account_3 %></p>
+              <p><strong style="color:#3E2F5B">Insurance accounts:</strong> <%= @funeral.digital_will.insurance_account_1 %>, <%= @funeral.digital_will.insurance_account_2 %> <%= @funeral.digital_will.insurance_account_3 %></p>
               <p><strong style="color:#3E2F5B">Hardware instruction:</strong> <%= @funeral.digital_will.hardware %></p>
               <p><strong style="color:#3E2F5B">Other digital will instructions:</strong> <%= @funeral.digital_will.comment %></p>
           </div>
