@@ -9,7 +9,8 @@
     <h2>In memory of</h2>
     <h1><%= @obituary.funeral.user.first_name%></h1>
       <% if @obituary.photos.last.present? %>
-      <%=  cl_image_tag(@obituary.photos.last.key, :transformation=>[
+      <%=  cl_image_tag("7y0faayuvcqb74nmh0lqnvwf5x9m.jpg", :transformation=>[
+        # @obituary.photos.last.key <- keep this for now
         {:effect=>"improve:outdoor"},
         {:background=>"snow"},
 
