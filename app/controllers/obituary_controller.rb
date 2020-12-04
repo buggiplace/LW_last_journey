@@ -16,6 +16,7 @@ class ObituaryController < ApplicationController
         redirect_to obituary_path
       elsif @obituary.public
         redirect_to public_obituary_path(@obituary)
+      // 2 lines above added from JL -tbd
       else
         redirect_to representative_path(@funeral)
       end
