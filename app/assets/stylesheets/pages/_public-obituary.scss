@@ -21,12 +21,15 @@
   transition: 0.5s;
 }
 
+.overlay img {
+
+}
+
 .overlay-content {
   position: relative;
   top: 0%;
   width: 100%;
   text-align: center;
-  margin-top: 30px;
 }
 
 .overlay a {
@@ -45,6 +48,7 @@
   color: white;
   display: block;
   transition: 0.3s;
+  margin-top: 50px;
 }
 
 .overlay p {
@@ -54,6 +58,7 @@
   color: white;
   display: block;
   transition: 0.3s;
+  margin-bottom: 20px;
 }
 
 .overlay a:hover, .overlay a:focus {
@@ -89,11 +94,11 @@
 
 @-webkit-keyframes glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #DC2517, 0 0 40px #DC2517, 0 0 50px #DC2517, 0 0 60px #DC2517, 0 0 70px #DC2517;
   }
 
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    text-shadow: 0 0 20px #fff, 0 0 30px black, 0 0 40px black, 0 0 50px black, 0 0 60px black, 0 0 70px black, 0 0 80px black;
   }
 }
 
@@ -183,7 +188,7 @@
 // main notice section at top
 
 .notice {
-  border: 3px solid $main1;
+  border: 3px solid black;
   border-radius: 20px;
   height: 100%;
   width: 75%;
@@ -221,6 +226,30 @@
   // padding-top: 3%;
 }
 
+.condolences h2 {
+  color: $main1 !important;
+}
+
+.condolences h1 {
+  color: $main1 !important;
+}
+
+.condolences h3 {
+  color: $main1 !important;
+}
+
+.condolences h4 {
+  color: $main1 !important;
+}
+
+.condolences p {
+  color: $main1 !important;
+}
+
+.condolences label {
+  color: $main1 !important;
+}
+
 .card-condolence-wrapper {
   overflow: scroll;
   height: 300px;
@@ -230,7 +259,6 @@
   padding-right: 15%;
   padding-left: 15%;
 }
-
 
 .card-condolence {
 
@@ -329,4 +357,7 @@
   // padding-top: 3%;
 }
 
+.spotify-public h2 {
+  color: $main1;
+}
 
