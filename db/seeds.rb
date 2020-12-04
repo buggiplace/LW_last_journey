@@ -56,7 +56,7 @@ lisa.funeral.funeral_type.update(
   )
 lisa.funeral.playlist.update(
   spotify_url: 'spotify:playlist:09vrf9JgCt1AD06mqwlubq',
-  spotify_profile_url: "spotify:user:buggiplace")
+  spotify_profile_url: "spotify:user:geebabygee")
 lisa.funeral.digital_will.update(
   cancel_accounts: "Spotify, Netflix",
   facebook_obituary: 'false',
@@ -82,23 +82,23 @@ lisa.funeral.representative = simon
 lisa.funeral.save
 
 
-filepath2 = Rails.root.join('db', 'mountain.JPG')
-lisa.funeral.obituary.photos.attach(io: File.open(filepath2), filename: "mountain.jpg", content_type: "image/jpg")
+filepath2 = Rails.root.join('db', 'mountain_c.JPG')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath2), filename: "mountain_c.jpg", content_type: "image/jpg")
 
-filepath3 = Rails.root.join('db', 'japan2.JPG')
-lisa.funeral.obituary.photos.attach(io: File.open(filepath3), filename: "japan2.JPG", content_type: "image/jpg")
+filepath3 = Rails.root.join('db', 'japan_c.JPG')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath3), filename: "japan_c.JPG", content_type: "image/jpg")
 
-filepath4 = Rails.root.join('db', 'rainbow.JPG')
-lisa.funeral.obituary.photos.attach(io: File.open(filepath4), filename: "rainbow.JPG", content_type: "image/jpg")
+filepath4 = Rails.root.join('db', 'rainbow_c.JPG')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath4), filename: "rainbow_c.JPG", content_type: "image/jpg")
 
-filepath5 = Rails.root.join('db', 'Oma.JPG')
-lisa.funeral.obituary.photos.attach(io: File.open(filepath5), filename: "oma.JPG", content_type: "image/jpg")
+filepath5 = Rails.root.join('db', 'Oma_c.JPG')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath5), filename: "oma_c.JPG", content_type: "image/jpg")
 
-filepath6 = Rails.root.join('db', 'castle.JPG')
-lisa.funeral.obituary.photos.attach(io: File.open(filepath6), filename: "castle.JPG", content_type: "image/jpg")
+filepath6 = Rails.root.join('db', 'castle_c.JPG')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath6), filename: "castle_c.JPG", content_type: "image/jpg")
 
-filepath7 = Rails.root.join('db', 'jump2.JPG')
-lisa.funeral.obituary.photos.attach(io: File.open(filepath7), filename: "jump2.JPG", content_type: "image/jpg")
+filepath7 = Rails.root.join('db', 'jump_c.JPG')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath7), filename: "jump_c.JPG", content_type: "image/jpg")
 
 # filepath9 = Rails.root.join('db', 'Patient_will.pdf')
 # document_patient_will = lisa.funeral.documents.create()
