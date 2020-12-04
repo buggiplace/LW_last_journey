@@ -82,23 +82,23 @@ lisa.funeral.representative = simon
 lisa.funeral.save
 
 
-filepath2 = Rails.root.join('db', 'mountain_c.JPG')
+filepath2 = Rails.root.join('db', 'mountain_c.jpg')
 lisa.funeral.obituary.photos.attach(io: File.open(filepath2), filename: "mountain_c.jpg", content_type: "image/jpg")
 
-filepath3 = Rails.root.join('db', 'japan_c.JPG')
-lisa.funeral.obituary.photos.attach(io: File.open(filepath3), filename: "japan_c.JPG", content_type: "image/jpg")
+filepath3 = Rails.root.join('db', 'japan_c.jpg')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath3), filename: "japan_c.jpg", content_type: "image/jpg")
 
-filepath4 = Rails.root.join('db', 'rainbow_c.JPG')
-lisa.funeral.obituary.photos.attach(io: File.open(filepath4), filename: "rainbow_c.JPG", content_type: "image/jpg")
+filepath4 = Rails.root.join('db', 'rainbow_c.jpg')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath4), filename: "rainbow_c.jpg", content_type: "image/jpg")
 
-filepath5 = Rails.root.join('db', 'Oma_c.JPG')
-lisa.funeral.obituary.photos.attach(io: File.open(filepath5), filename: "oma_c.JPG", content_type: "image/jpg")
+filepath5 = Rails.root.join('db', 'Oma_c.jpg')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath5), filename: "oma_c.jpg", content_type: "image/jpg")
 
-filepath6 = Rails.root.join('db', 'castle_c.JPG')
-lisa.funeral.obituary.photos.attach(io: File.open(filepath6), filename: "castle_c.JPG", content_type: "image/jpg")
+filepath6 = Rails.root.join('db', 'castle_c.jpg')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath6), filename: "castle_c.jpg", content_type: "image/jpg")
 
-filepath7 = Rails.root.join('db', 'jump_c.JPG')
-lisa.funeral.obituary.photos.attach(io: File.open(filepath7), filename: "jump_c.JPG", content_type: "image/jpg")
+filepath7 = Rails.root.join('db', 'jump_c.jpg')
+lisa.funeral.obituary.photos.attach(io: File.open(filepath7), filename: "jump_c.jpg", content_type: "image/jpg")
 
 # filepath9 = Rails.root.join('db', 'Patient_will.pdf')
 # document_patient_will = lisa.funeral.documents.create()
