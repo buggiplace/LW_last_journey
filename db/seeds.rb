@@ -56,7 +56,7 @@ lisa.funeral.funeral_type.update(
   )
 lisa.funeral.playlist.update(
   spotify_url: 'spotify:playlist:09vrf9JgCt1AD06mqwlubq',
-  spotify_profile_url: "spotify:user:buggiplace")
+  spotify_profile_url: "spotify:user:geebabygee")
 lisa.funeral.digital_will.update(
   cancel_accounts: "Spotify, Netflix",
   facebook_obituary: 'false',
