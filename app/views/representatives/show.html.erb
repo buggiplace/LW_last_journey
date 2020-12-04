@@ -96,19 +96,20 @@
       <div class="container form-exit d-flex flex-row justify-content-between align-items-center">
         <h3>Ready? Publish her online memorial</h3>
 <!--         Publishing does not work yet -->
-        <%= f.button :submit, value: "Save", class: "btn btn-lj-big-m2" %>
+        <%= f.button :submit, value: "Save", class: "btn btn-lj-big-m2", target: "_blank" %>
         <%#= f.submit name: "redirect_to", value: "Submit", class: "btn btn-lj-big-m2"%>
 <!--         Nice to have: ajax -->
         <% if @funeral.obituary.public %>
           <%= link_to "Unpublish", obituary_path(@funeral.obituary, obituary: {public: false}), method: :patch,  class: "btn btn-lj-big-m2" %>
           <%= link_to "Visit obituary", public_obituary_path(@funeral.obituary),  target: "_blank", class: "btn btn-lj-big-m2" %>
         <% else %>
-          <%= link_to "Publish", obituary_path(@funeral.obituary, obituary: {public: true}), method: :patch, class: "btn btn-lj-big-m2" %>
+          <%= link_to "Publish", obituary_path(@funeral.obituary, obituary: {public: true}), method: :patch, target: "_blank", class: "btn btn-lj-big-m2" %>
         <% end %>
       <% end %>
       </div>
     </div>
 </div>
+
 
 
 
