@@ -88,8 +88,8 @@ lisa.funeral.obituary.photos.attach(io: File.open(filepath2), filename: "mountai
 filepath3 = Rails.root.join('db', 'japan_c.jpg')
 lisa.funeral.obituary.photos.attach(io: File.open(filepath3), filename: "japan_c.jpg", content_type: "image/jpg")
 
-filepath4 = Rails.root.join('db', 'rainbow_c.jpg')
-lisa.funeral.obituary.photos.attach(io: File.open(filepath4), filename: "rainbow_c.jpg", content_type: "image/jpg")
+# filepath4 = Rails.root.join('db', 'rainbow_c.jpg')
+# lisa.funeral.obituary.photos.attach(io: File.open(filepath4), filename: "rainbow_c.jpg", content_type: "image/jpg")
 
 filepath5 = Rails.root.join('db', 'oma_c.jpg')
 lisa.funeral.obituary.photos.attach(io: File.open(filepath5), filename: "oma_c.jpg", content_type: "image/jpg")
