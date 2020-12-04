@@ -64,8 +64,8 @@ body{
   position: relative;
   background-color: white;
   border-color: transparent;
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
   border: 3px solid $main1;
   border-radius: var(--spacing-l);
   transition: 100ms linear;
@@ -158,10 +158,11 @@ body{
 
 .card__content{
   left: 0;
-  padding: var(--spacing-l);
+  // padding: var(--spacing-l);
   position: absolute;
-  top: 48%;
+  top: 56%;
   width:100%;
+  text-align: center
 }
 
 .card .card__content:hover {
