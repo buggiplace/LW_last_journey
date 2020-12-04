@@ -1,17 +1,23 @@
 <%#= link_to 'Back to overview', funerals_dashboard_path, class: 'btn btn-light m-1'%>
 
-<div class="container d-flex justify-content-center flex-column align-items-center mt-2">
+<div class="container d-flex align-items-center justify-content-center flex-row">
+
   <div>
     <h2>My documents</h2>
-    <p>The bad news first: you are going to be outlived by bureaucracy. Good news: you come prepared. Upload all important documents here so that you can find peace while everything goes according to plan </p>
+    <p>The bad news first: you are going to be outlived by bureaucracy. Good news: you come prepared. Upload all important documents here so that you can find peace while everything goes according to plan.</p>
   </div>
+  <%= image_tag "i_letters.png", class: "illustration-cloud-documents1" %>
+</div>
+
+<div class="container d-flex justify-content-center flex-column align-items-center mt-2">
+
 
     <div class="form-design sectionwrapper4">
     <%= simple_form_for(@funeral, url: funeral_documents_path(@funeral), method: :post) do |f| %>
       <%= f.error :base %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
       <div>
-        <%= image_tag "i_letters.png", class: "illustration-cloud-documents1" %>
+        <%#= image_tag "i_letters.png", class: "illustration-cloud-documents1" %>
       </div>
       <h4 class="d-flex flex-start">Document upload</h4>
       <h2 class="d-flex flex-start">Long live bureaucracy </h2>
